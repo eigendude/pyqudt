@@ -10,6 +10,12 @@ QUDT is a CC-SA-BY project by NASA Ames Research Center and TopQuadrant, Inc.
 
 License of this Python library: 3-clause BSD ("New BSD License")
 
+# Installation
+
+```
+pip3 install pyqudt
+```
+
 # Status
 
 The package is relatively complete and test cases cover most code. Version 1.0.0 has been released.
