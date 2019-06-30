@@ -41,12 +41,12 @@ class OntologyUtils(object):
         return cls._namespaces[shorthand]
 
     @classmethod
-    def get_uri(cls, shorthand: str, local_part: str) -> str:
+    def get_iri(cls, shorthand: str, local_part: str) -> str:
         """
-        Get the full URI given the namespace shorthand and the local part
+        Get the full IRI given the namespace shorthand and the local part
 
         :param shorthand: The namespace shorthand, e.g. 'xsd'
-        :param local_path: The local part of the URI
-        :return: The full URI containing the namespace and local part
+        :param local_path: The local part of the IRI
+        :return: The full IRI containing the namespace and local part
         """
         return cls.get_namespace(shorthand) + local_part

@@ -19,4 +19,4 @@ OntologyUtils.register_namespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#'
 class RDFS(object):
     namespace = OntologyUtils.get_namespace('rdfs')
 
-    LABEL = OntologyUtils.get_uri('rdfs', 'label')
+    LABEL = OntologyUtils.get_iri('rdfs', 'label')

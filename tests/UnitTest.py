@@ -17,37 +17,37 @@ import unittest
 
 
 class UnitTest(unittest.TestCase):
-    def test_resource_uri(self):
-        resource_uri = 'http://qudt.org/vocab/unit#Kelvin'
-        unit = Unit(resource_uri=resource_uri)
+    def test_resource_iri(self):
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
+        unit = Unit(resource_iri=resource_iri)
 
-        self.assertEqual(resource_uri, unit.resource_uri)
+        self.assertEqual(resource_iri, unit.resource_iri)
 
     def test_equals(self):
-        resource_uri1 = 'http://qudt.org/vocab/unit#Kelvin'
-        unit1 = Unit(resource_uri=resource_uri1)
+        resource_iri1 = 'http://qudt.org/vocab/unit#Kelvin'
+        unit1 = Unit(resource_iri=resource_iri1)
 
-        resource_uri2 = 'http://qudt.org/vocab/unit#Kelvin'
-        unit2 = Unit(resource_uri=resource_uri2)
+        resource_iri2 = 'http://qudt.org/vocab/unit#Kelvin'
+        unit2 = Unit(resource_iri=resource_iri2)
 
         self.assertEqual(unit1, unit2)
 
     def test_type(self):
-        resource_uri = 'http://qudt.org/vocab/unit#Kelvin'
-        unit = Unit(resource_uri=resource_uri)
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
+        unit = Unit(resource_iri=resource_iri)
 
-        self.assertFalse(unit.type_uri)
+        self.assertFalse(unit.type_iri)
 
-        unit.type = resource_uri
+        unit.type = resource_iri
 
         self.assertTrue(unit.type)
-        self.assertEqual(resource_uri, unit.type)
+        self.assertEqual(resource_iri, unit.type)
 
     def test_label(self):
-        resource_uri = 'http://qudt.org/vocab/unit#Kelvin'
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
         label = 'nanomolar'
 
-        unit = Unit(resource_uri=resource_uri)
+        unit = Unit(resource_iri=resource_iri)
 
         self.assertFalse(unit.label)
 
@@ -57,10 +57,10 @@ class UnitTest(unittest.TestCase):
         self.assertEqual(label, unit.label)
 
     def test_abbreviation(self):
-        resource_uri = 'http://qudt.org/vocab/unit#Kelvin'
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
         abbreviation = 'nM'
 
-        unit = Unit(resource_uri=resource_uri)
+        unit = Unit(resource_iri=resource_iri)
 
         self.assertFalse(unit.abbreviation)
 
@@ -70,10 +70,10 @@ class UnitTest(unittest.TestCase):
         self.assertEqual(abbreviation, unit.abbreviation)
 
     def test_symbol(self):
-        resource_uri = 'http://qudt.org/vocab/unit#Kelvin'
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
         symbol = 'K'
 
-        unit = Unit(resource_uri=resource_uri)
+        unit = Unit(resource_iri=resource_iri)
 
         self.assertFalse(unit.symbol)
 

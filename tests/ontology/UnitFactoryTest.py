@@ -32,10 +32,10 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('K', unit.abbreviation)
         self.assertEqual(1, unit.multiplier.multiplier)
         self.assertEqual(0, unit.multiplier.offset)
-        self.assertEqual('http://qudt.org/schema/qudt#TemperatureUnit', unit.type_uri)
+        self.assertEqual('http://qudt.org/schema/qudt#TemperatureUnit', unit.type_iri)
 
-    def test_get_uris(self):
-        units = UnitFactory.get_uris('http://qudt.org/schema/qudt#TemperatureUnit')
+    def test_get_iris(self):
+        units = UnitFactory.get_iris('http://qudt.org/schema/qudt#TemperatureUnit')
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
@@ -49,20 +49,20 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('nM', unit.abbreviation)
         self.assertAlmostEqual(0.000001, unit.multiplier.multiplier)
         self.assertAlmostEqual(0, unit.multiplier.offset)
-        self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_uri)
+        self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
     def test_get_open_phacts_unit_newer(self):
         unit = UnitFactory.get_unit('http://www.openphacts.org/units/NanogramPerMilliliter')
 
         self.assertTrue(unit)
-        self.assertEqual('http://qudt.org/schema/qudt#MassPerVolumeUnit', unit.type_uri)
+        self.assertEqual('http://qudt.org/schema/qudt#MassPerVolumeUnit', unit.type_iri)
 
     def test_find_units(self):
         units = UnitFactory.find_units('nM')
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
-        self.assertEqual('http://www.openphacts.org/units/Nanomolar', units[0].resource_uri)
+        self.assertEqual('http://www.openphacts.org/units/Nanomolar', units[0].resource_iri)
 
 
 if __name__ == '__main__':

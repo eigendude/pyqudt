@@ -19,4 +19,4 @@ OntologyUtils.register_namespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax
 class RDF(object):
     namespace = OntologyUtils.get_namespace('rdf')
 
-    TYPE = OntologyUtils.get_uri('rdf', 'type')
+    TYPE = OntologyUtils.get_iri('rdf', 'type')

@@ -41,10 +41,10 @@ class Quantity(object):
             # Nothing to be done
             return self
 
-        if self.unit.type_uri != unit.type_uri:
+        if self.unit.type_iri != unit.type_iri:
             raise ValueError(
                 f'The new unit does not have the same parent type '
-                f'(source: {self.unit.type_uri}; target: {unit.type_uri})'
+                f'(source: {self.unit.type_iri}; target: {unit.type_iri})'
             )
 
         # Convert to the base unit

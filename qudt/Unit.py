@@ -21,11 +21,11 @@ class Unit(object):
     """
     A unit of measurement.
     """
-    resource_uri: str
+    resource_iri: str
     label: str = dataclasses.field(default_factory=str)
     abbreviation: str = dataclasses.field(default_factory=str)
     symbol: str = dataclasses.field(default_factory=str)
-    type_uri: str = dataclasses.field(default_factory=str)
+    type_iri: str = dataclasses.field(default_factory=str)
     multiplier: Multiplier = dataclasses.field(default_factory=Multiplier)
 
     def __repr__(self):

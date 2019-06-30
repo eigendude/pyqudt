@@ -15,15 +15,15 @@ from qudt import Unit
 from qudt.ontology import UnitFactory
 
 
-def long_uri(shortened_uri: str) -> str:
-    if shortened_uri.startswith('uo:'):
-        return 'http://purl.obolibrary.org/obo/' + shortened_uri[3:]
-    elif shortened_uri.startswith('ops:'):
-        return 'http://www.openphacts.org/units/' + shortened_uri[4:]
-    elif shortened_uri.startswith('qudt:'):
-        return 'http://qudt.org/schema/qudt#' + shortened_uri[5:]
+def long_iri(shortened_iri: str) -> str:
+    if shortened_iri.startswith('uo:'):
+        return 'http://purl.obolibrary.org/obo/' + shortened_iri[3:]
+    elif shortened_iri.startswith('ops:'):
+        return 'http://www.openphacts.org/units/' + shortened_iri[4:]
+    elif shortened_iri.startswith('qudt:'):
+        return 'http://qudt.org/schema/qudt#' + shortened_iri[5:]
 
-    raise ValueError(f'Invalid shortened URI: {shortened_uri}')
+    raise ValueError(f'Invalid shortened IRI: {shortened_iri}')
 
 
 class UnitOntologyFactory(object):
@@ -31,52 +31,52 @@ class UnitOntologyFactory(object):
     A class for creating units from the Unit Ontology.
     """
     uo_to_qudt = {
-        long_uri('uo:EFO_0004374'): long_uri('ops:MilligramPerDeciliter'),
-        long_uri('uo:EFO_0004385'): long_uri('ops:PicogramPerMilliliter'),
-        long_uri('uo:UO_0000009'): long_uri('qudt:Kilogram'),
-        long_uri('uo:UO_0000010'): long_uri('qudt:SecondTime'),
-        long_uri('uo:UO_0000015'): long_uri('qudt:Centimeter'),
-        long_uri('uo:UO_0000016'): long_uri('qudt:Millimeter'),
-        long_uri('uo:UO_0000017'): long_uri('qudt:Micrometer'),
-        long_uri('uo:UO_0000018'): long_uri('ops:Nanometer'),
-        long_uri('uo:UO_0000021'): long_uri('qudt:Gram'),
-        long_uri('uo:UO_0000022'): long_uri('ops:Milligram'),
-        long_uri('uo:UO_0000023'): long_uri('ops:Microgram'),
-        long_uri('uo:UO_0000024'): long_uri('ops:Nanogram'),
-        long_uri('uo:UO_0000025'): long_uri('ops:Picogram'),
-        long_uri('uo:UO_0000026'): long_uri('ops:Femtogram'),
-        long_uri('uo:UO_0000027'): long_uri('qudt:DegreeCelsius'),
-        long_uri('uo:UO_0000028'): long_uri('qudt:Millisecond'),
-        long_uri('uo:UO_0000031'): long_uri('qudt:MinuteTime'),
-        long_uri('uo:UO_0000032'): long_uri('qudt:Hour'),
-        long_uri('uo:UO_0000033'): long_uri('qudt:Day'),
-        long_uri('uo:UO_0000039'): long_uri('qudt:Micromole'),
-        long_uri('uo:UO_0000040'): long_uri('qudt:Millimole'),
-        long_uri('uo:UO_0000041'): long_uri('qudt:Nanomole'),
-        long_uri('uo:UO_0000042'): long_uri('qudt:Picomole'),
-        long_uri('uo:UO_0000043'): long_uri('qudt:Femtomole'),
-        long_uri('uo:UO_0000062'): long_uri('ops:Molar'),
-        long_uri('uo:UO_0000063'): long_uri('ops:Millimolar'),
-        long_uri('uo:UO_0000064'): long_uri('ops:Micromolar'),
-        long_uri('uo:UO_0000065'): long_uri('ops:Nanomolar'),
-        long_uri('uo:UO_0000066'): long_uri('ops:Picomolar'),
-        long_uri('uo:UO_0000073'): long_uri('ops:Femtomolar'),
-        long_uri('uo:UO_0000098'): long_uri('ops:Milliliter'),
-        long_uri('uo:UO_0000099'): long_uri('qudt:Liter'),
-        long_uri('uo:UO_0000101'): long_uri('ops:Microliter'),
-        long_uri('uo:UO_0000169'): long_uri('ops:PartsPerMillion'),
-        long_uri('uo:UO_0000173'): long_uri('ops:GramPerMilliliter'),
-        long_uri('uo:UO_0000175'): long_uri('ops:GramPerLiter'),
-        long_uri('uo:UO_0000176'): long_uri('ops:MilligramPerMilliliter'),
-        long_uri('uo:UO_0000187'): long_uri('qudt:Percent'),
-        long_uri('uo:UO_0000197'): long_uri('ops:LiterPerKilogram'),
-        long_uri('uo:UO_0000198'): long_uri('ops:MilliliterPerKilogram'),
-        long_uri('uo:UO_0000271'): long_uri('ops:MicroliterPerMinute'),
-        long_uri('uo:UO_0000272'): long_uri('qudt:MillimeterOfMercury'),
-        long_uri('uo:UO_0000274'): long_uri('ops:MicrogramPerMilliliter'),
-        long_uri('uo:UO_0000275'): long_uri('ops:NanogramPerMilliliter'),
-        long_uri('uo:UO_0000308'): long_uri('ops:MilligramPerKilogram'),
-        #long_uri('uo:UO_0000311'), longURI(''),
+        long_iri('uo:EFO_0004374'): long_iri('ops:MilligramPerDeciliter'),
+        long_iri('uo:EFO_0004385'): long_iri('ops:PicogramPerMilliliter'),
+        long_iri('uo:UO_0000009'): long_iri('qudt:Kilogram'),
+        long_iri('uo:UO_0000010'): long_iri('qudt:SecondTime'),
+        long_iri('uo:UO_0000015'): long_iri('qudt:Centimeter'),
+        long_iri('uo:UO_0000016'): long_iri('qudt:Millimeter'),
+        long_iri('uo:UO_0000017'): long_iri('qudt:Micrometer'),
+        long_iri('uo:UO_0000018'): long_iri('ops:Nanometer'),
+        long_iri('uo:UO_0000021'): long_iri('qudt:Gram'),
+        long_iri('uo:UO_0000022'): long_iri('ops:Milligram'),
+        long_iri('uo:UO_0000023'): long_iri('ops:Microgram'),
+        long_iri('uo:UO_0000024'): long_iri('ops:Nanogram'),
+        long_iri('uo:UO_0000025'): long_iri('ops:Picogram'),
+        long_iri('uo:UO_0000026'): long_iri('ops:Femtogram'),
+        long_iri('uo:UO_0000027'): long_iri('qudt:DegreeCelsius'),
+        long_iri('uo:UO_0000028'): long_iri('qudt:Millisecond'),
+        long_iri('uo:UO_0000031'): long_iri('qudt:MinuteTime'),
+        long_iri('uo:UO_0000032'): long_iri('qudt:Hour'),
+        long_iri('uo:UO_0000033'): long_iri('qudt:Day'),
+        long_iri('uo:UO_0000039'): long_iri('qudt:Micromole'),
+        long_iri('uo:UO_0000040'): long_iri('qudt:Millimole'),
+        long_iri('uo:UO_0000041'): long_iri('qudt:Nanomole'),
+        long_iri('uo:UO_0000042'): long_iri('qudt:Picomole'),
+        long_iri('uo:UO_0000043'): long_iri('qudt:Femtomole'),
+        long_iri('uo:UO_0000062'): long_iri('ops:Molar'),
+        long_iri('uo:UO_0000063'): long_iri('ops:Millimolar'),
+        long_iri('uo:UO_0000064'): long_iri('ops:Micromolar'),
+        long_iri('uo:UO_0000065'): long_iri('ops:Nanomolar'),
+        long_iri('uo:UO_0000066'): long_iri('ops:Picomolar'),
+        long_iri('uo:UO_0000073'): long_iri('ops:Femtomolar'),
+        long_iri('uo:UO_0000098'): long_iri('ops:Milliliter'),
+        long_iri('uo:UO_0000099'): long_iri('qudt:Liter'),
+        long_iri('uo:UO_0000101'): long_iri('ops:Microliter'),
+        long_iri('uo:UO_0000169'): long_iri('ops:PartsPerMillion'),
+        long_iri('uo:UO_0000173'): long_iri('ops:GramPerMilliliter'),
+        long_iri('uo:UO_0000175'): long_iri('ops:GramPerLiter'),
+        long_iri('uo:UO_0000176'): long_iri('ops:MilligramPerMilliliter'),
+        long_iri('uo:UO_0000187'): long_iri('qudt:Percent'),
+        long_iri('uo:UO_0000197'): long_iri('ops:LiterPerKilogram'),
+        long_iri('uo:UO_0000198'): long_iri('ops:MilliliterPerKilogram'),
+        long_iri('uo:UO_0000271'): long_iri('ops:MicroliterPerMinute'),
+        long_iri('uo:UO_0000272'): long_iri('qudt:MillimeterOfMercury'),
+        long_iri('uo:UO_0000274'): long_iri('ops:MicrogramPerMilliliter'),
+        long_iri('uo:UO_0000275'): long_iri('ops:NanogramPerMilliliter'),
+        long_iri('uo:UO_0000308'): long_iri('ops:MilligramPerKilogram'),
+        #long_iri('uo:UO_0000311'), longIRI(''),
     }
 
     # Reverse the lookup table
@@ -85,35 +85,35 @@ class UnitOntologyFactory(object):
     }
 
     @classmethod
-    def get_unit(cls, resource_uri: str) -> Unit:
+    def get_unit(cls, resource_iri: str) -> Unit:
         """
-        Get a unit from a Unit Ontology resource URI.
+        Get a unit from a Unit Ontology resource IRI.
 
-        :param resource_uri: The URI of a resource in the Unit Ontology
+        :param resource_iri: The IRI of a resource in the Unit Ontology
         :return: The resoluved unit, or None on error
         """
-        mapped_uri = cls.uo_to_qudt.get(resource_uri)
+        mapped_iri = cls.uo_to_qudt.get(resource_iri)
 
-        if mapped_uri:
-            return UnitFactory.get_unit(mapped_uri)
+        if mapped_iri:
+            return UnitFactory.get_unit(mapped_iri)
 
         return None
 
     @classmethod
-    def get_uris(cls, type_uri: str) -> list:
+    def get_iris(cls, type_iri: str) -> list:
         """
-        Return a list of unit URIs with the given unit type.
+        Return a list of unit IRIs with the given unit type.
 
-        :param type_uri: The URI of the unit type, e.g. 'http://qudt.org/schema/qudt#MolarConcentrationUnit'
-        :return: The list of URIs, or empty if no units match the specified type
+        :param type_iri: The IRI of the unit type, e.g. 'http://qudt.org/schema/qudt#MolarConcentrationUnit'
+        :return: The list of IRIs, or empty if no units match the specified type
         """
-        uris = []
+        iris = []
 
-        qudt_uris = UnitFactory.get_uris(type_uri)
+        qudt_iris = UnitFactory.get_iris(type_iri)
 
-        for qudt_uri in qudt_uris:
-            uo_uri = cls.qudt_to_uo.get(qudt_uri)
-            if uo_uri:
-                uris.append(uo_uri)
+        for qudt_iri in qudt_iris:
+            uo_iri = cls.qudt_to_uo.get(qudt_iri)
+            if uo_iri:
+                iris.append(uo_iri)
 
-        return uris
+        return iris

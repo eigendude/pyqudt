@@ -25,10 +25,10 @@ class OntologyUtilsTest(unittest.TestCase):
 
         self.assertEqual('http://qudt.org/schema/qudt#', namespace)
 
-    def test_get_uri(self):
-        resource_uri = OntologyUtils.get_uri('qudt', 'symbol')
+    def test_get_iri(self):
+        resource_iri = OntologyUtils.get_iri('qudt', 'symbol')
 
-        self.assertEqual('http://qudt.org/schema/qudt#symbol', resource_uri)
+        self.assertEqual('http://qudt.org/schema/qudt#symbol', resource_iri)
 
 
 if __name__ == '__main__':

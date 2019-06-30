@@ -78,26 +78,26 @@ class UnitFactory(object):
         return cls._get_instance()._repo_path
 
     @classmethod
-    def get_unit(cls, resource_uri: str) -> Unit:
+    def get_unit(cls, resource_iri: str) -> Unit:
         """
-        Get a unit by its resource URI.
+        Get a unit by its resource IRI.
 
-        :param resource_uri: The unit's resource URI
+        :param resource_iri: The unit's resource IRI
         :return: The unit, or None on error
         """
-        return cls._get_instance()._get_unit(resource_uri)
+        return cls._get_instance()._get_unit(resource_iri)
 
-    def _get_unit(self, resource_uri: str) -> Unit:
+    def _get_unit(self, resource_iri: str) -> Unit:
         """
         Internal implementation of get_unit().
         """
         unit = Unit(
-            resource_uri=resource_uri,
+            resource_iri=resource_iri,
         )
 
         statements = self._get_statements(
             self._repos,
-            lambda subj, pred, obj: str(subj) == resource_uri,
+            lambda subj, pred, obj: str(subj) == resource_iri,
         )
 
         for (subject, predicate, obj) in statements:
@@ -112,9 +112,9 @@ class UnitFactory(object):
             elif predicate == RDFS.LABEL:
                 unit.label = str(obj)
             elif predicate == RDF.TYPE:
-                type_uri = str(obj)
-                if not self._should_be_ignored(type_uri):
-                    unit.type_uri = type_uri
+                type_iri = str(obj)
+                if not self._should_be_ignored(type_iri):
+                    unit.type_iri = type_iri
 
         return unit
 
@@ -130,7 +130,7 @@ class UnitFactory(object):
 
     def _find_units(self, abbreviation: str) -> list:
         """
-        Internal implementation of find_uris()
+        Internal implementation of find_iris()
         """
         found_units = []
 
@@ -140,28 +140,28 @@ class UnitFactory(object):
         )
 
         for (subject, predicate, obj) in statements:
-            type_uri = subject
-            found_units.append(self._get_unit(type_uri))
+            type_iri = subject
+            found_units.append(self._get_unit(type_iri))
 
         return found_units
 
     @classmethod
-    def get_uris(cls, type_uri: str) -> list:
+    def get_iris(cls, type_iri: str) -> list:
         """
-        Return a list of unit URIs with the given unit type.
+        Return a list of unit IRIs with the given unit type.
 
-        :param type_uri: The URI of the unit type, e.g. 'http://qudt.org/schema/qudt#TemperatureUnit'
+        :param type_iri: The IRI of the unit type, e.g. 'http://qudt.org/schema/qudt#TemperatureUnit'
         :return: The list of units, or empty if none match the specified type
         """
-        return cls._get_instance()._get_uris(type_uri)
+        return cls._get_instance()._get_iris(type_iri)
 
-    def _get_uris(self, type_uri: str) -> list:
+    def _get_iris(self, type_iri: str) -> list:
         """
-        Internal implementation of get_uris()
+        Internal implementation of get_iris()
         """
         statements = self._get_statements(
             self._repos,
-            lambda subj, pred, o: str(o) == type_uri,
+            lambda subj, pred, o: str(o) == type_iri,
         )
 
         return [subj for (subj, pred, o) in statements]
@@ -180,10 +180,10 @@ class UnitFactory(object):
     @staticmethod
     def _get_statements(repos, triplet_test):
         """
-        Get the statements of the given repos that match the provided resource URI.
+        Get the statements of the given repos that match the provided resource IRI.
 
         :param repos: The ontology repositories
-        :param resource_uri: The resource to locate
+        :param resource_iri: The resource to locate
         :return: The matching statements
         """
         statements = []
@@ -196,18 +196,18 @@ class UnitFactory(object):
         return statements
 
     @staticmethod
-    def _should_be_ignored(type_uri: str) -> bool:
+    def _should_be_ignored(type_iri: str) -> bool:
         """
         Check if a statement should be ignored when constructing units.
 
-        :param type_uri: The predicate type
+        :param type_iri: The predicate type
         :return: True if the statement should be ignored, False otherwise
         """
         # Accept anything outside the QUDT namespace
-        if not type_uri.startswith(QUDT.namespace):
+        if not type_iri.startswith(QUDT.namespace):
             return False
 
-        if type_uri in [
+        if type_iri in [
             QUDT.SI_DERIVED_UNIT,
             QUDT.SI_BASE_UNIT,
             QUDT.SI_UNIT,

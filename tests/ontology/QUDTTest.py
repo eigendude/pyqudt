@@ -18,9 +18,9 @@ import unittest
 
 class QUDTTest(unittest.TestCase):
     def test_unit_ontology(self):
-        symbol_uri = QUDT.SYMBOL
+        symbol_iri = QUDT.SYMBOL
 
-        self.assertTrue(symbol_uri.startswith(QUDT.namespace))
+        self.assertTrue(symbol_iri.startswith(QUDT.namespace))
 
 
 if __name__ == '__main__':
