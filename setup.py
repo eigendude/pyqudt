@@ -40,7 +40,7 @@ setuptools.setup(
         'Topic :: Scientific/Engineering :: Chemistry',
         'Topic :: Scientific/Engineering :: Physics',
     ],
-    packages=setuptools.find_packages(exclude=['tests']),
+    packages=setuptools.find_packages(exclude=['test']),
     package_data={
         'qudt.ontology.resources': ['*'],
     },
