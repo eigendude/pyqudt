@@ -130,7 +130,7 @@ class UnitFactory(object):
 
     def _find_units(self, abbreviation: str) -> list:
         """
-        Internal implementation of find_iris()
+        Internal implementation of find_units()
         """
         found_units = []
 
