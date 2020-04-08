@@ -5631,7 +5631,7 @@
     <qudt:conversionMultiplier rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</qudt:conversionMultiplier>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mole per Kilogram</rdfs:label>
     <rdf:type rdf:resource="http://qudt.org/schema/qudt#SIDerivedUnit"/>
-    <rdf:type rdf:resource="http://qudt.org/schema/qudt#MolalConcentrationUnit"/>
+    <rdf:type rdf:resource="http://qudt.org/schema/qudt#MolarConcentrationUnit"/>
   </rdf:Description>
   <rdf:Description rdf:about="#USDollar">
     <qudt:description>American Samoa, British Indian Ocean Territory, Ecuador, El Salvador, Guam, Haiti, Marshall Islands, Micronesia, Northern Mariana Islands, Palau, Panama, Puerto Rico, East Timor, Turks and Caicos Islands, United States, Virgin Islands</qudt:description>

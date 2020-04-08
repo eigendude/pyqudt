@@ -117,7 +117,7 @@
     <owl:hasValue rdf:resource="http://qudt.org/vocab/quantity#Turbidity"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://qudt.org/schema/qudt#MolalConcentrationUnit">
+  <rdf:Description rdf:about="http://qudt.org/schema/qudt#MolarConcentrationUnit">
     <rdfs:subClassOf rdf:nodeID="A2"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://qudt.org/schema/qudt#ContinuumMechanicsQuantityKind">

@@ -56,9 +56,9 @@
     xmlns:spr="http://spinrdf.org/spr#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xml:base="http://qudt.org/schema/qudt" > 
-  <rdf:Description rdf:about="#MolalConcentrationUnit">
+  <rdf:Description rdf:about="#MolarConcentrationUnit">
     <rdfs:subClassOf rdf:resource="#ConcentrationUnit"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Molal Concentration Unit</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Molar Concentration Unit</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#AreaTimeTemperatureUnit">
