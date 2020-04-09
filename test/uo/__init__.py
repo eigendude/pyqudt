@@ -11,4 +11,4 @@
 #
 ################################################################################
 
-from .UnitOntologyFactoryTest import UnitOntologyFactoryTest
+from .unit_ontology_factory_test import UnitOntologyFactoryTest

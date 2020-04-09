@@ -11,5 +11,18 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.units.length import LengthUnit
+from qudt.quantity import Quantity
+
+import unittest
+
+
+class LengthUnitTest(unittest.TestCase):
+    def test_electron_volt(self):
+        temp = Quantity(23.5, LengthUnit.NM)
+
+        self.assertEqual("nm", temp.unit.abbreviation)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -11,5 +11,11 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.unit import Unit
+from qudt.ontology.unit_factory import UnitFactory
+
+
+class LengthUnit(object):
+    """
+    """
+    NM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanometer')

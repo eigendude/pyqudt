@@ -11,5 +11,20 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.units.concentration import ConcentrationUnit
+from qudt.quantity import Quantity
+
+import unittest
+
+
+class MolarTest(unittest.TestCase):
+    def test_electron_volt(self):
+        obs = Quantity(0.000001, ConcentrationUnit.MOLAR)
+        obs2 = obs.convert_to(ConcentrationUnit.NANOMOLAR)
+
+        self.assertEqual(ConcentrationUnit.NANOMOLAR, obs2.unit)
+        self.assertAlmostEqual(1000, obs2.value)
+
+
+if __name__ == '__main__':
+    unittest.main()

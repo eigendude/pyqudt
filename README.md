@@ -27,9 +27,9 @@ Keep in mind, these conversions are purely derived from data in the QUDT ontolog
 Source:
 
 ```python
-from qudt import Quantity
-from qudt.units import ConcentrationUnit
-from qudt.units import TemperatureUnit
+from qudt.quantity import Quantity
+from qudt.units.concentration import ConcentrationUnit
+from qudt.units.temperature import TemperatureUnit
 
 obs = Quantity(0.1, ConcentrationUnit.MICROMOLAR)
 print(f'{obs} = {obs.convert_to(ConcentrationUnit.NANOMOLAR)}')

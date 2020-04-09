@@ -11,6 +11,6 @@
 #
 ################################################################################
 
-from .MassPerVolumeUnitTest import MassPerVolumeUnitTest
-from .MolarTest import MolarTest
-from .NanomolarTest import NanomolarTest
+from .mass_per_volume_unit_test import MassPerVolumeUnitTest
+from .molar_test import MolarTest
+from .nanomolar_test import NanomolarTest

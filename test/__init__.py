@@ -11,6 +11,6 @@
 #
 ################################################################################
 
-from .MultiplierTest import MultiplierTest
-from .QuantityTest import QuantityTest
-from .UnitTest import UnitTest
+from .multiplier_test import MultiplierTest
+from .quantity_test import QuantityTest
+from .unit_test import UnitTest

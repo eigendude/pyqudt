@@ -11,5 +11,18 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.units.energy import EnergyUnit
+from qudt.quantity import Quantity
+
+import unittest
+
+
+class EnergyUnitTest(unittest.TestCase):
+    def test_electron_volt(self):
+        temp = Quantity(-23.5, EnergyUnit.EV)
+
+        self.assertEqual("eV", temp.unit.abbreviation)
+
+
+if __name__ == '__main__':
+    unittest.main()

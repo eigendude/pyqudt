@@ -11,5 +11,18 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.multiplier import Multiplier
+
+import unittest
+
+
+class MultiplierTest(unittest.TestCase):
+    def test_constructor_null_unit(self):
+        multiplier = Multiplier(0.1, 0.2)
+
+        self.assertAlmostEqual(0.1, multiplier.offset)
+        self.assertAlmostEqual(0.2, multiplier.multiplier)
+
+
+if __name__ == '__main__':
+    unittest.main()

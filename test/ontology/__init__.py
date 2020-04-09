@@ -11,7 +11,7 @@
 #
 ################################################################################
 
-from .OntologyReaderTest import OntologyReaderTest
-from .OntologyUtilsTest import OntologyUtilsTest
-from .QUDTTest import QUDTTest
-from .UnitFactoryTest import UnitFactoryTest
+from .ontology_reader_test import OntologyReaderTest
+from .ontology_utils_test import OntologyUtilsTest
+from .qudt_test import QUDTTest
+from .unit_factory_test import UnitFactoryTest

@@ -11,5 +11,12 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.unit import Unit
+from qudt.ontology.unit_factory import UnitFactory
+
+
+class AreaUnit(object):
+    """
+    """
+    SQUARE_METER: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#SquareMeter')
+    SQUARE_ANGSTROM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/SquareAngstrom')

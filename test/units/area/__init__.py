@@ -11,4 +11,4 @@
 #
 ################################################################################
 
-from .SquareAreaTest import SquareAreaTest
+from .square_area_test import SquareAreaTest

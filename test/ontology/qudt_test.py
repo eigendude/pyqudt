@@ -11,5 +11,17 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.ontology.qudt import QUDT
+
+import unittest
+
+
+class QUDTTest(unittest.TestCase):
+    def test_unit_ontology(self):
+        symbol_iri = QUDT.SYMBOL
+
+        self.assertTrue(symbol_iri.startswith(QUDT.namespace))
+
+
+if __name__ == '__main__':
+    unittest.main()

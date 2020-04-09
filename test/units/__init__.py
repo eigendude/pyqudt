@@ -11,6 +11,6 @@
 #
 ################################################################################
 
-from .EnergyUnitTest import EnergyUnitTest
-from .LengthUnitTest import LengthUnitTest
-from .TimeUnitTest import TimeUnitTest
+from .energy_unit_test import EnergyUnitTest
+from .length_unit_test import LengthUnitTest
+from .time_unit_test import TimeUnitTest

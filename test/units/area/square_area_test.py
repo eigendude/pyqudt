@@ -11,5 +11,19 @@
 #
 ################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.units.area import AreaUnit
+from qudt.quantity import Quantity
+
+import unittest
+
+
+class SquareAreaTest(unittest.TestCase):
+    def test_electron_volt(self):
+        area = Quantity(5, AreaUnit.SQUARE_ANGSTROM)
+        area2 = area.convert_to(AreaUnit.SQUARE_METER)
+
+        self.assertAlmostEqual(0.00000000000000000005, area2.value)
+
+
+if __name__ == '__main__':
+    unittest.main()

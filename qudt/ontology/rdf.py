@@ -8,8 +8,15 @@
 #
 #  SPDX-License-Identifier: BSD-3-Clause
 #  See the file LICENSE for more information.
-#
-################################################################################
+#################################################################################
 
-from .celsius_test import CelsiusTest
-from .fahrenheit_test import FahrenheitTest
+from qudt.ontology.ontology_utils import OntologyUtils
+
+
+OntologyUtils.register_namespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
+
+
+class RDF(object):
+    namespace = OntologyUtils.get_namespace('rdf')
+
+    TYPE = OntologyUtils.get_iri('rdf', 'type')
