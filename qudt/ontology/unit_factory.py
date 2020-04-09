@@ -35,10 +35,8 @@ REPO_PACKAGE_NAME = 'resources'
 
 # The RDF triplet repositories to load
 REPO_FILES = [
-    'unit',
-    'qudt',
-    'quantity',
-    'ops.ttl',
+    'openphacts.jsonld',
+    'unit.jsonld',
 ]
 
 

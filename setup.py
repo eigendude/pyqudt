@@ -46,5 +46,6 @@ setuptools.setup(
     },
     install_requires=[
         'rdflib',
+        'rdflib-jsonld',
     ],
 )

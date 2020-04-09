@@ -1,0 +1,3182 @@
+{
+  "@context": {
+    "arg": "http://spinrdf.org/arg#",
+    "catalog": "http://www.linkedmodel.org/schema/catalog#",
+    "catalog-1.0": "http://www.linkedmodel.org/1.2/schema/catalog#",
+    "cc": "http://creativecommons.org/ns#",
+    "composite": "http://www.topbraid.org/2007/05/composite.owl#",
+    "css": "http://uispin.org/css#",
+    "dbpedia": "http://dbpedia.org/resource/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dimension": "http://qudt.org/schema/dimension#",
+    "dimension-1.1": "http://qudt.org/1.1/schema/dimension#",
+    "dtype": "http://www.linkedmodel.org/schema/dtype#",
+    "dtype-1.0": "http://www.linkedmodel.org/1.0/schema/dtype#",
+    "fn": "http://www.w3.org/2005/xpath-functions#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "html": "http://uispin.org/html#",
+    "let": "http://uispin.org/let#",
+    "letrs": "http://uispin.org/letrs#",
+    "lm-cat": "http://www.linkedmodel.org/catalog/lm#",
+    "lm-cat-1.2": "http://www.linkedmodel.org/1.2/catalog/lm#",
+    "lmdoc": "http://www.linkedmodel.org/oui/lmdoc#",
+    "omv": "http://omv.ontoware.org/2005/05/ontology#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "quantity": "http://qudt.org/schema/quantity#",
+    "quantity-1.1": "http://qudt.org/1.1/schema/quantity#",
+    "qudt": "http://qudt.org/schema/qudt#",
+    "qudt-1.1": "http://qudt.org/1.1/schema/qudt#",
+    "qudt-cat": "http://qudt.org/catalog/qudt#",
+    "qudt-cat-11": "http://qudt.org/1.1/catalog/qudt#",
+    "qudt-dimension": "http://qudt.org/vocab/dimension#",
+    "qudt-dimension-1.1": "http://qudt.org/1.1/vocab/dimension#",
+    "qudt-dimensionalunit-1.1": "http://qudt.org/1.1/vocab/dimensionalunit#",
+    "qudt-quantity": "http://qudt.org/vocab/quantity#",
+    "qudt-quantity-1.1": "http://qudt.org/1.1/vocab/quantity#",
+    "qudt-unit-1.1": "http://qudt.org/1.1/vocab/unit#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "smf": "http://topbraid.org/sparqlmotionfunctions#",
+    "sp": "http://spinrdf.org/sp#",
+    "spin": "http://spinrdf.org/spin#",
+    "spl": "http://spinrdf.org/spl#",
+    "spr": "http://spinrdf.org/spr#",
+    "spra": "http://spinrdf.org/spra#",
+    "style": "http://uispin.org/style#",
+    "sxml": "http://topbraid.org/sxml#",
+    "tui": "http://uispin.org/tui#",
+    "ui": "http://uispin.org/ui#",
+    "unit": "http://qudt.org/vocab/unit#",
+    "vaem": "http://www.linkedmodel.org/schema/vaem#",
+    "vaem-1.2": "http://www.linkedmodel.org/1.2/schema/vaem#",
+    "vann": "http://purl.org/vocab/vann/",
+    "voag": "http://voag.linkedmodel.org/schema/voag#",
+    "voag-1.0": "http://voag.linkedmodel.org/1.0/schema/voag#",
+    "void": "http://rdfs.org/ns/void#",
+    "xhtml": "http://topbraid.org/xhtml#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "qudt:DynamicViscosityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Dynamic Viscosity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_dynamic_viscosity"
+      }
+    },
+    {
+      "@id": "qudt:MagneticFieldStrengthUnit",
+      "@type": "owl:Class",
+      "qudt:description": "A magnetic field is a vector field that permeates space and which can exert a magnetic force on moving electric charges and on magnetic dipoles (such as permanent magnets). [Wikipedia] The strength of a magnetic field at a point in space is the magnitude of the field vector at that point.\r\n\r\nThis class contains the following instance(s): \"Ampere per meter\", \"Ampere turn per inch\", \"Ampere turn per meter\", \"Oersted\".",
+      "rdfs:label": "Magnetic Field Strength Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_magnetic_induction"
+      }
+    },
+    {
+      "@id": "_:N8ad69962835e4932b0af35ddb9db7bc5",
+      "xsd:maxInclusive": {
+        "@type": "xsd:float",
+        "@value": "100.0"
+      }
+    },
+    {
+      "@id": "qudt:standardUncertainty",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "The standard uncertainty of a quantity is the estimated standard deviation of the mean taken from a series of measurements.",
+      "rdfs:label": "standard uncertainty",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      }
+    },
+    {
+      "@id": "qudt:MassPerVolumeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Per Volume Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_density"
+      }
+    },
+    {
+      "@id": "qudt:AngularMassUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The units of angular mass have dimensions of mass * area. They are used to measure the moment of inertia.",
+      "rdfs:label": "Angular Mass Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:FrequencyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Frequency Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_frequency"
+      }
+    },
+    {
+      "@id": "qudt:DerivedUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        {
+          "@id": "_:N2debf59d4f2a42f4887a5396077e8e11"
+        },
+        "owl:Class"
+      ],
+      "dc:description": "A DerivedUnit is a type specification for units that are derived from other units.",
+      "rdfs:label": "Derived Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:Unit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricCurrentUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Electric current is the flow (movement) of electric charge. The SI unit of electric current is the ampere, and electric current is measured using an ammeter. This class contains the following instance(s): \"Abampere\", \"Ampere\", \"Biot\", \"Statampere\".",
+      "rdfs:label": "Electric Current Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_current"
+      }
+    },
+    {
+      "@id": "qudt:MassAmountOfSubstanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Amount Of Substance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:ExposureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Exposure Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiologyUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricDipoleMomentUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The electric dipole moment (or electric dipole for short) is a measure of the polarity of a system of electric charges. [Wikipedia]\r\n\r\nThis class has the following instance(s): \"Coulomb meter\", \"Debye\".",
+      "rdfs:label": "Electric Dipole Moment Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:ThermalEnergyLengthUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Energy Length Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "dc:description",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "description",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:ThermalConductivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Conductivity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ThermalInsulanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Insulance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "dc:subject",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "subject",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:unitFor",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:unit"
+      },
+      "rdfs:label": "unit for"
+    },
+    {
+      "@id": "qudt:symbol",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "The symbol for a unit is a glyph that is used to represent the unit in a compact form. For example, the symbol for the US Dollar is $. This contrasts with unit:abbreviation, which gives a short alphanumeric abbreviation for the unit. (I.e. USD for US Dollar).",
+      "rdfs:label": "symbol",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:literal"
+      }
+    },
+    {
+      "@id": "qudt:TimeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Units that measure time.",
+      "rdfs:label": "Time Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_time"
+      }
+    },
+    {
+      "@id": "dc:creator",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "creator",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:TimeSquaredUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Time Squared Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "qudt:definedUnitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure with the unit system that defines the unit.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemDefinedUnit"
+      },
+      "rdfs:label": "defined unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:unitOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:dimensionInverse",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty",
+        "owl:SymmetricProperty",
+        "owl:InverseFunctionalProperty"
+      ],
+      "owl:inverseOf": {
+        "@id": "qudt:dimensionInverse"
+      },
+      "rdfs:label": "dimension inverse"
+    },
+    {
+      "@id": "qudt:systemUnit",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a system of units with a unit of measure that is either a) defined by the system, or b) accepted for use by the system and is convertible to a unit of equivalent dimension that is defined by the system. Systems of units may distinguish between base and derived units. Base units are the units which measure the base quantities for the corresponding system of quantities. The base units are used to define units for all other quantities as products of powers of the base units. Such units are called derived units for the system.",
+      "owl:inverseOf": {
+        "@id": "qudt:unitOfSystem"
+      },
+      "rdfs:label": "system unit"
+    },
+    {
+      "@id": "_:Nebb1b1149a8d4fa8bd5ab2a684c908e3",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:systemUnit"
+      }
+    },
+    {
+      "@id": "qudt:LinearEnergyTransferUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Linear Energy Transfer Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AtomicPhysicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:LengthTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Length Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricityAndMagnetismUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The class of units used to measure the properties of electricity and magnetism.",
+      "rdfs:label": "Electricity And Magnetism Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N2a4682f1a54943b694bbb29a0db30581"
+        },
+        {
+          "@id": "qudt:PhysicalUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:PhysicalUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Physical Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N58575713256e4c0c87f5cfbbf9c782d4"
+        },
+        {
+          "@id": "qudt:ScienceAndEngineeringUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:LuminousIntensityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Luminous Intensity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_luminous_intensity"
+      }
+    },
+    {
+      "@id": "qudt:LuminousEnergyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Luminous Energy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_luminous_energy"
+      }
+    },
+    {
+      "@id": "qudt:SIUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        "owl:Class"
+      ],
+      "qudt:description": "An SI unit",
+      "rdfs:label": "SI Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhysicalUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:SI_units"
+      }
+    },
+    {
+      "@id": "_:N65e0450a20604de385093bebca6c2be4",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:symbol"
+      }
+    },
+    {
+      "@id": "qudt:LogarithmicUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Logarithmic units are abstract mathematical units that can be used to express any quantities (physical or mathematical) that are defined on a logarithmic scale, that is, as being proportional to the value of a logarithm function. Examples of logarithmic units include common units of information and entropy, such as the bit, and the byte, as well as units of relative signal strength magnitude such as the decibel.",
+      "rdfs:label": "Logarithmic Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhysicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:AtomicMassUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Atomic Mass Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AtomicPhysicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:exactConstant",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "exact constant",
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      }
+    },
+    {
+      "@id": "qudt:literal",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "literal",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:NotUsedWithSIUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        "owl:Class"
+      ],
+      "owl:disjointWith": {
+        "@id": "qudt:UsedWithSIUnit"
+      },
+      "qudt:description": "A type specification for all units that are not used in the SI standard.",
+      "rdfs:label": "Not Used With SI Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:NonSIUnit"
+      }
+    },
+    {
+      "@id": "_:N021c05b51e254ea69088687fb12797ef",
+      "@type": "rdfs:Datatype",
+      "owl:onDatatype": {
+        "@id": "xsd:integer"
+      },
+      "owl:withRestrictions": {
+        "@list": [
+          {
+            "@id": "_:N4ecfb16d51f743c1b4218e286b19f181"
+          },
+          {
+            "@id": "_:Ndc5c2cbc2b3e41faa23350e1ebd39e94"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "qudt:abbreviation",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "An abbreviation for a unit is a short (usually 5 characters or less) string that is used in place of the full name for the unit in contexts where space is limited, or where using the abbreviation will enhance readability.",
+      "rdfs:label": "abbreviation",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:systemBaseQuantityKind",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:baseQuantityKindOfSystem"
+      },
+      "rdfs:label": "system base quantity kind",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemQuantityKind"
+      }
+    },
+    {
+      "@id": "qudt:HumanUnit",
+      "@type": "owl:Class",
+      "qudt:description": "units for measuring human resources",
+      "rdfs:label": "Human Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N42bec08e63284b42b59f38664fdef6e5"
+        },
+        {
+          "@id": "qudt:ResourceUnit"
+        }
+      ]
+    },
+    {
+      "@id": "http://qudt.org/schema/qudt",
+      "@type": "owl:Ontology",
+      "dc:contributor": [
+        "Irene Polikoff",
+        "David Price",
+        "Daniel Mekonnen",
+        "Ralph Hodgson"
+      ],
+      "dc:creator": "James E. Masters",
+      "dc:rights": "The QUDT Ontologies are issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to NASA Ames Research Center and TopQuadrant, Inc.",
+      "dc:subject": "Quantities, Units, Dimensions and Types",
+      "dc:title": "Quantities, Units, Dimensions and Types (QUDT) Ontology Version 1.1",
+      "owl:imports": [
+        {
+          "@id": "http://www.linkedmodel.org/schema/dtype"
+        },
+        {
+          "@id": "http://www.linkedmodel.org/schema/vaem"
+        }
+      ],
+      "owl:versionIRI": {
+        "@id": "http://qudt.org/1.1/schema/qudt"
+      },
+      "owl:versionInfo": "$Id: OSG_qudt-(v1.1).ttl 4989 2011-06-01 21:56:40Z RalphHodgson $",
+      "rdfs:label": "Quantities, Units, Dimensions and Types (QUDT) - Level 1",
+      "vaem:acronym": "QUDT",
+      "vaem:dateCreated": {
+        "@type": "xsd:dateTime",
+        "@value": "2011-01-06T09:30:49"
+      },
+      "vaem:description": "The QUDT, or 'Quantity, Unit, Dimension and Type' collection of ontologies define the base classes properties, and restrictions used for modeling physical quantities, units of measure, and their dimensions in various measurement systems. The goal of the QUDT ontology is to provide a unified model of, measurable quantities, units for measuring different kinds of quantities, the numerical values of quantities in different units of measure and the data structures and data types used to store and manipulate these objects in software. This OWL schema is a foundation for a basic treatment of units.",
+      "vaem:hasAspectScope": "Basic treatment of quantities and units. No dimensional treatment in this graph.",
+      "vaem:hasCatalogEntry": {
+        "@id": "qudt-cat:QUDT-SchemaCatalogEntry"
+      },
+      "vaem:hasDisciplineScope": "All disciplines",
+      "vaem:hasDomainScope": "Science, Medicine and Engineering",
+      "vaem:hasRole": {
+        "@id": "vaem:SchemaGraph"
+      },
+      "vaem:intent": "Provides a schema for describing Units of Measure",
+      "vaem:lastUpdated": "$LastChangedDate: 2011-06-01 14:56:40 -0700 (Wed, 01 Jun 2011) $",
+      "vaem:namespace": "http://qudt.org/schema/qudt",
+      "vaem:namespacePrefix": "qudt",
+      "vaem:revisionNumber": "1.1",
+      "vaem:specificity": 1,
+      "vaem:usesNonImportedResource": [
+        {
+          "@id": "dc:rights"
+        },
+        {
+          "@id": "dc:subject"
+        },
+        {
+          "@id": "dc:creator"
+        },
+        {
+          "@id": "skos:exactMatch"
+        },
+        {
+          "@id": "dc:description"
+        },
+        {
+          "@id": "voag:CC-SHAREALIKE_3PT0-US"
+        },
+        {
+          "@id": "dc:title"
+        },
+        {
+          "@id": "skos:closeMatch"
+        },
+        {
+          "@id": "dc:contributor"
+        },
+        {
+          "@id": "dc:author"
+        }
+      ],
+      "voag:hasLicenseType": {
+        "@id": "voag:CC-SHAREALIKE_3PT0-US"
+      },
+      "voag:withAttributionTo": [
+        {
+          "@id": "qudt:NASA-ARC-Attribution"
+        },
+        {
+          "@id": "voag:TopQuadrantAttribution"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:ConductanceUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Electrical conductance is the inverse of electrical resistance. It measures the ease with which electricity flows along a path through an electrical element.\r\n\r\nThis class contains the following instance(s): \"Abmho\", \"Mho\", \"Siemens\", \"Statmho\".",
+      "rdfs:label": "Conductance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_conductance"
+      }
+    },
+    {
+      "@id": "qudt:systemBaseUnit",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a system of units to a base unit defined within the system. The base units of a system are used to define the derived units of the system by expressing the derived units as products of the base units raised to a rational power.",
+      "owl:inverseOf": {
+        "@id": "qudt:baseUnitOfSystem"
+      },
+      "rdfs:label": "base unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemCoherentUnit"
+      }
+    },
+    {
+      "@id": "qudt:Enumeration",
+      "@type": "owl:Class",
+      "dc:description": "This class is for describing the enumerations themselves. Having an enumerated value is one concept.  Having a way to descrive the set of enumerated valies is a distinct need. An enumeration is a collection of enumeration elements. In some cases it is necesaary to refer to the enumeration as opposed to one of its values.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Nb1d20df3365144c3ad107ff4b8a1375a"
+        },
+        {
+          "@id": "_:Nc74cf3dfe6a14b0795e93c33f9fbb9e8"
+        },
+        {
+          "@id": "_:N2c44838a2d464c11b2aa3222e19b656b"
+        },
+        {
+          "@id": "_:N5c79d8aed5ff4d97ade70f7953e454ca"
+        },
+        {
+          "@id": "_:Nfecb277a838c484da7ab3a584e53ad62"
+        },
+        {
+          "@id": "_:N97b5d2288cae44248c30bc83686ce801"
+        },
+        {
+          "@id": "dtype:Enumeration"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Enumeration"
+      }
+    },
+    {
+      "@id": "qudt:BendingMomentOrTorqueUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Bending Moment Or Torque Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_torque"
+      }
+    },
+    {
+      "@id": "_:N3f164623d16c4fe0a56d9092190c6cd5",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UBM",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:conversionMultiplier",
+      "@type": [
+        "owl:FunctionalProperty",
+        "owl:DatatypeProperty"
+      ],
+      "rdfs:label": "conversion multiplier",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      },
+      "skos:closeMatch": {
+        "@id": "dbpedia:Conversion_of_units"
+      }
+    },
+    {
+      "@id": "qudt:InductanceUnit",
+      "@type": "owl:Class",
+      "qudt:description": "An electric current flowing around a circuit produces a magnetic field and hence a magnetic flux through the circuit. The ratio of the magnetic flux to the current is called the inductance, or more accurately self-inductance of the circuit. [Wikipedia]\r\n\r\nThis class contains the following instance(s): \"Abhenry\", \"Henry\", \"Micro Henry\", \"Milli Henry\", \"Stathenry\".",
+      "rdfs:label": "Inductance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_inductance"
+      }
+    },
+    {
+      "@id": "qudt:AmountOfSubstanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Amount Of Substance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_amount_of_substance"
+      }
+    },
+    {
+      "@id": "qudt:MassPerLengthUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Per Length Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ComputingUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Computing Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N9d049d75377446839e25f601bfae6b2b"
+        },
+        {
+          "@id": "qudt:ScienceAndEngineeringUnit"
+        }
+      ],
+      "skos:closeMatch": {
+        "@id": "dbpedia:Category:Units_of_information"
+      }
+    },
+    {
+      "@id": "qudt:specialization",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a quantity kind to its specialization(s). For example, linear velocity and angular velocity are both specializations of velocity.",
+      "owl:inverseOf": {
+        "@id": "qudt:generalization"
+      },
+      "rdfs:label": "specialization"
+    },
+    {
+      "@id": "qudt:systemDerivedUnit",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a system of units to a unit of measure that is defined within the system in terms of the base units for the system. That is, the derived unit is defined as a product of the base units for the system raised to some rational power.",
+      "rdfs:label": "derived unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemDefinedUnit"
+      }
+    },
+    {
+      "@id": "qudt:ConcentrationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Concentration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:AreaAngleUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Area Angle Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "_:N2a4682f1a54943b694bbb29a0db30581",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UEM",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:description",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "description",
+      "rdfs:range": {
+        "@id": "qudt:string1024"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "vaem:description"
+      }
+    },
+    {
+      "@id": "qudt:MechanicsUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mechanics Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Nc976a0044bd442e7a88759a072ef6cc1"
+        },
+        {
+          "@id": "qudt:PhysicalUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:LinearAccelerationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Linear Acceleration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AccelerationUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_acceleration"
+      }
+    },
+    {
+      "@id": "qudt:BinaryPrefixUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Binary Prefix Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PrefixUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Binary_prefix"
+      }
+    },
+    {
+      "@id": "qudt:BiomedicalUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Biomedical Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N3f164623d16c4fe0a56d9092190c6cd5"
+        },
+        {
+          "@id": "qudt:ScienceAndEngineeringUnit"
+        }
+      ]
+    },
+    {
+      "@id": "_:N4a327bed9c964295a451d7da2710332c",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:description"
+      }
+    },
+    {
+      "@id": "qudt:systemCoherentUnit",
+      "@type": [
+        "owl:DeprecatedProperty",
+        "owl:ObjectProperty"
+      ],
+      "dc:description": "A coherent unit of measurement for a unit system is a defined unit that may be expressed as a product of powers of the system's base units with the proportionality factor of one.",
+      "owl:inverseOf": {
+        "@id": "qudt:coherentUnitOfSystem"
+      },
+      "rdfs:label": "coherent unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemDefinedUnit"
+      }
+    },
+    {
+      "@id": "qudt:quantity",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "a property to relate an observable thing with a quantity (qud:Quantity)",
+      "rdfs:label": "quantity"
+    },
+    {
+      "@id": "qudt:VolumePerMassUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Volume per mass unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:AreaThermalExpansionUnit",
+      "@type": "owl:Class",
+      "qudt:description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.\r\n\r\nDifferent coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:\r\n\r\n    * linear thermal expansion\r\n    * area thermal expansion\r\n    * volumetric thermal expansion\r\n\r\nThese characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.\r\n\r\nSome substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients.\r\n\r\nFor exactly isotropic materials, the area thermal expansion coefficient is very closely approximated as twice the linear coefficient.",
+      "rdfs:label": "Area Thermal Expansion Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermalExpansionUnit"
+      }
+    },
+    {
+      "@id": "qudt:MolarEnergyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Molar Energy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:EnergyAndWorkUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Energy And Work Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_energy"
+      }
+    },
+    {
+      "@id": "dc:rights",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "rights",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:PermeabilityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Permeability Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:integerPercentage",
+      "@type": "rdfs:Datatype",
+      "owl:equivalentClass": {
+        "@id": "_:N021c05b51e254ea69088687fb12797ef"
+      },
+      "rdfs:label": "integer percentage",
+      "rdfs:subClassOf": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "_:N6b25e688a5524fbe99d9e543c5774ceb",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:symbol"
+      }
+    },
+    {
+      "@id": "qudt:SystemOfUnits",
+      "@type": "owl:Class",
+      "dc:description": "A system of units is a set of units which are chosen as the reference scales for some set of quantity kinds together with the definitions of each unit. Units may be defined by experimental observation or by proportion to another unit not included in the system. If the unit system is explicitly associated with a quantity kind system, then the unit system must define at least one unit for each quantity kind.",
+      "rdfs:label": "System of Units",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Nebb1b1149a8d4fa8bd5ab2a684c908e3"
+        },
+        {
+          "@id": "_:Naf60815984b34f24993e52a3b07ca239"
+        },
+        {
+          "@id": "_:N4a327bed9c964295a451d7da2710332c"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Systems_of_units"
+      }
+    },
+    {
+      "@id": "qudt:quantityValue",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:valueQuantity"
+      },
+      "rdfs:label": "quantity value"
+    },
+    {
+      "@id": "qudt:SystemOfNaturalUnits",
+      "@type": "owl:Class",
+      "dc:description": "In physics, natural units are physical units of measurement based only on universal physical constants. For example the elementary charge e is a natural unit of electric charge, or the speed of light c is a natural unit of speed. A purely natural system of units is defined in such a way that some set of selected universal physical constants are normalized to unity; that is, their numerical values in terms of these units become exactly 1. Examples are Planck Units and Atomic Units. Atomic units (au or a.u.) form a system of natural units which is especially convenient for atomic physics calculations. There are two different kinds of atomic units, which one might name Hartree atomic units[1] and Rydberg atomic units, which differ in the choice of the unit of mass and charge. Planck units are unique among systems of natural units, because they are not defined in terms of properties of any prototype, physical object, or even elementary particle.  [Wikipeda]",
+      "rdfs:label": "System of natural units",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SystemOfUnits"
+      },
+      "skos:closeMatch": {
+        "@id": "dbpedia:Category:Natural_units"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Natural_units"
+      }
+    },
+    {
+      "@id": "qudt:LinearThermalExpansionUnit",
+      "@type": "owl:Class",
+      "qudt:description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.\r\n\r\nDifferent coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:\r\n\r\n    * linear thermal expansion\r\n    * area thermal expansion\r\n    * volumetric thermal expansion\r\n\r\nThese characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.\r\n\r\nSome substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]",
+      "rdfs:label": "Linear Thermal Expansion Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermalExpansionUnit"
+      }
+    },
+    {
+      "@id": "qudt:prefixUnitOfSystem",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:DeprecatedProperty"
+      ],
+      "owl:inverseOf": {
+        "@id": "qudt:systemPrefixUnit"
+      },
+      "rdfs:label": "prefix unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:definedUnitOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:SIBaseUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        {
+          "@id": "_:N1365f5084ab04133ba09607af9f32e06"
+        },
+        "owl:Class"
+      ],
+      "owl:disjointWith": {
+        "@id": "qudt:SIDerivedUnit"
+      },
+      "qudt:description": "All SI units are derived from the SI Base units",
+      "rdfs:label": "SI Base Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:BaseUnit"
+        },
+        {
+          "@id": "qudt:SIUnit"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:SI_base_units"
+      }
+    },
+    {
+      "@id": "qudt:MagneticFluxDensityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Magnetic Flux Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_magnetic_flux_density"
+      }
+    },
+    {
+      "@id": "qudt:VolumePerTimeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "A \"Space And Time\" Unit with the following instance(s): \"Cubic foot per minute\", \"Cubic foot per second\", \"Cubic inch per minute\", \"Cubic meter per second\", \"Cubic yard per minute\", \"Gallon per day\", \"Gallon per minute\".",
+      "rdfs:label": "Volume Per Time Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "_:Nc54fa3123fbe481ea2ae5f73e9177d3b",
+      "@type": "rdfs:Datatype",
+      "owl:onDatatype": {
+        "@id": "xsd:string"
+      },
+      "owl:withRestrictions": {
+        "@list": [
+          {
+            "@id": "_:N51392d045f014832825207120c45a82d"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "qudt:SpecificHeatPressureUnit",
+      "@type": "owl:Class",
+      "qudt:description": "This class contains units of measure for specific heat capacity at a constant pressure.",
+      "rdfs:label": "Specific Heat Pressure Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargeLineDensityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The linear charge density is the amount of electric charge in a line. It is measured in coulombs per metre (C/m). Since there are positive as well as negative charges, the charge density can take on negative values. [Wikipedia]",
+      "rdfs:label": "Electric Charge Line Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricChargeDensityUnit"
+      }
+    },
+    {
+      "@id": "qudt:floatPercentage",
+      "@type": "rdfs:Datatype",
+      "owl:equivalentClass": {
+        "@id": "_:N9f18a212f0a54657b8a436cbbf1e2ac0"
+      },
+      "rdfs:label": "float percentage",
+      "rdfs:subClassOf": {
+        "@id": "xsd:float"
+      }
+    },
+    {
+      "@id": "qudt:baseQuantityKindOfSystem",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:systemBaseQuantityKind"
+      },
+      "rdfs:label": "base quantity kind of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:quantityKindOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:SpecificHeatCapacityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Specific Heat Capacity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:referenceThing",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "reference thing"
+    },
+    {
+      "@id": "qudt:PowerUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Power Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_power"
+      }
+    },
+    {
+      "@id": "qudt:quantityKind",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "quantity kind"
+    },
+    {
+      "@id": "_:N4ecfb16d51f743c1b4218e286b19f181",
+      "xsd:minInclusive": 0
+    },
+    {
+      "@id": "qudt:RadiometryUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Radiometry Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:OpticsUnit"
+      }
+    },
+    {
+      "@id": "qudt:baseUnitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure to the system of units in which it is defined as a base unit for the system. The base units of a system are used to define the derived units of the system by expressing the derived units as products of the base units raised to a rational power.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemBaseUnit"
+      },
+      "rdfs:label": "base unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:coherentUnitOfSystem"
+      }
+    },
+    {
+      "@id": "_:Nfecb277a838c484da7ab3a584e53ad62",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:abbreviation"
+      }
+    },
+    {
+      "@id": "qudt:AbsorbedDoseUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Absorbed Dose Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiologyUnit"
+      }
+    },
+    {
+      "@id": "qudt:conversionCoefficient",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "conversion coefficient",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      }
+    },
+    {
+      "@id": "qudt:HeartRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Heart Rate Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:BiomedicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:CatalyticActivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Catalytic Activity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_catalytic_activity"
+      }
+    },
+    {
+      "@id": "qudt:InformationEntropyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Information Entropy Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ResourceUnit"
+        },
+        {
+          "@id": "qudt:LogarithmicUnit"
+        },
+        {
+          "@id": "qudt:ComputingUnit"
+        }
+      ]
+    },
+    {
+      "@id": "_:N1ff402bb389c440bada024a8ed043f02",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:currencyExponent"
+      }
+    },
+    {
+      "@id": "qudt:VolumeThermalExpansionUnit",
+      "@type": "owl:Class",
+      "qudt:description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.\r\n\r\nDifferent coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:\r\n\r\n    * linear thermal expansion\r\n    * area thermal expansion\r\n    * volumetric thermal expansion\r\n\r\nThese characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.\r\n\r\nSome substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. \r\n\r\nFor exactly isotropic materials, the volumetric thermal expansion coefficient is very closely approximated as three times the linear coefficient. [Wikipedia]",
+      "rdfs:label": "Volume Thermal Expansion Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermalExpansionUnit"
+      }
+    },
+    {
+      "@id": "qudt:EnergyDensityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Units that measure energy density, i.e. energy per unit volume.",
+      "rdfs:label": "Energy Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:LuminousEfficacyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Luminous Efficacy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      }
+    },
+    {
+      "@id": "qudt:AngularAccelerationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Angular Acceleration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AccelerationUnit"
+      }
+    },
+    {
+      "@id": "qudt:CurrencyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Currency Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N1ff402bb389c440bada024a8ed043f02"
+        },
+        {
+          "@id": "qudt:FinancialUnit"
+        },
+        {
+          "@id": "_:N74f9c754660d4405a4992a838ff76196"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:systemQuantityKind",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:quantityKindOfSystem"
+      },
+      "rdfs:label": "system quantity kind"
+    },
+    {
+      "@id": "qudt:unitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure with a system of units that either a) defines the unit or b) allows the unit to be used within the system.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemUnit"
+      },
+      "rdfs:label": "unit of system"
+    },
+    {
+      "@id": "qudt:ElectricFluxDensityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Electric Flux Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricChargeDensityUnit"
+      }
+    },
+    {
+      "@id": "qudt:MomentumUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Momentum Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:VolumePerTimeSquaredUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Volume per Time Squared Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:VideoFrameRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Video Frame Rate Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ComputingUnit"
+      }
+    },
+    {
+      "@id": "qudt:EventUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Event Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ResourceUnit"
+      }
+    },
+    {
+      "@id": "qudt:FinancialUnit",
+      "@type": "owl:Class",
+      "qudt:description": "This class contains units that measure financial quantities, such as currency, transactions, rates of return, etc.",
+      "rdfs:label": "Financial Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ResourceUnit"
+        },
+        {
+          "@id": "_:Nb2266072e18c463b86bd2a427e7031f0"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:AngularVelocityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Angular Velocity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:VelocityUnit"
+      }
+    },
+    {
+      "@id": "qudt:MassUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_mass"
+      }
+    },
+    {
+      "@id": "qudt:AreaTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Area Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:exactMatch",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:TransitiveProperty",
+        "owl:SymmetricProperty"
+      ],
+      "rdfs:label": "exact match"
+    },
+    {
+      "@id": "qudt:CapacitanceUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Capacitance is a measure of the amount of electric charge stored (or separated) for a given electric potential.\r\n\r\nThis class contains the following instance(s): \"Abfarad\", \"Farad\", \"MicroFarad\", \"NanoFarad\", \"PicoFarad\", \"Statfarad\".",
+      "rdfs:label": "Capacitance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_capacitance"
+      }
+    },
+    {
+      "@id": "qudt:AtomicPhysicsUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Atomic Physics Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:PhysicalUnit"
+        },
+        {
+          "@id": "_:N5deadb43cc634bf69ed24e5210330daf"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:MicrobialFormationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Microbial Formation Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:BiomedicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:TurbidityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Turbidity is the cloudiness or haziness of a fluid caused by individual particles (suspended solids) that are generally invisible to the naked eye, similar to smoke in air.",
+      "rdfs:label": "Turbidity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:BiomedicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:baseDimensionEnumeration",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty"
+      ],
+      "dc:description": "This property associates a system of quantities with an enumeration that enumerates the base dimensions of the system in canonical order.",
+      "rdfs:label": "base dimension enumeration"
+    },
+    {
+      "@id": "qudt:EnergyPerAreaUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Units that quantify energy per unit area.",
+      "rdfs:label": "Energy Per Area Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:CoefficientOfHeatTransferUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Coefficient Of Heat Transfer Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ThermalResistivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Resistivity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:valueQuantity",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:quantityValue"
+      },
+      "rdfs:label": "value for quantity"
+    },
+    {
+      "@id": "qudt:AngleUnit",
+      "@type": "owl:Class",
+      "dc:description": "All units relating to specificaiton of angles. ",
+      "rdfs:label": "Angle unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:SpaceAndTimeUnit"
+        },
+        {
+          "@id": "qudt:DimensionlessUnit"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_angle"
+      }
+    },
+    {
+      "@id": "qudt:LuminanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Luminance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_luminance"
+      }
+    },
+    {
+      "@id": "qudt:RF-PowerUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "RF-Power Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:CommunicationsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricFieldStrengthUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The strength of the electric field at a given point is defined as the force that would be exerted on a positive test charge of +1 coulomb placed at that point; the direction of the field is given by the direction of that force. Electric fields contain electrical energy with energy density proportional to the square of the field intensity. The electric field is to charge as gravitational acceleration is to mass and force density is to volume.",
+      "rdfs:label": "Electric Field Strength Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "skos:closeMatch",
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "_:Na32dc384677442beab1fb6926981b9ab",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UCHM",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:MolarHeatCapacityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Molar Heat Capacity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:vectorMagnitude",
+      "@type": [
+        "owl:FunctionalProperty",
+        "owl:DatatypeProperty"
+      ],
+      "rdfs:label": "vector magnitude",
+      "rdfs:range": {
+        "@id": "xsd:float"
+      }
+    },
+    {
+      "@id": "qudt:SpecificEnergyUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Units which quantify specific energy, i.e. energy per unit mass.",
+      "rdfs:label": "Specific Energy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:derivedQuantityKindOfSystem",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:systemDerivedQuantityKind"
+      },
+      "rdfs:label": "derived quantity kind of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:quantityKindOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:element",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "An element of an enumeration",
+      "rdfs:label": "element"
+    },
+    {
+      "@id": "qudt:RadianceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Radiance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiometryUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Electric charge is a fundamental conserved property of some subatomic particles, which determines their electromagnetic interaction. Electrically charged matter is influenced by, and produces, electromagnetic fields. The interaction between a moving charge and an electromagnetic field is the source of the electromagnetic force, which is one of the four fundamental forces.",
+      "rdfs:label": "Electric Charge Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_charge"
+      }
+    },
+    {
+      "@id": "qudt:MassPerAreaUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Per Area Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:CommunicationsUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Communications Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ScienceAndEngineeringUnit"
+        },
+        {
+          "@id": "_:N4e9cb51ed3bb41d2aa4fabe1b3e72173"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:ResourceUnit",
+      "@type": "owl:Class",
+      "dc:description": "A Resource Unit is a unit for measuring the amount of various types of resources.",
+      "rdfs:label": "Resource Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:Unit"
+      }
+    },
+    {
+      "@id": "_:N9f18a212f0a54657b8a436cbbf1e2ac0",
+      "@type": "rdfs:Datatype",
+      "owl:onDatatype": {
+        "@id": "xsd:float"
+      },
+      "owl:withRestrictions": {
+        "@list": [
+          {
+            "@id": "_:Na0073f6f2e4f4f68aa1463e89167cab9"
+          },
+          {
+            "@id": "_:N8ad69962835e4932b0af35ddb9db7bc5"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:N51392d045f014832825207120c45a82d",
+      "xsd:maxLength": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1024"
+      }
+    },
+    {
+      "@id": "qudt:ScienceAndEngineeringUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Science And Engineering Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Nf92265b9e57a4a2089daf42f9204f729"
+        },
+        {
+          "@id": "qudt:Unit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:ThermalEnergyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Energy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:unitSystem",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty"
+      ],
+      "rdfs:label": "unit system"
+    },
+    {
+      "@id": "skos:exactMatch",
+      "@type": "rdf:Property"
+    },
+    {
+      "@id": "qudt:PowerPerElectricChargeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The ratio of power to electric charge is proportional to the rate of change of electric potential.",
+      "rdfs:label": "Energy per Electric Charge Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:HeatCapacityAndEntropyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Heat Capacity And Entropy Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:LinearMomentumUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Linear Momentum Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MomentumUnit"
+      }
+    },
+    {
+      "@id": "qudt:RadiantIntensityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Radiant Intensity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiometryUnit"
+      }
+    },
+    {
+      "@id": "_:N2f816d6abf254a5981f0491277a93260",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UB",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:PlaneAngleUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Plane Angle Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AngleUnit"
+      }
+    },
+    {
+      "@id": "qudt:coherentUnitSystem",
+      "@type": [
+        "owl:FunctionalProperty",
+        "owl:ObjectProperty"
+      ],
+      "dc:description": "A system of units is coherent with respect to a system of quantities and equations if the system of units is chosen in such a way that the equations between numerical values have exactly the same form (including the numerical factors) as the corresponding equations between the quantities. In such a coherent system, no numerical factor other than the number 1 ever occurs in the expressions for the derived units in terms of the base units.",
+      "rdfs:label": "coherent unit system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:unitSystem"
+      }
+    },
+    {
+      "@id": "qudt:conversionOffset",
+      "@type": [
+        "owl:DatatypeProperty",
+        "owl:FunctionalProperty"
+      ],
+      "rdfs:label": "conversion offset",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      }
+    },
+    {
+      "@id": "_:N74f9c754660d4405a4992a838ff76196",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UFC",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:generalization",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a quantity kind to its generalization. A quantity kind, PARENT, is a generalization of the quantity kind CHILD only if\r\n\r\n1. PARENT and CHILD have the same dimensions in every system of quantities;\r\n2. Every unit that is a measure of quantities of kind CHILD is also a valid measure of quantities of kind PARENT.",
+      "owl:inverseOf": {
+        "@id": "qudt:specialization"
+      },
+      "rdfs:label": "generalization"
+    },
+    {
+      "@id": "_:N36234c13c4774cbe9bb6096ec9c7be35",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:conversionMultiplier"
+      }
+    },
+    {
+      "@id": "qudt:KinematicViscosityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Kinematic Viscosity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:AbsorbedDoseRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Absorbed Dose Rate Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiologyUnit"
+      }
+    },
+    {
+      "@id": "qudt:IlluminanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Illuminance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_illuminance"
+      }
+    },
+    {
+      "@id": "qudt:LinearVelocityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Linear Velocity units measure change of length per unit time. Examples include meters per second, miles per hour, knots, etc. ",
+      "rdfs:label": "Linear Velocity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:VelocityUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_velocity"
+      }
+    },
+    {
+      "@id": "_:N5c79d8aed5ff4d97ade70f7953e454ca",
+      "@type": "owl:Restriction",
+      "owl:minCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:element"
+      }
+    },
+    {
+      "@id": "qudt:VolumeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Volume Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_volume"
+      }
+    },
+    {
+      "@id": "qudt:ResistanceUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Electrical resistance is a ratio of the degree to which an object opposes an electric current through it, measured in ohms. Its reciprocal quantity is electrical conductance measured in siemens.\r\n\r\nThis class contains the following instance(s): \"Abohm\", \"Ohm\", \"Statohm\".",
+      "rdfs:label": "Resistance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_electrical_resistance"
+      }
+    },
+    {
+      "@id": "qudt:TemperaturePerTimeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Temperature per time unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:relativeStandardUncertainty",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "The relative standard uncertainty of a measurement is the (absolute) standard uncertainty divided by the magnitude of the exact value.",
+      "rdfs:label": "relative standard uncertainty",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      }
+    },
+    {
+      "@id": "qudt:referenceUnit",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty"
+      ],
+      "rdfs:label": "reference unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:referenceThing"
+      }
+    },
+    {
+      "@id": "qudt:EnergyAndWorkPerMassAmountOfSubstance",
+      "@type": "owl:Class",
+      "rdfs:label": "Energy and work per mass amount of substance",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:DimensionlessUnit",
+      "@type": "owl:Class",
+      "dc:description": "A Dimensionless Unit is a quantity for which all the exponents of the factors corresponding to the base quantities in its quantity dimension are zero.",
+      "rdfs:label": "Dimensionless Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:Unit"
+      }
+    },
+    {
+      "@id": "qudt:PowerPerAreaUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Power Per Area Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:derivedUnitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure to the system of units in which it is defined as a derived unit. That is, the derived unit is defined as a product of the base units for the system raised to some rational power.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemDerivedUnit"
+      },
+      "rdfs:label": "derived unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:definedUnitOfSystem"
+      }
+    },
+    {
+      "@id": "_:N3b691fd92e45413bbf51df41c38a6730",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UTD",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargeDensityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The linear, surface, or volume charge density is the amount of electric charge in a line, surface, or volume. It is measured in coulombs per metre (C/m), square metre (C/m^2), or cubic metre (C/m^3), respectively. Since there are positive as well as negative charges, the charge density can take on negative values. [Wikipedia]",
+      "rdfs:label": "Electric Charge Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:SignalDetectionThresholdUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Signal relative to an underlying signal",
+      "rdfs:label": "Signal Detection Threshold Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:CommunicationsUnit"
+      }
+    },
+    {
+      "@id": "qudt:MassPerTimeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Per Time Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:PermittivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Permittivity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:PressureOrStressUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Pressure Or Stress Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_pressure"
+      }
+    },
+    {
+      "@id": "qudt:PressureOrStressRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Pressure or stress rate",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:EnergyPerElectricChargeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The ratio of energy to electric charge arises repeatedly in electrodynamics. It is the dimensional equivalent to the electrostatic potential and electromotive force. In both cases, the SI unit is the volt, or newton meters per coulomb.",
+      "rdfs:label": "Energy per Electric Charge Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "_:N4e9cb51ed3bb41d2aa4fabe1b3e72173",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UCMN",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:systemCoherentDerivedUnit",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:coherentDerivedUnitOfSystem"
+      },
+      "rdfs:label": "coherent derived unit",
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "qudt:systemDerivedUnit"
+        },
+        {
+          "@id": "qudt:systemCoherentUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:QuantityKindCategory",
+      "@type": "rdfs:Class",
+      "rdfs:label": "Quantity Kind Category",
+      "rdfs:subClassOf": {
+        "@id": "owl:Class"
+      }
+    },
+    {
+      "@id": "qudt:allowedUnitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure with a unit system that does not define the unit, but allows its use within the system. An allowed unit must be convertible to some dimensionally eqiuvalent unit that is defined by the system.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemAllowedUnit"
+      },
+      "rdfs:label": "allowed unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:unitOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:ElectricFluxUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Electric Flux Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:uneceCommonCode",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "UNECE common code",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "_:N9f44aaf2da594c228a38af7641f3dd6f",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:abbreviation"
+      }
+    },
+    {
+      "@id": "qudt:CurrentPerAngleUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Current Per Angle Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:systemDimension",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "system dimension"
+    },
+    {
+      "@id": "qudt:GravitationalAttractionUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Gravitational Attraction Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "_:N58575713256e4c0c87f5cfbbf9c782d4",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UPHS",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargePerAmountOfSubstanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Electric Charge Per Amount Of Substance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectrochemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:negativeDeltaLimit",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "A negative change limit between consecutive sample values for a parameter. The Negative Delta may be the encoded value or engineering units value depending on whether or not a Calibrator is defined.",
+      "rdfs:label": "negative delta limit",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:order",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "order",
+      "rdfs:range": {
+        "@id": "xsd:nonNegativeInteger"
+      }
+    },
+    {
+      "@id": "qudt:HeatFlowRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Heat Flow Rate Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ForceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Force Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_force"
+      }
+    },
+    {
+      "@id": "_:N164f999ada4946acb01fc5f70a7634b3",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UROY",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:SolidAngleUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The solid angle subtended by a surface S is defined as the surface area of a unit sphere covered by the surface S's projection onto the sphere. A solid angle is related to the surface of a sphere in the same way an ordinary angle is related to the circumference of a circle. Since the total surface area of the unit sphere is 4*pi, the measure of solid angle will always be between 0 and 4*pi.",
+      "rdfs:label": "Solid Angle Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AngleUnit"
+      }
+    },
+    {
+      "@id": "_:Nf92265b9e57a4a2089daf42f9204f729",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "USE",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:ThermalDiffusivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Diffusivity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:code",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "A unit code is a numeric string that uniquely identifies a unit ",
+      "rdfs:label": "code",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "_:Nc74cf3dfe6a14b0795e93c33f9fbb9e8",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "qudt:EnumeratedValue"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:default"
+      }
+    },
+    {
+      "@id": "qudt:systemAllowedUnit",
+      "@type": [
+        "owl:DeprecatedProperty",
+        "owl:ObjectProperty"
+      ],
+      "dc:description": "This property relates a unit system with a unit of measure that is not defined by or part of the system, but is allowed for use within the system. An allowed unit must be convertible to some dimensionally eqiuvalent unit that is defined by the system.",
+      "owl:inverseOf": {
+        "@id": "qudt:allowedUnitOfSystem"
+      },
+      "rdfs:label": "allowed unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemUnit"
+      }
+    },
+    {
+      "@id": "_:N2debf59d4f2a42f4887a5396077e8e11",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UD",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:default",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "The default element in an enumeration",
+      "rdfs:label": "default"
+    },
+    {
+      "@id": "qudt:DataRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Data Rate Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ResourceUnit"
+        },
+        {
+          "@id": "qudt:ComputingUnit"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nb0abe92ede5a44cd92cb4cac54f5817c",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:abbreviation"
+      }
+    },
+    {
+      "@id": "_:N9d049d75377446839e25f601bfae6b2b",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UCPG",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:LengthUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Length Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_length"
+      }
+    },
+    {
+      "@id": "qudt:ThermalExpansionUnit",
+      "@type": "owl:Class",
+      "qudt:description": "When the temperature of a substance changes, the energy that is stored in the intermolecular bonds between atoms changes. When the stored energy increases, so does the length of the molecular bonds. As a result, solids typically expand in response to heating and contract on cooling; this dimensional response to temperature change is expressed by its coefficient of thermal expansion.\r\n\r\nDifferent coefficients of thermal expansion can be defined for a substance depending on whether the expansion is measured by:\r\n\r\n    * linear thermal expansion\r\n    * area thermal expansion\r\n    * volumetric thermal expansion\r\n\r\nThese characteristics are closely related. The volumetric thermal expansion coefficient can be defined for both liquids and solids. The linear thermal expansion can only be defined for solids, and is common in engineering applications.\r\n\r\nSome substances expand when cooled, such as freezing water, so they have negative thermal expansion coefficients. [Wikipedia]",
+      "rdfs:label": "Thermal Expansion Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargeAreaDensityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Electric Charge Area Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricChargeDensityUnit"
+      }
+    },
+    {
+      "@id": "qudt:RadiologyUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Radiology Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:N164f999ada4946acb01fc5f70a7634b3"
+        },
+        {
+          "@id": "qudt:PhysicalUnit"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_radiation_dose"
+      }
+    },
+    {
+      "@id": "qudt:elementKind",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "element kind"
+    },
+    {
+      "@id": "qudt:DoseEquivalentUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Dose Equivalent Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiologyUnit"
+      }
+    },
+    {
+      "@id": "qudt:RespiratoryRateUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Respiratory Rate Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:BiomedicalUnit"
+      }
+    },
+    {
+      "@id": "dc:title",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "title",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "_:Na0073f6f2e4f4f68aa1463e89167cab9",
+      "xsd:minInclusive": {
+        "@type": "xsd:float",
+        "@value": "0.0"
+      }
+    },
+    {
+      "@id": "_:N19dd6086ae944fbaac38f62cae475f03",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:code"
+      }
+    },
+    {
+      "@id": "qudt:AreaTimeTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Area Time Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:LengthTemperatureTimeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Length Temperature Time Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:MassTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:SpaceAndTimeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Space And Time Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:PhysicalUnit"
+        },
+        {
+          "@id": "_:N9a255b7e7e5749c69721dbf648bbd2b4"
+        }
+      ]
+    },
+    {
+      "@id": "_:N806b8c27d7eb4cd8a51425e54ed3ada2",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:description"
+      }
+    },
+    {
+      "@id": "qudt:ActivityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Activity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:RadiologyUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_radioactivity"
+      }
+    },
+    {
+      "@id": "qudt:VelocityUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Velocity Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "_:Nb2266072e18c463b86bd2a427e7031f0",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UF",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:MolarConcentrationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Molar Concentration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ConcentrationUnit"
+      }
+    },
+    {
+      "@id": "qudt:CountingUnit",
+      "@type": "owl:Class",
+      "dc:description": "All units about counts. Examples are Atomic Number, Number, Number per Year, Percent and Sample per Second.",
+      "rdfs:label": "Counting Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ResourceUnit"
+        },
+        {
+          "@id": "qudt:DimensionlessUnit"
+        }
+      ],
+      "skos:closeMatch": {
+        "@id": "dbpedia:Category:Units_of_amount"
+      }
+    },
+    {
+      "@id": "_:Nc976a0044bd442e7a88759a072ef6cc1",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UMH",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:MassAmountOfSubstanceTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Mass Amount Of Substance Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:SpecificHeatVolumeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "This class contains units of measure for specific heat capacity at a constant volume.",
+      "rdfs:label": "Specific Heat Volume Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "_:N8c67ecd895744c7383b55e84f1c51665",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "U",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "_:N42bec08e63284b42b59f38664fdef6e5",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UH",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:unit",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "A reference to the unit of measure of a quantity (variable or constant) of interest.",
+      "owl:inverseOf": {
+        "@id": "qudt:unitFor"
+      },
+      "rdfs:label": "unit",
+      "rdfs:range": {
+        "@id": "qudt:Unit"
+      }
+    },
+    {
+      "@id": "qudt:string1024",
+      "@type": "rdfs:Datatype",
+      "owl:equivalentClass": {
+        "@id": "_:Nc54fa3123fbe481ea2ae5f73e9177d3b"
+      },
+      "rdfs:label": "string1024",
+      "rdfs:subClassOf": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "_:N5deadb43cc634bf69ed24e5210330daf",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UAP",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "_:N4d2beaa0707a41bfb6303009b7de819c",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:conversionOffset"
+      }
+    },
+    {
+      "@id": "qudt:typePrefix",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "type prefix",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:currencyExponent",
+      "@type": [
+        "owl:DatatypeProperty",
+        "owl:FunctionalProperty"
+      ],
+      "dc:description": "The currency exponent indicates the number of decimal places between a major currency unit and its minor currency unit. For example, the US dollar is the major currency unit of the United States, and the US cent is the minor currency unit. Since one cent is 1/100 of a dollar, the US dollar has a currency exponent of 2. However, the Japanese Yen has no minor currency units, so the yen has a currency exponent of 0.",
+      "rdfs:label": "currency exponent",
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      }
+    },
+    {
+      "@id": "qudt:ThermalResistanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thermal Resistance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      }
+    },
+    {
+      "@id": "_:N3af58f2c605f479db19075b124d630bf",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:description"
+      }
+    },
+    {
+      "@id": "_:Nb3548031b308486c94d85e6540100268",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:uneceCommonCode"
+      }
+    },
+    {
+      "@id": "_:N97b5d2288cae44248c30bc83686ce801",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:description"
+      }
+    },
+    {
+      "@id": "qudt:BaseUnit",
+      "@type": [
+        {
+          "@id": "_:N2f816d6abf254a5981f0491277a93260"
+        },
+        "owl:Class",
+        "owl:DeprecatedClass"
+      ],
+      "dc:description": "A Base Unit is a unit adopted by convention for a base quantity.",
+      "rdfs:label": "Base Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:Unit"
+      }
+    },
+    {
+      "@id": "qudt:value",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "A property to relate an observable thing with a quantity value (qud:QuantityValue)",
+      "rdfs:label": "value"
+    },
+    {
+      "@id": "qudt:UsedWithSIUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        "owl:Class"
+      ],
+      "owl:disjointWith": {
+        "@id": "qudt:NotUsedWithSIUnit"
+      },
+      "qudt:description": "A type specification for all units that are used in the SI standard.",
+      "rdfs:label": "Used With SI Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:NonSIUnit"
+      }
+    },
+    {
+      "@id": "qudt:LuminousFluxUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Luminous Flux Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhotometryUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_luminous_flux"
+      }
+    },
+    {
+      "@id": "qudt:CurvatureUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The canonicall example of extrinsic curvature is that of a circle, which has curvature equal to the inverse of its radius everywhere. Smaller circles bend more sharply, and hence have higher curvature. The curvature of a smooth curve is defined as the curvature of its osculating circle at each point. The osculating circle of a sufficiently smooth plane curve at a given point on the curve is the circle whose center lies on the inner normal line and whose curvature is the same as that of the given curve at that point. This circle is tangent to the curve at the given point.\r\n\r\nThat is, given a point P on a smooth curve C, the curvature of C at P is defined to be 1/R where R is the radius of the osculating circle of C at P. The magnitude of curvature at points on physical curves can be measured in diopters (also spelled dioptre) — this is the convention in optics. [Wikipedia]",
+      "rdfs:label": "Curvature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "qudt:InverseAmountOfSubstanceUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Inverse Amount Of Substance Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "qudt:PrefixUnit",
+      "@type": "owl:Class",
+      "dc:description": "Prefixes are either binary or decimal.",
+      "rdfs:label": "Prefix Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:DimensionlessUnit"
+      }
+    },
+    {
+      "@id": "qudt:NonSIUnit",
+      "@type": [
+        "owl:Class",
+        "owl:DeprecatedClass"
+      ],
+      "owl:disjointWith": {
+        "@id": "qudt:SIUnit"
+      },
+      "qudt:description": "A Non-SI unit. Typically an imperial measure.",
+      "rdfs:label": "Non SI Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:PhysicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:coherentDerivedUnitOfSystem",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit of measure to the unit system in which the unit is derived from the system's base units with a proportionality constant of one.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemCoherentDerivedUnit"
+      },
+      "rdfs:label": "derived unit of system",
+      "rdfs:subPropertyOf": [
+        {
+          "@id": "qudt:coherentUnitOfSystem"
+        },
+        {
+          "@id": "qudt:derivedUnitOfSystem"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:systemPrefixUnit",
+      "@type": [
+        "owl:DeprecatedProperty",
+        "owl:ObjectProperty"
+      ],
+      "owl:inverseOf": {
+        "@id": "qudt:prefixUnitOfSystem"
+      },
+      "rdfs:label": "prefix unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemDefinedUnit"
+      }
+    },
+    {
+      "@id": "qudt:MagnetomotiveForceUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Magnetomotive force is any physical cause that produces magnetic flux. In other words, it is a field of magnetism (measured in tesla) that has area (measured in square meters), so that (Tesla)(Area)= Flux. It is analogous to electromotive force or voltage in electricity. MMF usually describes electric wire coils in a way so scientists can measure or predict the actual force a wire coil can generate. [Wikipedia]\r\n\r\nThis class contains the following instance(s): \"Ampere turn\", \"Gilbert\", \"Oersted centimeter\", \"Unit pole\".",
+      "rdfs:label": "Magnetomotive Force Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:TimeAreaUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Time Area Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "qudt:MagneticFluxUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Magnetic flux is a measure of quantity of magnetism, taking into account the strength and the extent of a magnetic field. The SI unit of magnetic flux is the weber (in derived units: volt-seconds), and the unit of magnetic field is the weber per square meter, or tesla. [Wikipedia]\r\n\r\nThis class contains the following instance(s): \"Maxwell\", \"Unit pole\", \"Weber\".",
+      "rdfs:label": "Magnetic Flux Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_magnetic_flux"
+      }
+    },
+    {
+      "@id": "_:Nb1d20df3365144c3ad107ff4b8a1375a",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "qudt:EnumeratedValue"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:element"
+      }
+    },
+    {
+      "@id": "_:N9a255b7e7e5749c69721dbf648bbd2b4",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "UST",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:TemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Temperature Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ThermodynamicsUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_temperature"
+      }
+    },
+    {
+      "@id": "_:N2c44838a2d464c11b2aa3222e19b656b",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:default"
+      }
+    },
+    {
+      "@id": "_:Ndda52bdc958d490aba16d6f6dab692ba",
+      "@type": "owl:Restriction",
+      "owl:maxCardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:order"
+      }
+    },
+    {
+      "@id": "qudt:OpticsUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Light Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:AtomicChargeUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The electric charge of an ion, equal to the number of electrons the atom has gained or lost in its ionization multiplied by the charge on one electron.  This class contains the following instance(s): \"atomic number\".",
+      "rdfs:label": "Atomic Charge Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:AtomicPhysicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:PhotometryUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Photometry Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:OpticsUnit"
+      }
+    },
+    {
+      "@id": "qudt:ThrustToMassRatioUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Thrust To Mass Ratio Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:basisElement",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:FunctionalProperty"
+      ],
+      "rdfs:label": "basis element"
+    },
+    {
+      "@id": "dc:contributor",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:label": "contributor",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:positiveDeltaLimit",
+      "@type": "owl:DatatypeProperty",
+      "dc:description": "A positive change limit between consecutive sample values for a parameter. The Positive Delta may be the encoded value or engineering units value depending on whether or not a Calibrator is defined.",
+      "rdfs:label": "Positive delta limit",
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "qudt:ElectricChargeVolumeDensityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "The volume charge density is the amount of electric charge in a volume. It is measured in coulombs per cubic metre (C/m^3).  Since there are positive as well as negative charges, the charge density can take on negative values. [Wikipedia]",
+      "rdfs:label": "Electric Charge Volume Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricChargeDensityUnit"
+      }
+    },
+    {
+      "@id": "_:Naf60815984b34f24993e52a3b07ca239",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "qudt:Unit"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:systemUnit"
+      }
+    },
+    {
+      "@id": "qudt:AmountOfSubstanceTemperatureUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Amount of substance temperature unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ChemistryUnit"
+      }
+    },
+    {
+      "@id": "voag:withAttributionTo",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "with attribution to"
+    },
+    {
+      "@id": "voag:hasLicenseType",
+      "@type": "owl:ObjectProperty"
+    },
+    {
+      "@id": "qudt:quantityKindOfSystem",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:systemQuantityKind"
+      },
+      "rdfs:label": "quantity kind of system"
+    },
+    {
+      "@id": "qudt:ForcePerLengthUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Force Per Length Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MechanicsUnit"
+      }
+    },
+    {
+      "@id": "qudt:numericValue",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:label": "numeric value",
+      "rdfs:range": {
+        "@id": "xsd:double"
+      }
+    },
+    {
+      "@id": "qudt:DecimalPrefixUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Decimal Prefix Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:PrefixUnit"
+        },
+        {
+          "@id": "qudt:SIUnit"
+        }
+      ]
+    },
+    {
+      "@id": "_:N49afda147d2f47659fa45ffcb471d5c5",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:int",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:literal"
+      }
+    },
+    {
+      "@id": "_:Nd94427f1b2a249748ddeb21096f4fb71",
+      "@type": "owl:Restriction",
+      "owl:cardinality": {
+        "@type": "xsd:nonNegativeInteger",
+        "@value": "1"
+      },
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "_:Ndc5c2cbc2b3e41faa23350e1ebd39e94",
+      "xsd:maxInclusive": 100
+    },
+    {
+      "@id": "qudt:coherentUnitOfSystem",
+      "@type": [
+        "owl:DeprecatedProperty",
+        "owl:ObjectProperty"
+      ],
+      "dc:description": "A coherent unit of measurement for a unit system is a defined unit that may be expressed as a product of powers of the system's base units with the proportionality factor of one.",
+      "owl:inverseOf": {
+        "@id": "qudt:systemCoherentUnit"
+      },
+      "rdfs:label": "coherent unit of system",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:definedUnitOfSystem"
+      }
+    },
+    {
+      "@id": "qudt:ThermodynamicsUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Thermodynamics units are units that provide reference scales for quantifying the conversion of energy into work, as well as heat and its relation to macroscopic variables such as temperature and pressure.",
+      "rdfs:label": "Thermodynamics Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:PhysicalUnit"
+        },
+        {
+          "@id": "_:N3b691fd92e45413bbf51df41c38a6730"
+        }
+      ],
+      "skos:closeMatch": {
+        "@id": "dbpedia:Category:Thermodynamics"
+      }
+    },
+    {
+      "@id": "qudt:AccelerationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Acceleration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      }
+    },
+    {
+      "@id": "qudt:SerumOrPlasmaLevelUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Serum Or Plasma Level Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:BiomedicalUnit"
+      }
+    },
+    {
+      "@id": "qudt:systemDerivedQuantityKind",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "qudt:derivedQuantityKindOfSystem"
+      },
+      "rdfs:label": "system derived quantity kind",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemQuantityKind"
+      }
+    },
+    {
+      "@id": "qudt:systemDefinedUnit",
+      "@type": "owl:ObjectProperty",
+      "dc:description": "This property relates a unit system with a unit of measure that is defined by the system.",
+      "rdfs:label": "defined unit",
+      "rdfs:subPropertyOf": {
+        "@id": "qudt:systemUnit"
+      }
+    },
+    {
+      "@id": "qudt:ElectrochemistryUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Electrochemistry Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:ElectricityAndMagnetismUnit"
+        },
+        {
+          "@id": "qudt:ChemistryUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:AngularMomentumUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Angular Momentum Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:MomentumUnit"
+      }
+    },
+    {
+      "@id": "qudt:SIDerivedUnit",
+      "@type": [
+        "owl:DeprecatedClass",
+        "owl:Class"
+      ],
+      "owl:disjointWith": {
+        "@id": "qudt:SIBaseUnit"
+      },
+      "rdfs:label": "SI Derived Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "qudt:DerivedUnit"
+        },
+        {
+          "@id": "qudt:SIUnit"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:SI_derived_units"
+      }
+    },
+    {
+      "@id": "qudt:AreaUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Area Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:SpaceAndTimeUnit"
+      },
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_area"
+      }
+    },
+    {
+      "@id": "_:N1365f5084ab04133ba09607af9f32e06",
+      "@type": "owl:Restriction",
+      "owl:hasValue": "USI",
+      "owl:onProperty": {
+        "@id": "qudt:typePrefix"
+      }
+    },
+    {
+      "@id": "qudt:ForcePerElectricChargeUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Force Per Electric Charge Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    },
+    {
+      "@id": "qudt:MolalConcentrationUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Molal Concentration Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ConcentrationUnit"
+      }
+    },
+    {
+      "@id": "qudt:RateOfReturnUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Rate Of Return Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:FinancialUnit"
+      }
+    },
+    {
+      "@id": "qudt:ChemistryUnit",
+      "@type": "owl:Class",
+      "rdfs:label": "Chemistry Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Na32dc384677442beab1fb6926981b9ab"
+        },
+        {
+          "@id": "qudt:PhysicalUnit"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:Unit",
+      "@type": "owl:Class",
+      "dc:description": "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension). For example, the meter is a quantity of length that has been rigorously defined and standardized by the BIPM (International Board of Weights and Measures). Any measurement of the length can be expressed as a number multiplied by the unit meter. More formally, the value of a physical quantity Q with respect to a unit (U) is expressed as the scalar multiple of a real number (n) and U, as  Q = nU.",
+      "rdfs:label": "Unit",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:Nb3548031b308486c94d85e6540100268"
+        },
+        {
+          "@id": "_:N8c67ecd895744c7383b55e84f1c51665"
+        },
+        {
+          "@id": "_:N9f44aaf2da594c228a38af7641f3dd6f"
+        },
+        {
+          "@id": "_:N36234c13c4774cbe9bb6096ec9c7be35"
+        },
+        {
+          "@id": "owl:Thing"
+        },
+        {
+          "@id": "_:N4d2beaa0707a41bfb6303009b7de819c"
+        },
+        {
+          "@id": "_:Nd94427f1b2a249748ddeb21096f4fb71"
+        },
+        {
+          "@id": "_:N3af58f2c605f479db19075b124d630bf"
+        },
+        {
+          "@id": "_:N6b25e688a5524fbe99d9e543c5774ceb"
+        }
+      ],
+      "skos:exactMatch": {
+        "@id": "dbpedia:Category:Units_of_measure"
+      }
+    },
+    {
+      "@id": "qudt:EnumeratedValue",
+      "@type": "owl:Class",
+      "dc:description": "This class is for all enumerated and/or coded values.  For example, it contains the dimension objects that are the basis elements in some abstract vector space associated with a quantity kind system. Another use is for the base dimensions for quantity systems. Each quantity kind system that defines a base set has a corresponding ordered enumeration whose elements are the dimension objects for the base quantity kinds. The order of the dimensions in the enumeration determines the canonical order of the basis elements in the corresponding abstract vector space.",
+      "rdfs:label": "Enumerated Value",
+      "rdfs:subClassOf": [
+        {
+          "@id": "dtype:EnumeratedValue"
+        },
+        {
+          "@id": "_:N19dd6086ae944fbaac38f62cae475f03"
+        },
+        {
+          "@id": "_:N806b8c27d7eb4cd8a51425e54ed3ada2"
+        },
+        {
+          "@id": "_:N65e0450a20604de385093bebca6c2be4"
+        },
+        {
+          "@id": "_:N49afda147d2f47659fa45ffcb471d5c5"
+        },
+        {
+          "@id": "_:Ndda52bdc958d490aba16d6f6dab692ba"
+        },
+        {
+          "@id": "_:Nb0abe92ede5a44cd92cb4cac54f5817c"
+        }
+      ]
+    },
+    {
+      "@id": "qudt:ElectricCurrentDensityUnit",
+      "@type": "owl:Class",
+      "qudt:description": "Electric current density is a measure of the density of flow of a conserved charge. Usually the charge is the electric charge, in which case the associated current density is the electric current per unit area of cross section, but the term current density can also be applied to other conserved quantities. It is defined as a vector whose magnitude is the current per cross-sectional area. [Wikipedia]\r\n\r\nIn SI units, the electric current density is measured in amperes per square metre. This class contains the following instance(s): \"Ampere per square meter\".",
+      "rdfs:label": "Electric Current Density Unit",
+      "rdfs:subClassOf": {
+        "@id": "qudt:ElectricityAndMagnetismUnit"
+      }
+    }
+  ]
+}

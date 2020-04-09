@@ -1,0 +1,535 @@
+{
+  "@context": {
+    "dbpedia": "http://dbpedia.org/resource/",
+    "qudt": "http://qudt.org/schema/qudt#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "http://www.openphacts.org/units/Nanogram",
+      "@type": [
+        "qudt:MassUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "ng",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-12"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μg",
+      "rdfs:label": "Nanogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Nanomolar",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MolarConcentrationUnit"
+      ],
+      "qudt:abbreviation": "nM",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "nmol/dm^3",
+      "rdfs:label": "Nanomolar"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/LiterPerKilogram",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:VolumePerMassUnit"
+      ],
+      "qudt:abbreviation": "l/kg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "l/kg",
+      "rdfs:label": "liter per kilogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Molar",
+      "@type": [
+        "qudt:MolarConcentrationUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "M",
+      "qudt:conversionMultiplier": 1000,
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "mol/dm^3",
+      "rdfs:label": "Molar",
+      "skos:exactMatch": {
+        "@id": "dbpedia:Molar_concentration"
+      }
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MilligramPerMilliliter",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MassPerVolumeUnit",
+        "qudt:DerivedUnit"
+      ],
+      "qudt:abbreviation": "mg/mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1000.0"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "mg/cm^3",
+      "rdfs:label": "Milligram per Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Milliliter",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:VolumeUnit"
+      ],
+      "qudt:abbreviation": "mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "mL",
+      "rdfs:label": "Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Picogram",
+      "@type": [
+        "qudt:MassUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "pg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-15"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "pg",
+      "rdfs:label": "Picogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/NanogramPerMilliliter",
+      "@type": [
+        "qudt:MassPerVolumeUnit",
+        "qudt:SIDerivedUnit",
+        "qudt:DerivedUnit"
+      ],
+      "qudt:abbreviation": "ng/mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "ng/cm^3",
+      "rdfs:label": "Nanogram per Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MilligramPerKilogram",
+      "@type": "qudt:SIDerivedUnit",
+      "qudt:abbreviation": "mg/kg",
+      "qudt:symbol": "mg/kg",
+      "rdfs:label": "Milligram per Kilogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MicroliterPerMinute",
+      "@type": [
+        "qudt:VolumePerTimeUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "μL/min",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "6E-8"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μL/min",
+      "rdfs:label": "microliter per minute"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/LiterPerSecond",
+      "@type": [
+        "qudt:VolumePerTimeUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "L/s",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "L/s",
+      "rdfs:label": "liter per second"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Nanometer",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:DerivedUnit",
+        "qudt:LengthUnit"
+      ],
+      "qudt:abbreviation": "nm",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-8"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "rdfs:label": "Nanometer"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Microliter",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:VolumeUnit"
+      ],
+      "qudt:abbreviation": "μL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μL",
+      "rdfs:label": "Microliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/GramPerMilliliter",
+      "@type": [
+        "qudt:MassPerVolumeUnit",
+        "qudt:DerivedUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "g/mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1000000.0"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "g/cm^3",
+      "rdfs:label": "Gram per Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Micromolar",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MolarConcentrationUnit"
+      ],
+      "qudt:abbreviation": "μM",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μmol/dm^3",
+      "rdfs:label": "Micromolar"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/PartsPerMillion",
+      "@type": "qudt:QuantityKind",
+      "qudt:quantityKind": {
+        "@id": "http://qudt.org/schema/quantity#DimensionlessRatio"
+      },
+      "qudt:symbol": "ppm",
+      "rdfs:label": "Parts per Million"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Femtomole",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:AmountOfSubstanceUnit"
+      ],
+      "qudt:abbreviation": "fmol",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-15"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "fmol",
+      "rdfs:label": "Femtomole"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Picomole",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:AmountOfSubstanceUnit"
+      ],
+      "qudt:abbreviation": "pmol",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-12"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "pmol",
+      "rdfs:label": "Picomole"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Millimolar",
+      "@type": [
+        "qudt:MolarConcentrationUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "mM",
+      "qudt:conversionMultiplier": 1,
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "mmol/dm^3",
+      "rdfs:label": "Millimolar"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Picomolar",
+      "@type": [
+        "qudt:MolarConcentrationUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "pM",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-9"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "pmol/dm^3",
+      "rdfs:label": "Picomolar"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Femtomolar",
+      "@type": [
+        "qudt:MolarConcentrationUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "fM",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-12"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "fmol/dm^3",
+      "rdfs:label": "Femtomolar"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MilligramPerDeciliter",
+      "@type": [
+        "qudt:DerivedUnit",
+        "qudt:MassPerVolumeUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "mg/dL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "100.0"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "rdfs:label": "Milligram per Deciliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Microgram",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MassUnit"
+      ],
+      "qudt:abbreviation": "μg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-9"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μg",
+      "rdfs:label": "Microgram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/LiterPerMinute",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:VolumePerTimeUnit"
+      ],
+      "qudt:abbreviation": "L/min",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.06"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "L/min",
+      "rdfs:label": "liter per minute"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Micromole",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:AmountOfSubstanceUnit"
+      ],
+      "qudt:abbreviation": "μmol",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "μmol",
+      "rdfs:label": "Micromole"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/SquareAngstrom",
+      "@type": [
+        "qudt:AreaUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "Å^2",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-20"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "Å^2",
+      "rdfs:label": "Square Ångström"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Milligram",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MassUnit"
+      ],
+      "qudt:abbreviation": "mg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "mg",
+      "rdfs:label": "Milligram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Millimole",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:AmountOfSubstanceUnit"
+      ],
+      "qudt:abbreviation": "mmol",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "mmol",
+      "rdfs:label": "Millimole"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Nanomole",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:AmountOfSubstanceUnit"
+      ],
+      "qudt:abbreviation": "nmol",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-9"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "nmol",
+      "rdfs:label": "Nanomole"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MilliliterPerKilogram",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:VolumePerMassUnit"
+      ],
+      "qudt:abbreviation": "ml/kg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "ml/kg",
+      "rdfs:label": "milliliter per kilogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/PicogramPerMilliliter",
+      "@type": [
+        "qudt:MassPerVolumeUnit",
+        "qudt:SIDerivedUnit",
+        "qudt:DerivedUnit"
+      ],
+      "qudt:abbreviation": "pg/mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "0.000001"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "pg/cm^3",
+      "rdfs:label": "Picogram per Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/Femtogram",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:MassUnit"
+      ],
+      "qudt:abbreviation": "fg",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1E-18"
+      },
+      "qudt:conversionOffset": 0.0,
+      "qudt:symbol": "fg",
+      "rdfs:label": "Femtogram"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/MicrogramPerMilliliter",
+      "@type": [
+        "qudt:SIDerivedUnit",
+        "qudt:DerivedUnit",
+        "qudt:MassPerVolumeUnit"
+      ],
+      "qudt:abbreviation": "μg/mL",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1.0"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "μg/cm^3",
+      "rdfs:label": "Microgram per Milliliter"
+    },
+    {
+      "@id": "http://www.openphacts.org/units/GramPerLiter",
+      "@type": [
+        "qudt:DerivedUnit",
+        "qudt:MassPerVolumeUnit",
+        "qudt:SIDerivedUnit"
+      ],
+      "qudt:abbreviation": "g/L",
+      "qudt:conversionMultiplier": {
+        "@type": "xsd:decimal",
+        "@value": "1.0"
+      },
+      "qudt:conversionOffset": {
+        "@type": "xsd:decimal",
+        "@value": "0.0"
+      },
+      "qudt:symbol": "g/dm^3",
+      "rdfs:label": "Gram per Liter"
+    }
+  ]
+}
