@@ -18,14 +18,14 @@ import unittest
 
 
 class NanomolarTest(unittest.TestCase):
-    def test_molar_conversion(self):
+    def test_molar_conversion(self) -> None:
         obs = Quantity(0.1, ConcentrationUnit.MICROMOLAR)
         obs2 = obs.convert_to(ConcentrationUnit.NANOMOLAR)
 
         self.assertEqual(ConcentrationUnit.NANOMOLAR, obs2.unit)
         self.assertAlmostEqual(100, obs2.value)
 
-    def test_compare_to_mole_per_cubic_meter(self):
+    def test_compare_to_mole_per_cubic_meter(self) -> None:
         obs = Quantity(1.0, ConcentrationUnit.NANOMOLAR)
         obs2 = obs.convert_to(ConcentrationUnit.MOLE_PER_CUBIC_METER)
 

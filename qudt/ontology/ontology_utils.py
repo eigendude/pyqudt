@@ -11,6 +11,8 @@
 #
 ################################################################################
 
+from typing import Dict
+
 
 class OntologyUtils(object):
     """
@@ -18,10 +20,10 @@ class OntologyUtils(object):
     """
 
     # Registered namespaces
-    _namespaces = {}
+    _namespaces: Dict[str, str] = dict()
 
     @classmethod
-    def register_namespace(cls, shorthand, namespace):
+    def register_namespace(cls, shorthand: str, namespace: str) -> None:
         """
         Register shorthand for a namespace.
 
@@ -46,7 +48,7 @@ class OntologyUtils(object):
         Get the full IRI given the namespace shorthand and the local part
 
         :param shorthand: The namespace shorthand, e.g. 'xsd'
-        :param local_path: The local part of the IRI
+        :param local_part: The local part of the IRI
         :return: The full IRI containing the namespace and local part
         """
         return cls.get_namespace(shorthand) + local_part

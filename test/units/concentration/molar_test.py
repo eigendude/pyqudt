@@ -18,7 +18,7 @@ import unittest
 
 
 class MolarTest(unittest.TestCase):
-    def test_electron_volt(self):
+    def test_electron_volt(self) -> None:
         obs = Quantity(0.000001, ConcentrationUnit.MOLAR)
         obs2 = obs.convert_to(ConcentrationUnit.NANOMOLAR)
 

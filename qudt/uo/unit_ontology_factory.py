@@ -14,6 +14,10 @@
 from qudt.unit import Unit
 from qudt.ontology.unit_factory import UnitFactory
 
+from typing import Dict
+from typing import List
+from typing import Optional
+
 
 def long_iri(shortened_iri: str) -> str:
     if shortened_iri.startswith('uo:'):
@@ -30,7 +34,7 @@ class UnitOntologyFactory(object):
     """
     A class for creating units from the Unit Ontology.
     """
-    uo_to_qudt = {
+    uo_to_qudt: Dict[str, str] = {
         long_iri('uo:EFO_0004374'): long_iri('ops:MilligramPerDeciliter'),
         long_iri('uo:EFO_0004385'): long_iri('ops:PicogramPerMilliliter'),
         long_iri('uo:UO_0000009'): long_iri('qudt:Kilogram'),
@@ -80,19 +84,19 @@ class UnitOntologyFactory(object):
     }
 
     # Reverse the lookup table
-    qudt_to_uo = {
+    qudt_to_uo: Dict[str, str] = {
         v: k for k, v in uo_to_qudt.items()
     }
 
     @classmethod
-    def get_unit(cls, resource_iri: str) -> Unit:
+    def get_unit(cls, resource_iri: str) -> Optional[Unit]:
         """
         Get a unit from a Unit Ontology resource IRI.
 
         :param resource_iri: The IRI of a resource in the Unit Ontology
-        :return: The resoluved unit, or None on error
+        :return: The resolved unit, or None on error
         """
-        mapped_iri = cls.uo_to_qudt.get(resource_iri)
+        mapped_iri: Optional[str] = cls.uo_to_qudt.get(resource_iri)
 
         if mapped_iri:
             return UnitFactory.get_unit(mapped_iri)
@@ -100,16 +104,16 @@ class UnitOntologyFactory(object):
         return None
 
     @classmethod
-    def get_iris(cls, type_iri: str) -> list:
+    def get_iris(cls, type_iri: str) -> List[str]:
         """
         Return a list of unit IRIs with the given unit type.
 
         :param type_iri: The IRI of the unit type, e.g. 'http://qudt.org/schema/qudt#MolarConcentrationUnit'
         :return: The list of IRIs, or empty if no units match the specified type
         """
-        iris = []
+        iris: List[str] = list()
 
-        qudt_iris = UnitFactory.get_iris(type_iri)
+        qudt_iris: List[str] = UnitFactory.get_iris(type_iri)
 
         for qudt_iri in qudt_iris:
             uo_iri = cls.qudt_to_uo.get(qudt_iri)

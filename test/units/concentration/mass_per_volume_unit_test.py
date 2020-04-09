@@ -18,7 +18,7 @@ import unittest
 
 
 class MassPerVolumeUnitTest(unittest.TestCase):
-    def test_electron_volt(self):
+    def test_electron_volt(self) -> None:
         obs = Quantity(0.1, ConcentrationUnit.MICROGRAM_PER_MILLILITER)
         obs2 = obs.convert_to(ConcentrationUnit.PICOGRAM_PER_MILLILITER)
 

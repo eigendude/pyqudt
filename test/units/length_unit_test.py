@@ -18,8 +18,10 @@ import unittest
 
 
 class LengthUnitTest(unittest.TestCase):
-    def test_electron_volt(self):
+    def test_electron_volt(self) -> None:
         temp = Quantity(23.5, LengthUnit.NM)
+
+        assert temp.unit is not None
 
         self.assertEqual("nm", temp.unit.abbreviation)
 

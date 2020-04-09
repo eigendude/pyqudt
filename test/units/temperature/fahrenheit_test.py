@@ -18,14 +18,14 @@ import unittest
 
 
 class FahrenheitTest(unittest.TestCase):
-    def test_twenty_degrees(self):
+    def test_twenty_degrees(self) -> None:
         temp = Quantity(20, TemperatureUnit.CELSIUS)
         temp2 = temp.convert_to(TemperatureUnit.FAHRENHEIT)
 
         self.assertEqual(TemperatureUnit.FAHRENHEIT, temp2.unit)
         self.assertAlmostEqual(68, round(temp2.value, 2))
 
-    def test_minus_fourty(self):
+    def test_minus_fourty(self) -> None:
         temp = Quantity(-40, TemperatureUnit.CELSIUS)
         temp2 = temp.convert_to(TemperatureUnit.FAHRENHEIT)
 

@@ -18,8 +18,10 @@ import unittest
 
 
 class EnergyUnitTest(unittest.TestCase):
-    def test_electron_volt(self):
+    def test_electron_volt(self) -> None:
         temp = Quantity(-23.5, EnergyUnit.EV)
+
+        assert temp.unit is not None
 
         self.assertEqual("eV", temp.unit.abbreviation)
 

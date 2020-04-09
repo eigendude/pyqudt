@@ -17,7 +17,7 @@ import unittest
 
 
 class MultiplierTest(unittest.TestCase):
-    def test_constructor_null_unit(self):
+    def test_constructor_null_unit(self) -> None:
         multiplier = Multiplier(0.1, 0.2)
 
         self.assertAlmostEqual(0.1, multiplier.offset)

@@ -19,6 +19,15 @@ from qudt.unit import Unit
 
 import os
 import rdflib
+from typing import Callable
+from typing import List
+from typing import Optional
+from typing import Tuple
+
+
+# Type definitions
+Statement = Tuple[str, str, str]
+Predicate = Callable[[str, str, str], bool]
 
 
 # The package containing the RDF triplet repositories
@@ -38,7 +47,7 @@ class UnitFactory(object):
     A factory for creating units of measurement.
     """
 
-    _instance = None
+    _instance: Optional['UnitFactory'] = None
 
     def __init__(self):
         """
@@ -49,15 +58,15 @@ class UnitFactory(object):
         package_path = os.path.dirname(os.path.realpath(__file__))
 
         # Get the path to the repository files
-        self._repo_path = os.path.join(package_path, REPO_PACKAGE_NAME)
+        self._repo_path: str = os.path.join(package_path, REPO_PACKAGE_NAME)
 
         # Load the repositories
-        self._repos = [
+        self._repos: List[rdflib.Graph] = [
             self._read_repo(repo_file) for repo_file in REPO_FILES
         ]
 
     @classmethod
-    def _get_instance(cls):
+    def _get_instance(cls) -> 'UnitFactory':
         """
         Get the singleton used to store repository contents.
 
@@ -95,7 +104,7 @@ class UnitFactory(object):
             resource_iri=resource_iri,
         )
 
-        statements = self._get_statements(
+        statements: List[Statement] = self._get_statements(
             self._repos,
             lambda subj, pred, obj: str(subj) == resource_iri,
         )
@@ -119,7 +128,7 @@ class UnitFactory(object):
         return unit
 
     @classmethod
-    def find_units(cls, abbreviation: str) -> list:
+    def find_units(cls, abbreviation: str) -> List[Unit]:
         """
         Get units by their abbreviation.
 
@@ -128,13 +137,13 @@ class UnitFactory(object):
         """
         return cls._get_instance()._find_units(abbreviation)
 
-    def _find_units(self, abbreviation: str) -> list:
+    def _find_units(self, abbreviation: str) -> List[Unit]:
         """
         Internal implementation of find_units()
         """
-        found_units = []
+        found_units: List[Unit] = list()
 
-        statements = self._get_statements(
+        statements: List[Statement] = self._get_statements(
             self._repos,
             lambda subj, pred, o: str(pred) == QUDT.ABBREVIATION and str(o) == abbreviation,
         )
@@ -146,7 +155,7 @@ class UnitFactory(object):
         return found_units
 
     @classmethod
-    def get_iris(cls, type_iri: str) -> list:
+    def get_iris(cls, type_iri: str) -> List[str]:
         """
         Return a list of unit IRIs with the given unit type.
 
@@ -155,18 +164,18 @@ class UnitFactory(object):
         """
         return cls._get_instance()._get_iris(type_iri)
 
-    def _get_iris(self, type_iri: str) -> list:
+    def _get_iris(self, type_iri: str) -> List[str]:
         """
         Internal implementation of get_iris()
         """
-        statements = self._get_statements(
+        statements: List[Statement] = self._get_statements(
             self._repos,
             lambda subj, pred, o: str(o) == type_iri,
         )
 
         return [subj for (subj, pred, o) in statements]
 
-    def _read_repo(self, file_name) -> rdflib.Graph:
+    def _read_repo(self, file_name: str) -> rdflib.Graph:
         """
         Helper function to load the RDF triplet repository.
 
@@ -178,15 +187,18 @@ class UnitFactory(object):
         return OntologyReader.read(repo_path)
 
     @staticmethod
-    def _get_statements(repos, triplet_test):
+    def _get_statements(
+            repos: List[rdflib.Graph],
+            triplet_test: Predicate
+    ) -> List[Statement]:
         """
-        Get the statements of the given repos that match the provided resource IRI.
+        Get the statements of the given repos that satisfy the provided lambda.
 
         :param repos: The ontology repositories
-        :param resource_iri: The resource to locate
+        :param triplet_test: The lambda to invoke per statement
         :return: The matching statements
         """
-        statements = []
+        statements: List[Statement] = list()
 
         for repo in repos:
             for (subject, predicate, obj) in repo:

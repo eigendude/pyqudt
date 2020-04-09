@@ -14,6 +14,7 @@
 from qudt.unit import Unit
 
 import dataclasses
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -22,9 +23,9 @@ class Quantity(object):
     A quantity with a value and a unit.
     """
     value: float
-    unit: Unit
+    unit: Optional[Unit]
 
-    def convert_to(self, unit: Unit):
+    def convert_to(self, unit: Unit) -> 'Quantity':
         """
         Converts the quantity's value to the specified unit of measurement.
 

@@ -18,14 +18,14 @@ import unittest
 
 
 class CelsiusTest(unittest.TestCase):
-    def test_absolute_zero(self):
+    def test_absolute_zero(self) -> None:
         temp = Quantity(-273.15, TemperatureUnit.CELSIUS)
         temp2 = temp.convert_to(TemperatureUnit.KELVIN)
 
         self.assertEqual(TemperatureUnit.KELVIN, temp2.unit)
         self.assertAlmostEqual(0.0, temp2.value)
 
-    def test_room_temperature(self):
+    def test_room_temperature(self) -> None:
         temp = Quantity(20, TemperatureUnit.CELSIUS)
         temp2 = temp.convert_to(TemperatureUnit.KELVIN)
 

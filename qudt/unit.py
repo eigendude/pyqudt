@@ -28,5 +28,5 @@ class Unit(object):
     type_iri: str = dataclasses.field(default_factory=str)
     multiplier: Multiplier = dataclasses.field(default_factory=Multiplier)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.abbreviation)

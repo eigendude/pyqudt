@@ -18,7 +18,7 @@ import unittest
 
 
 class TimeUnitTest(unittest.TestCase):
-    def test(self):
+    def test(self) -> None:
         hour = UnitFactory.get_unit('http://qudt.org/vocab/unit#Hour')
         second = UnitFactory.get_unit('http://qudt.org/vocab/unit#SecondTime')
 

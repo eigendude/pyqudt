@@ -21,7 +21,7 @@ ONTOLOGY_FILE = 'ops.ttl'
 
 
 class OntologyReaderTest(unittest.TestCase):
-    def test_unit_ontology(self):
+    def test_unit_ontology(self) -> None:
         schema_path = UnitFactory.get_repo_dir()
 
         repo_path = os.path.join(schema_path, ONTOLOGY_FILE)

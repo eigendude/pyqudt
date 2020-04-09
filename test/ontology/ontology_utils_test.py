@@ -20,12 +20,12 @@ OntologyUtils.register_namespace('qudt', 'http://qudt.org/schema/qudt#')
 
 
 class OntologyUtilsTest(unittest.TestCase):
-    def test_get_namespace(self):
+    def test_get_namespace(self) -> None:
         namespace = OntologyUtils.get_namespace('qudt')
 
         self.assertEqual('http://qudt.org/schema/qudt#', namespace)
 
-    def test_get_iri(self):
+    def test_get_iri(self) -> None:
         resource_iri = OntologyUtils.get_iri('qudt', 'symbol')
 
         self.assertEqual('http://qudt.org/schema/qudt#symbol', resource_iri)

@@ -18,8 +18,10 @@ import unittest
 
 
 class UnitOntologyFactoryTest(unittest.TestCase):
-    def test_get_unit(self):
+    def test_get_unit(self) -> None:
         unit = UnitOntologyFactory.get_unit('http://purl.obolibrary.org/obo/UO_0000065')
+
+        assert unit is not None
 
         self.assertTrue(isinstance(unit, Unit))
         self.assertEqual('Nanomolar', unit.label)
@@ -29,7 +31,7 @@ class UnitOntologyFactoryTest(unittest.TestCase):
         self.assertEqual(0, unit.multiplier.offset)
         self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
-    def test_get_units_by_qudt_type(self):
+    def test_get_units_by_qudt_type(self) -> None:
         units = UnitOntologyFactory.get_iris('http://qudt.org/schema/qudt#MolarConcentrationUnit')
 
         self.assertTrue(units)

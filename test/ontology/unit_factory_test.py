@@ -18,12 +18,12 @@ import unittest
 
 
 class UnitFactoryTest(unittest.TestCase):
-    def test_get_instance(self):
+    def test_get_instance(self) -> None:
         factory = UnitFactory._get_instance()
 
         self.assertTrue(factory)
 
-    def test_get_unit(self):
+    def test_get_unit(self) -> None:
         unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Kelvin')
 
         self.assertTrue(isinstance(unit, Unit))
@@ -34,13 +34,13 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual(0, unit.multiplier.offset)
         self.assertEqual('http://qudt.org/schema/qudt#TemperatureUnit', unit.type_iri)
 
-    def test_get_iris(self):
+    def test_get_iris(self) -> None:
         units = UnitFactory.get_iris('http://qudt.org/schema/qudt#TemperatureUnit')
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
 
-    def test_get_open_phacts_unit(self):
+    def test_get_open_phacts_unit(self) -> None:
         unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanomolar')
 
         self.assertTrue(unit)
@@ -51,13 +51,13 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertAlmostEqual(0, unit.multiplier.offset)
         self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
-    def test_get_open_phacts_unit_newer(self):
+    def test_get_open_phacts_unit_newer(self) -> None:
         unit = UnitFactory.get_unit('http://www.openphacts.org/units/NanogramPerMilliliter')
 
         self.assertTrue(unit)
         self.assertEqual('http://qudt.org/schema/qudt#MassPerVolumeUnit', unit.type_iri)
 
-    def test_find_units(self):
+    def test_find_units(self) -> None:
         units = UnitFactory.find_units('nM')
 
         self.assertTrue(units)

@@ -18,7 +18,7 @@ import unittest
 
 
 class SquareAreaTest(unittest.TestCase):
-    def test_electron_volt(self):
+    def test_electron_volt(self) -> None:
         area = Quantity(5, AreaUnit.SQUARE_ANGSTROM)
         area2 = area.convert_to(AreaUnit.SQUARE_METER)
 

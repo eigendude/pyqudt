@@ -13,6 +13,7 @@
 
 import os
 import rdflib
+from typing import Optional
 
 
 class OntologyReader(object):
@@ -21,7 +22,7 @@ class OntologyReader(object):
     """
 
     @classmethod
-    def read(cls, repo_path) -> rdflib.Graph:
+    def read(cls, repo_path: str) -> rdflib.Graph:
         """
         Read an RDF triplet repository.
 
@@ -40,7 +41,7 @@ class OntologyReader(object):
         return g
 
     @staticmethod
-    def _get_repo_format(repo_path: str) -> str:
+    def _get_repo_format(repo_path: str) -> Optional[str]:
         """
         Get the RDF format used by RDFLib based on the file's extension.
 

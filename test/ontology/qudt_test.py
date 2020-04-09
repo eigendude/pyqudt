@@ -17,7 +17,7 @@ import unittest
 
 
 class QUDTTest(unittest.TestCase):
-    def test_unit_ontology(self):
+    def test_unit_ontology(self) -> None:
         symbol_iri = QUDT.SYMBOL
 
         self.assertTrue(symbol_iri.startswith(QUDT.namespace))
