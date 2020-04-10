@@ -17,7 +17,7 @@ from qudt.ontology.unit_factory import UnitFactory
 import os
 import unittest
 
-ONTOLOGY_FILE = 'ops.ttl'
+ONTOLOGY_FILE = 'openphacts.ttl'
 
 
 class OntologyReaderTest(unittest.TestCase):
