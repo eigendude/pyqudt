@@ -11,7 +11,9 @@
 #
 ################################################################################
 
+import json
 import os
+import pyld.jsonld
 import rdflib
 from typing import Optional
 
@@ -36,7 +38,19 @@ class OntologyReader(object):
         # See https://github.com/RDFLib/rdflib-jsonld/issues/53
         # TODO: Fix URL
         g = rdflib.ConjunctiveGraph()
-        g.parse(repo_path, format=repo_format)
+
+        if repo_format == 'json-ld':
+            # JSON-LD support in rdflib is limited. Particularly, while it can
+            # handle namespaces, it cannot handle fully compacted JSON-LD.
+            #
+            # To allow for compacted JSON-LD, we use pyld to expand the JSON-LD
+            # for rdflib.
+            with open(repo_path, 'r') as file:
+                compacted = json.loads(file.read())
+            expanded = pyld.jsonld.expand(compacted)
+            g.parse(data=json.dumps(expanded), format=repo_format)
+        else:
+            g.parse(repo_path, format=repo_format)
 
         return g
 

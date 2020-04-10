@@ -45,6 +45,7 @@ setuptools.setup(
         'qudt.ontology.resources': ['*'],
     },
     install_requires=[
+        'PyLD',
         'rdflib',
         'rdflib-jsonld',
     ],
