@@ -19,6 +19,10 @@ OntologyUtils.register_namespace('qudt', 'http://qudt.org/schema/qudt#')
 class QUDT(object):
     namespace = OntologyUtils.get_namespace('qudt')
 
+    QUANTITY_VALUE = OntologyUtils.get_iri('qudt', 'QuantityValue')
+
+    UNIT = OntologyUtils.get_iri('qudt', 'unit')
+    NUMERIC_VALUE = OntologyUtils.get_iri('qudt', 'numericValue')
     SYMBOL = OntologyUtils.get_iri('qudt', 'symbol')
     ABBREVIATION = OntologyUtils.get_iri('qudt', 'abbreviation')
     CONVERSION_OFFSET = OntologyUtils.get_iri('qudt', 'conversionOffset')
