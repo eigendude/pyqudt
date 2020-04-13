@@ -78,7 +78,7 @@ class UnitFactory(object):
     @classmethod
     def get_repo_dir(cls) -> str:
         """
-        Get the directory used for loading repostories.
+        Get the directory used for loading repositories.
 
         :return: The path to the repository directory
         """
@@ -131,7 +131,7 @@ class UnitFactory(object):
         Get units by their abbreviation.
 
         :param abbreviation: The unit abbreviation, e.g. 'nM'
-        :return: The list of units, or empty if no units matched the symbol
+        :return: The list of units, or empty if no units matched the abbreviation
         """
         return cls._get_instance()._find_units(abbreviation)
 

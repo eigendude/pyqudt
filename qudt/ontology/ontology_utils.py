@@ -28,7 +28,7 @@ class OntologyUtils(object):
         Register shorthand for a namespace.
 
         :param shorthand: The shorthand, e.g. 'xsd'
-        :param namespace The namespace, e.g. 'http://www.w3.org/2001/XMLSchema#'
+        :param namespace: The namespace, e.g. 'http://www.w3.org/2001/XMLSchema#'
         """
         cls._namespaces[shorthand] = namespace
 

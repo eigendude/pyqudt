@@ -8,7 +8,7 @@
 #
 #  SPDX-License-Identifier: BSD-3-Clause
 #  See the file LICENSE for more information.
-#################################################################################
+################################################################################
 
 from qudt.ontology.ontology_utils import OntologyUtils
 
