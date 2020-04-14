@@ -59,9 +59,12 @@ class UnitFactory(object):
         self._repo_path: str = os.path.join(package_path, REPO_PACKAGE_NAME)
 
         # Load the repositories
-        self._repos: List[rdflib.Graph] = [
-            self._read_repo(repo_file) for repo_file in REPO_FILES
-        ]
+        self._repos: List[rdflib.Graph] = list()
+        for repo_file in REPO_FILES:
+            try:
+                self._repos.append(self._read_repo(repo_file))
+            except FileNotFoundError:
+                pass
 
     @classmethod
     def _get_instance(cls) -> 'UnitFactory':
@@ -83,6 +86,30 @@ class UnitFactory(object):
         :return: The path to the repository directory
         """
         return cls._get_instance()._repo_path
+
+    @classmethod
+    def load_repo(cls, repo_file: str) -> int:
+        """
+        Loads the specified RDF triplet repo using rdflib.
+
+        If the repo's file does not exist, this function has no effect and
+        returns 0.
+
+        :param repo_file: The path to the RDF triplet repo
+        :return: The number of triplets loaded, or 0 if the file doesn't exist
+        """
+        # Load the repository
+        try:
+            repo = OntologyReader.read(repo_file)
+        except FileNotFoundError:
+            return 0
+
+        # Store the results
+        if repo:
+            cls._get_instance()._repos.append(repo)
+
+        # Return the number of triplets read into the graph
+        return len(repo)
 
     @classmethod
     def get_unit(cls, resource_iri: str) -> Unit:
