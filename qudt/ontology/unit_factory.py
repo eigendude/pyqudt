@@ -37,6 +37,7 @@ REPO_PACKAGE_NAME = 'resources'
 REPO_FILES = [
     'openphacts.jsonld',
     'unit.jsonld',
+    'contrib.jsonld',
 ]
 
 

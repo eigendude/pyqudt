@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "aclima": "http://aclima.io/schema/1.0/",
+    "qudt": "http://qudt.org/schema/qudt#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "abbreviation": "qudt:abbreviation",
+    "label": "rdfs:label",
+    "multiplier": "qudt:conversionMultiplier",
+    "offset": "qudt:conversionOffset",
+    "symbol": "qudt:symbol"
+  },
+  "@graph": [
+    {
+      "@id": "aclima:Kilobyte",
+      "@type": [
+        "qudt:InformationEntropyUnit",
+        "qudt:DerivedUnit"
+      ],
+      "abbreviation": "KB",
+      "multiplier": 1.0e3,
+      "offset": 0.0,
+      "symbol": "KB",
+      "label": "Kilobyte"
+    },
+    {
+      "@id": "aclima:Megabyte",
+      "@type": [
+        "qudt:InformationEntropyUnit",
+        "qudt:DerivedUnit"
+      ],
+      "abbreviation": "MB",
+      "multiplier": 1.0e6,
+      "offset": 0.0,
+      "symbol": "MB",
+      "label": "Megabyte"
+    },
+    {
+      "@id": "aclima:Gigabyte",
+      "@type": [
+        "qudt:InformationEntropyUnit",
+        "qudt:DerivedUnit"
+      ],
+      "abbreviation": "GB",
+      "multiplier": 1.0e9,
+      "offset": 0.0,
+      "symbol": "GB",
+      "label": "Gigabyte"
+    }
+  ]
+}
