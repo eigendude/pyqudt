@@ -9789,7 +9789,7 @@
       ],
       "qudt:abbreviation": "B",
       "qudt:code": "3040",
-      "qudt:conversionMultiplier": 5.54517744,
+      "qudt:conversionMultiplier": 1.0,
       "qudt:conversionOffset": 0.0,
       "qudt:symbol": "B",
       "rdfs:label": "Byte",
