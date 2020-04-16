@@ -26,8 +26,8 @@ from typing import Tuple
 
 
 # Type definitions
-Statement = Tuple[str, str, str]
-Predicate = Callable[[str, str, str], bool]
+Statement = Tuple[str, str, rdflib.term.Identifier]
+Predicate = Callable[[str, str, rdflib.term.Identifier], bool]
 
 
 # The package containing the RDF triplet repositories
