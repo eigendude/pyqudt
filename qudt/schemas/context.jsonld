@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "http://qudt.org/schema/qudt#",
+
+    "prov": "http://www.w3.org/ns/prov#",
+    "qudt": "http://qudt.org/schema/qudt#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "spdx": "http://spdx.org/rdf/terms#",
+    "unit": "http://qudt.org/vocab/unit#",
+
+    "description": {
+      "@id": "schema:description",
+      "@container": "@language",
+      "@language": "en-US"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language",
+      "@language": "en-US"
+    }
+  }
+}

@@ -30,6 +30,10 @@ class QuantityTest(unittest.TestCase):
         self.assertAlmostEqual(0.1, quantity.value)
         self.assertEqual(TemperatureUnit.CELSIUS, quantity.unit)
 
+    def test_jsonld(self) -> None:
+        quantity = Quantity(0.1, TemperatureUnit.CELSIUS)
+
+        self.assertTrue(quantity.jsonld(), '')
 
 if __name__ == '__main__':
     unittest.main()

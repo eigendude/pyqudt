@@ -11,11 +11,13 @@
 #
 ################################################################################
 
+from qudt.contrib.models import BaseModel
+
 import dataclasses
 
 
 @dataclasses.dataclass
-class Unit(object):
+class Unit(BaseModel):
     """
     A unit of measurement.
     """

@@ -11,6 +11,7 @@
 #
 ################################################################################
 
+from qudt.contrib.models import BaseModel
 from qudt.unit import Unit
 
 import dataclasses
@@ -18,7 +19,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class Quantity(object):
+class Quantity(BaseModel):
     """
     A quantity with a value and a unit.
     """

@@ -82,6 +82,13 @@ class UnitTest(unittest.TestCase):
         self.assertTrue(unit.symbol)
         self.assertEqual(symbol, unit.symbol)
 
+    def test_jsonld(self) -> None:
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
+
+        unit = Unit(resource_iri=resource_iri)
+
+        self.assertTrue(unit.jsonld(), '')
+
 
 if __name__ == '__main__':
     unittest.main()
