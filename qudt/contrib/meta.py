@@ -145,6 +145,7 @@ class CustomDict(MutableMapping):
     _defaults = dict()
     _aliases = {
         "id": "@id",
+        "resource_iri": "@id",
     }
 
     def __init__(self, *args, **kwargs):
