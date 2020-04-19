@@ -141,9 +141,9 @@ class UnitFactory(object):
             elif predicate == QUDT.ABBREVIATION:
                 unit.abbreviation = str(obj)
             elif predicate == QUDT.CONVERSION_OFFSET:
-                unit.multiplier.offset = float(obj)
+                unit.offset = float(obj)
             elif predicate == QUDT.CONVERSION_MULTIPLIER:
-                unit.multiplier.multiplier = float(obj)
+                unit.multiplier = float(obj)
             elif predicate == RDFS.LABEL:
                 unit.label = str(obj)
             elif predicate == RDF.TYPE:

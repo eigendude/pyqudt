@@ -27,8 +27,8 @@ class UnitOntologyFactoryTest(unittest.TestCase):
         self.assertEqual('Nanomolar', unit.label)
         self.assertEqual('nmol/dm^3', unit.symbol)
         self.assertEqual('nM', unit.abbreviation)
-        self.assertEqual(0.000001, unit.multiplier.multiplier)
-        self.assertEqual(0, unit.multiplier.offset)
+        self.assertEqual(0.000001, unit.multiplier)
+        self.assertEqual(0, unit.offset)
         self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
     def test_get_units_by_qudt_type(self) -> None:
