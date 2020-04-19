@@ -49,10 +49,10 @@ class Quantity(object):
             )
 
         # Convert to the base unit
-        base_unit_value = self.value * self.unit.multiplier.multiplier + self.unit.multiplier.offset
+        base_unit_value = self.value * self.unit.multiplier + self.unit.offset
 
         # Convert the base unit to the new unit
-        new_value = (base_unit_value - unit.multiplier.offset) / unit.multiplier.multiplier
+        new_value = (base_unit_value - unit.offset) / unit.multiplier
 
         new_measurement = Quantity(
             unit=unit,

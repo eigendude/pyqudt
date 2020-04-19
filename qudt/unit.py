@@ -11,8 +11,6 @@
 #
 ################################################################################
 
-from qudt.multiplier import Multiplier
-
 import dataclasses
 
 
@@ -26,7 +24,8 @@ class Unit(object):
     abbreviation: str = dataclasses.field(default_factory=str)
     symbol: str = dataclasses.field(default_factory=str)
     type_iri: str = dataclasses.field(default_factory=str)
-    multiplier: Multiplier = dataclasses.field(default_factory=Multiplier)
+    offset: float = dataclasses.field(default=0.0)
+    multiplier: float = dataclasses.field(default=1.0)
 
     def __repr__(self) -> str:
         return str(self.abbreviation)

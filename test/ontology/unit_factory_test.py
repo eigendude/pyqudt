@@ -30,8 +30,8 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('Kelvin', unit.label)
         self.assertEqual('K', unit.symbol)
         self.assertEqual('K', unit.abbreviation)
-        self.assertEqual(1, unit.multiplier.multiplier)
-        self.assertEqual(0, unit.multiplier.offset)
+        self.assertEqual(1, unit.multiplier)
+        self.assertEqual(0, unit.offset)
         self.assertEqual('http://qudt.org/schema/qudt#TemperatureUnit', unit.type_iri)
 
     def test_get_iris(self) -> None:
@@ -47,8 +47,8 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('Nanomolar', unit.label)
         self.assertEqual('nmol/dm^3', unit.symbol)
         self.assertEqual('nM', unit.abbreviation)
-        self.assertAlmostEqual(0.000001, unit.multiplier.multiplier)
-        self.assertAlmostEqual(0, unit.multiplier.offset)
+        self.assertAlmostEqual(0.000001, unit.multiplier)
+        self.assertAlmostEqual(0, unit.offset)
         self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
     def test_get_open_phacts_unit_newer(self) -> None:
