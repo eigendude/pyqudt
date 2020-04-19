@@ -82,6 +82,42 @@ class UnitTest(unittest.TestCase):
         self.assertTrue(unit.symbol)
         self.assertEqual(symbol, unit.symbol)
 
+    def test_jsonld(self) -> None:
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
+
+        unit = Unit(resource_iri=resource_iri)
+
+        self.assertTrue(unit.jsonld())
+
+    def test_serialization(self) -> None:
+        # TODO: Improve serialization test
+
+        resource_iri = 'http://qudt.org/vocab/unit#Kelvin'
+
+        unit = Unit(resource_iri=resource_iri)
+
+        self.assertTrue(unit.serialize())
+
+    def test_deserialize(self) -> None:
+        doc = {
+            "@id": "http://qudt.org/vocab/unit#DegreeCelsius",
+            "@type": "http://qudt.org/schema/qudt#TemperatureUnit",
+            "http://qudt.org/schema/qudt#abbreviation": "degC",
+            "http://qudt.org/schema/qudt#conversionMultiplier": 1.0,
+            "http://qudt.org/schema/qudt#conversionOffset": 273.15,
+            "http://qudt.org/schema/qudt#symbol": "degC",
+            "http://www.w3.org/2000/01/rdf-schema#label": "Degree Celsius"
+        }
+
+        unit = Unit.from_jsonld(doc)
+
+        self.assertEqual(unit.resource_iri, "http://qudt.org/vocab/unit#DegreeCelsius")
+        self.assertEqual(unit.type_iri, "http://qudt.org/schema/qudt#TemperatureUnit")
+        self.assertEqual(unit.abbreviation, "degC")
+        self.assertAlmostEqual(unit.multiplier, 1.0)
+        self.assertAlmostEqual(unit.offset, 273.15)
+        self.assertEqual(unit.label, "Degree Celsius")
+
 
 if __name__ == '__main__':
     unittest.main()

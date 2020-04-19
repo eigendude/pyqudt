@@ -11,14 +11,22 @@
 #
 ################################################################################
 
+from qudt.model import BaseModel
+from qudt.model import coerce
+from qudt.model import link
+from qudt.ontology.qudt import QUDT
+from qudt.ontology.unit import UNIT
 from qudt.unit import Unit
 
 import dataclasses
+from typing import Any
+from typing import ClassVar
+from typing import Dict
 from typing import Optional
 
 
-@dataclasses.dataclass
-class Quantity(object):
+@dataclasses.dataclass(repr=False)
+class Quantity(BaseModel):
     """
     A quantity with a value and a unit.
     """
@@ -66,3 +74,29 @@ class Quantity(object):
         Return a string representation of the quantity.
         """
         return f'{self.value} {self.unit}'
+
+    ############################################################################
+    # Serialization
+    ############################################################################
+
+    _SCHEMA: ClassVar[Dict[str, Any]] = {
+        '@type': QUDT.QUANTITY_VALUE,
+        'value': QUDT.NUMERIC_VALUE,
+        'unit': coerce(QUDT.UNIT, lambda unit: link(unit.resource_iri) if unit else UNIT.UNITLESS),
+    }
+
+    ############################################################################
+    # Deserialization
+    ############################################################################
+
+    @staticmethod
+    def from_jsonld(jsonld_document: Dict[str, Any]) -> 'Quantity':
+        """
+        Deserialize data model.
+        """
+        from qudt.ontology.unit_factory import UnitFactory
+
+        return Quantity(
+            value=jsonld_document[QUDT.NUMERIC_VALUE],
+            unit=UnitFactory.get_unit(jsonld_document.get(QUDT.UNIT, UNIT.UNITLESS))
+        )
