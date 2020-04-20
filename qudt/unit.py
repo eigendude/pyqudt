@@ -42,9 +42,8 @@ class Unit(BaseModel):
     offset: float = dataclasses.field(default=0.0)
     multiplier: float = dataclasses.field(default=1.0)
 
-    def __post_init__(self):
-        BaseModel.__post_init__(self, _CONTEXT)
-        # self._post_init(_CONTEXT)
+    def __post_init__(self) -> None:
+        BaseModel.__init__(self, _CONTEXT)
 
     def __repr__(self) -> str:
         return str(self.abbreviation)

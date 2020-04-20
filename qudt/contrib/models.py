@@ -26,10 +26,7 @@ class BaseModel:
     """
     Base model for alternative representations, such as JSON-LD.
     """
-    def __init__(self):
-        pass
-
-    def __post_init__(self, context: Dict[str, str]):
+    def __init__(self, context: Dict[str, str]):
         schema_fields = list(self.__dict__.keys())
 
         self._id_field: Optional[str] = None
