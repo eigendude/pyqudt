@@ -11,7 +11,7 @@
 #
 ################################################################################
 
-from qudt.contrib.models import BaseModel
+from qudt.model import BaseModel
 from qudt.ontology.qudt import QUDT
 from qudt.ontology.rdfs import RDFS
 
