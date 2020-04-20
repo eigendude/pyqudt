@@ -12,6 +12,7 @@
 ################################################################################
 
 from qudt.quantity import Quantity
+from qudt.units.dimensionless import DimensionlessUnit
 from qudt.units.temperature import TemperatureUnit
 
 import unittest
@@ -19,10 +20,10 @@ import unittest
 
 class QuantityTest(unittest.TestCase):
     def test_constructor_null_unit(self) -> None:
-        quantity = Quantity(0.1, None)
+        quantity = Quantity(0.1)
 
         self.assertAlmostEqual(0.1, quantity.value)
-        self.assertFalse(quantity.unit)
+        self.assertEqual(quantity.unit.resource_iri, DimensionlessUnit.UNITLESS.resource_iri)
 
     def test_constructor(self) -> None:
         quantity = Quantity(0.1, TemperatureUnit.CELSIUS)

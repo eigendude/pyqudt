@@ -21,17 +21,7 @@ Meta-programming for the models.
 
 from abc import ABCMeta
 from collections import MutableMapping
-from collections import namedtuple
-import copy
 import inspect
-import json
-
-
-_Alias = namedtuple('Alias', ['indict', 'default'])
-
-
-def alias(key, default=None):
-    return _Alias(key, default)
 
 
 class BaseMeta(ABCMeta):
@@ -53,26 +43,16 @@ class BaseMeta(ABCMeta):
     """
 
     def __new__(mcs, name, bases, attrs, **kwargs):
-        defaults = dict()
         aliases = dict()
 
+        attrs = mcs.expand_attrs(name, attrs)
+
         for base in bases:
-            if hasattr(base, '_defaults'):
-                defaults.update(getattr(base, '_defaults'))
             if hasattr(base, '_aliases'):
                 aliases.update(getattr(base, '_aliases'))
 
         info, rest = mcs.split_attrs(attrs)
 
-        for i in list(info.keys()):
-            if isinstance(info[i], _Alias):
-                aliases[i] = info[i].indict
-                if info[i].default is not None:
-                    defaults[i] = info[i].default
-            else:
-                defaults[i] = info[i]
-
-        rest['_defaults'] = defaults
         rest['_aliases'] = aliases
 
         cls = super().__new__(mcs, name, tuple(bases), rest)
@@ -100,9 +80,6 @@ class BaseMeta(ABCMeta):
     def split_attrs(attrs):
         """
         Extract the attributes of the class.
-
-        This allows adding default values in the class definition.
-        e.g.:
         """
         is_attr = dict()
         rest = dict()
@@ -114,19 +91,6 @@ class BaseMeta(ABCMeta):
                 rest[key] = value
 
         return is_attr, rest
-
-    @staticmethod
-    def get_defaults(schema):
-        temp = dict()
-
-        for obj in [
-            schema,
-        ] + schema.get('allOf', list()):
-            for key, value in obj.get('properties', dict()).items():
-                if 'default' in value and key not in temp:
-                    temp[key] = value['default']
-
-        return temp
 
 class CustomDict(MutableMapping):
     """
@@ -142,16 +106,14 @@ class CustomDict(MutableMapping):
     True
     """
 
-    _defaults = dict()
     _aliases = {
         "id": "@id",
+        "resource_iri": "@id",
+        "type_iri": "@type",
     }
 
     def __init__(self, *args, **kwargs):
         super().__init__()
-
-        for key, value in self._defaults.items():
-            self[key] = copy.copy(value)
 
         for arg in args:
             self.update(arg)
@@ -161,10 +123,10 @@ class CustomDict(MutableMapping):
 
         return self
 
-    def serializable(self, **kwargs):
+    def serializable(self):
         def ser_or_down(item):
             if hasattr(item, 'serializable'):
-                return item.serializable(**kwargs)
+                return item.serializable()
             elif isinstance(item, dict):
                 temp = dict()
 
@@ -178,7 +140,7 @@ class CustomDict(MutableMapping):
             else:
                 return item
 
-        return ser_or_down(self.as_dict(**kwargs))
+        return ser_or_down(self.as_dict())
 
     def __getitem__(self, key):
         return self.__dict__[key]
@@ -194,41 +156,21 @@ class CustomDict(MutableMapping):
         key = self._key_to_attr(key)
         del self.__dict__[key]
 
-    def as_dict(self, verbose=True, aliases=False):
+    def as_dict(self):
         attrs = self.__dict__.keys()
-
-        if not verbose and hasattr(self, '_terse_keys'):
-            attrs = self._terse_keys + ['@type', '@id']
 
         result = {
             key: getattr(self, key) for key in attrs
             if not self._internal_key(key) and hasattr(self, key)
         }
 
-        if not aliases:
-            return result
-
-        # The name 'old_key' is inferred from original naming 'ok'. This
-        # assumption may be incorrect
-        for key, old_key in self._aliases.items():
-            if old_key in result:
-                result[key] = getattr(result, old_key)
-                del result[old_key]
-
         return result
-
-    def __iter__(self):
-        return (key for key in self.__dict__ if not self._internal_key(key))
-
-    def __len__(self):
-        return len(self.__dict__)
 
     def update(self, other):
         for key, value in other.items():
             self[key] = value
 
     def _attr_to_key(self, key):
-        key = key.replace('__', ':', 1)
         key = self._aliases.get(key, key)
         return key
 
@@ -238,12 +180,10 @@ class CustomDict(MutableMapping):
 
         if key in self._aliases:
             key = self._aliases[key]
-        else:
-            key = key.replace(':', '__', 1)
 
         return key
 
-    def __getattr__(self, key):
+    def _getattr(self, key):
         # The name 'new_key' is inferred from original naming 'nkey'. This
         # assumption may be incorrect
         new_key = self._attr_to_key(key)
@@ -255,18 +195,12 @@ class CustomDict(MutableMapping):
 
         return getattr(self, new_key)
 
-    def __setattr__(self, key, value):
+    def _setattr(self, key, value):
         super().__setattr__(self._attr_to_key(key), value)
 
-    def __delattr__(self, key):
+    def _delattr(self, key):
         super().__delattr__(self._attr_to_key(key))
 
     @staticmethod
     def _internal_key(key):
         return key[0] == '_'
-
-    def __str__(self):
-        return json.dumps(self.serializable(), sort_keys=True, indent=4)
-
-    def __repr__(self):
-        return json.dumps(self.serializable(), sort_keys=True, indent=4)

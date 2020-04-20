@@ -12,11 +12,24 @@
 ################################################################################
 
 from qudt.contrib.models import BaseModel
+from qudt.ontology.qudt import QUDT
+from qudt.ontology.rdfs import RDFS
 
 import dataclasses
 
 
-@dataclasses.dataclass
+_CONTEXT = {
+    'resource_iri': '@id',
+    'label': RDFS.LABEL,
+    'abbreviation': QUDT.ABBREVIATION,
+    'symbol': QUDT.SYMBOL,
+    'type_iri': '@type',
+    'offset': QUDT.CONVERSION_OFFSET,
+    'multiplier': QUDT.CONVERSION_MULTIPLIER,
+}
+
+
+@dataclasses.dataclass(repr=False)
 class Unit(BaseModel):
     """
     A unit of measurement.
@@ -28,6 +41,10 @@ class Unit(BaseModel):
     type_iri: str = dataclasses.field(default_factory=str)
     offset: float = dataclasses.field(default=0.0)
     multiplier: float = dataclasses.field(default=1.0)
+
+    def __post_init__(self):
+        BaseModel.__post_init__(self, _CONTEXT)
+        # self._post_init(_CONTEXT)
 
     def __repr__(self) -> str:
         return str(self.abbreviation)

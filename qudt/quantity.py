@@ -12,19 +12,31 @@
 ################################################################################
 
 from qudt.contrib.models import BaseModel
+from qudt.ontology.qudt import QUDT
 from qudt.unit import Unit
+from qudt.units.dimensionless import DimensionlessUnit
 
 import dataclasses
-from typing import Optional
 
 
-@dataclasses.dataclass
+_CONTEXT = {
+    '@type': QUDT.QUANTITY_VALUE,
+    'value': QUDT.NUMERIC_VALUE,
+    'unit': [QUDT.UNIT, lambda unit: unit.resource_iri],
+}
+
+
+@dataclasses.dataclass(repr=False)
 class Quantity(BaseModel):
     """
     A quantity with a value and a unit.
     """
     value: float
-    unit: Optional[Unit]
+    unit: Unit = DimensionlessUnit.UNITLESS
+
+    def __post_init__(self) -> None:
+        BaseModel.__post_init__(self, _CONTEXT)
+        #self._post_init(_CONTEXT)
 
     def convert_to(self, unit: Unit) -> 'Quantity':
         """

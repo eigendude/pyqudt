@@ -14,140 +14,115 @@
 #  SPDX-License-Identifier: Apache-2.0
 #
 ################################################################################
-"""
-Base model
-
-The implementation should mirror the JSON schema definition. For compatibility
-with Python 3 and for easier debugging, this new version drops introspection
-and adds all arguments to the models.
-"""
-
-from qudt.contrib.meta import BaseMeta
-from qudt.contrib.meta import CustomDict
 
 import json
-import os
 import pyld.jsonld
-from six import with_metaclass  # TODO: Update for Python 3
-import time
-
-CONTEXT_PATH = os.path.abspath(
-    os.path.join(
-        os.path.dirname(os.path.realpath(__file__)),
-        '..',
-        'schemas',
-        'context.jsonld'
-    )
-)
-
-def load_context(context):
-    if not context:
-        return context
-    elif isinstance(context, list):
-        contexts = list()
-        for c in context:
-            contexts.append(load_context(c))
-        return contexts
-    elif isinstance(context, dict):
-        return dict(context)
-    elif isinstance(context, str):
-        with open(context) as f:
-            return dict(json.loads(f.read()))
-    else:
-        raise AttributeError('Please, provide a valid context')
+from typing import Any
+from typing import Dict
+from typing import Optional
 
 
-base_context = load_context(CONTEXT_PATH)
-
-
-class BaseModel(with_metaclass(BaseMeta, CustomDict)):
+class BaseModel:
     """
-    Entities of the base model are a special kind of dictionary that emulates
-    a JSON-LD object. For convenience, the values can also be accessed as
-    attributes, a la Javascript. e.g.:
-
-    >>> myobject.key == myobject['key']
-    True
-    >>> myobject.ns__name == myobject['ns:name']
-    True
-
-    Additionally, subclasses of this class can specify default values for their
-    instances. These defaults are inherited by subclasses. e.g.:
-
-    >>> class NewModel(BaseModel):
-    ...     mydefault = 5
-    >>> n1 = NewModel()
-    >>> n1['mydefault'] == 5
-    True
-    >>> n1.mydefault = 3
-    >>> n1['mydefault'] == 3  # TODO: Upstream has an error using = instead of ==
-    True
-    >>> class SubModel(NewModel):
-    >>>     pass
-    >>> subn = SubModel()
-    >>> subn.mydefault == 5
-    True
-
-    Lastly, every subclass that also specifies a schema will get registered, so
-    it is possible to deserialize JSON and get the right type, i.e. to recover
-    an instance of the original class from a plan JSON.
+    Base model for alternative representations, such as JSON-LD.
     """
+    def __init__(self):
+        pass
 
-    _context = base_context['@context']
+    def __post_init__(self, context: Dict[str, str]):
+        schema_fields = list(self.__dict__.keys())
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        self._id_field: Optional[str] = None
+        self._type_field: Optional[str] = None
+        self._id_iri: Optional[str] = None
+        self._type_iri: Optional[str] = None
 
-    @property
-    def id(self):
-        if '@id' not in self:
-            self['@id'] = f'prefix:{type(self).__name__}_{time.time()}'
-        return self['@id']
+        self._context = {
+            field: context[field] for field in schema_fields
+        }
 
-    @id.setter
-    def id(self, value):
-        self['@id'] = value
+        # Handle coercions
+        self._coercions = {
+            field: context[field][1] for field in schema_fields
+            if isinstance(context[field], list)
+        }
 
-    def jsonld(self,
-               with_context=False,
-               context_uri=None,
-               prefix=None,
-               expanded=False,
-               **kwargs):
+        # Handle type and ID overrides
+        if '@id' in context:
+            self._id_iri = context['@id']
+        if '@type' in context:
+            self._type_iri = context['@type']
 
-        result = self.serializable(**kwargs)
+        # Handle fields
+        for field, iri in self._context.items():
+            # Dereference fields with coercions
+            if isinstance(iri, list):
+                iri = iri[0]
+                self._context[field] = iri
 
-        if expanded:
-            result = pyld.jsonld.expand(
-                result,
-                options={
-                    'expandContext': [
-                        self._context,
-                        {
-                            'prefix': prefix,
-                            'endpoint': prefix,
-                        }
-                    ]
-                }
-            )[0]
+            # Handle fields mapped to JSON-LD keywords
+            if iri == '@id':
+                self._id_field = field
+            elif iri == '@type':
+                self._type_field = field
 
-        if not with_context:
-            try:
-                del result['@context']
-            except KeyError:
-                pass
-        elif context_uri:
-            result['@context'] = context_uri
-        else:
-            result['@context'] = self._context
+        # Strip fields that map to JSON-LD keywords, they will be added in jsonld()
+        if self._id_field is not None:
+            del self._context[self._id_field]
+        if self._type_field is not None:
+            del self._context[self._type_field]
+
+    def jsonld(self, flatten=True):
+        result = {
+            field: self._coerce(field) for field in self._context.keys()
+        }
+
+        # Handle field overrides
+        if self._id_iri:
+            result['@id'] = self._id_iri
+        if self._type_iri:
+            result['@type'] = self._type_iri
+
+        # Include JSON-LD keyword fields
+        if self._id_field:
+            result['@id'] = getattr(self, self._id_field)
+        if self._type_field:
+            result['@type'] = getattr(self, self._type_field)
+
+        result = pyld.jsonld.expand(
+            result,
+            options={
+                'expandContext': [
+                    self._context,
+                ]
+            }
+        )[0]
+
+        if flatten:
+            result = pyld.jsonld.compact(result, ctx={"@context": dict()})
 
         return result
 
-    def serialize(self,
-                  prefix=None,
-                  **kwargs):
-        js = self.jsonld(prefix=prefix, **kwargs)
+    def serialize(self, **kwargs):
+        js = self.jsonld(**kwargs)
 
         content = json.dumps(js, indent=2, sort_keys=True)
 
         return content
+
+    def _coerce(self, field: str) -> Any:
+        value = getattr(self, field)
+
+        if field in self._coercions:
+            coercion = self._coercions[field]
+            return coercion(value)
+
+        return value
+
+    """
+    @classmethod
+    def from_jsonld(cls, jsonld_document):
+        result = pyld.jsonld.compact(jsonld_document, ctx={
+            "http:/qudt...": ""
+        })
+    """
