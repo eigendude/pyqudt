@@ -40,11 +40,11 @@ class BaseModel:
     JSON-LD keywords, IRIs or tuples with the second term being a coercion
     function or type.
     """
-    # The JSON-LD context
-    _CONTEXT: ClassVar[Dict[str, str]] = dict()
-
     # The model schema
     _SCHEMA: ClassVar[Dict[str, Any]] = dict()
+
+    # The JSON-LD context
+    _CONTEXT: ClassVar[Dict[str, str]] = dict()
 
     def __post_init__(self) -> None:
         """
@@ -153,12 +153,12 @@ class BaseModel:
 
         result = pyld.jsonld.compact(result, ctx=self._CONTEXT)
 
+        del result['@context']
+
         return result
 
     def serialize(self) -> str:
         js = self.jsonld()
-
-        del js['@context']
 
         content = json.dumps(js, indent=4, sort_keys=True)
 
