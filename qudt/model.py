@@ -19,6 +19,7 @@ from typing import Callable
 from typing import ClassVar
 from typing import Dict
 from typing import Optional
+from typing import Union
 
 
 _Coerce = collections.namedtuple('Coerce', ['iri', 'converter'])
@@ -27,8 +28,8 @@ _Link = collections.namedtuple('Link', ['iri'])
 def coerce(iri: Any, converter: Callable[[Any], str]) -> _Coerce:
     return _Coerce(str(iri), converter)
 
-def link(iri: Any) -> _Link:
-    return _Link(str(iri))
+def link(iri: Optional[Any]) -> _Link:
+    return _Link(str(iri) if iri else None)
 
 
 class BaseModel:
@@ -39,6 +40,10 @@ class BaseModel:
     JSON-LD keywords, IRIs or tuples with the second term being a coercion
     function or type.
     """
+    # The JSON-LD context
+    _CONTEXT: ClassVar[Dict[str, str]] = dict()
+
+    # The model schema
     _SCHEMA: ClassVar[Dict[str, Any]] = dict()
 
     def __post_init__(self) -> None:
@@ -66,7 +71,7 @@ class BaseModel:
 
         # If a field is not defined in the schema, an exception will be raised
         try:
-            self._context = {
+            self._schema = {
                 field: schema[field] for field in schema_fields
             }
         except KeyError as e:
@@ -85,7 +90,7 @@ class BaseModel:
         ]
 
         # Handle fields
-        for field, iri in self._context.items():
+        for field, iri in self._schema.items():
             # Skip fields set to None
             if iri is None:
                 continue
@@ -94,10 +99,10 @@ class BaseModel:
             # with the IRI now
             if self._has_coercion(iri):
                 iri = iri.iri
-                self._context[field] = iri
+                self._schema[field] = iri
             elif self._has_link(iri):
                 iri = iri.iri
-                self._context[field] = iri
+                self._schema[field] = iri
 
             # Handle fields mapped to JSON-LD keywords
             if iri == '@id':
@@ -107,9 +112,9 @@ class BaseModel:
 
         # Strip fields that map to JSON-LD keywords, they will be added in jsonld()
         if self._id_field is not None:
-            del self._context[self._id_field]
+            del self._schema[self._id_field]
         if self._type_field is not None:
-            del self._context[self._type_field]
+            del self._schema[self._type_field]
 
         # Handle type and ID overrides in the original schema
         if '@id' in schema:
@@ -117,17 +122,11 @@ class BaseModel:
         if '@type' in schema:
             self._type_iri = schema['@type']
 
-    def __repr__(self):
-        """
-        Return a string representation of the modeled object.
-        """
-        return self.serialize()
-
-    def jsonld(self, flatten: bool = True) -> Dict[str, Any]:
+    def jsonld(self) -> Dict[str, Any]:
         # Create the document for regular fields
         result = {
             field: self._link_value(self._coerce_field(field))
-            for field in self._context.keys()
+            for field in self._schema.keys()
         }
 
         # Include JSON-LD keyword fields
@@ -147,42 +146,26 @@ class BaseModel:
             result,
             options={
                 'expandContext': [
-                    self._context,
+                    self._schema,
                 ]
             }
         )[0]
 
-        if flatten:
-            # Flatten the dict by compacting with an empty context. No string
-            # substitutions will occur, but lists and values will be unnested.
-            result = pyld.jsonld.compact(result, ctx={"@context": dict()})
+        result = pyld.jsonld.compact(result, ctx=self._CONTEXT)
 
         return result
 
-    def serialize(self, context: Dict[str, str] = dict(), **kwargs) -> str:
-        if not hasattr(self, '_ontologies_loaded'):
-            # Ensure available ontologies are loaded to use their namespaces in
-            # serialization context
-            import qudt.ontology.ops
-            import qudt.ontology.qudt
-            import qudt.ontology.rdf
-            import qudt.ontology.rdfs
-            import qudt.ontology.unit
-            setattr(self, '_ontologies_loaded', True)
+    def serialize(self) -> str:
+        js = self.jsonld()
 
-        js = self.jsonld(**kwargs)
+        del js['@context']
 
-        js = pyld.jsonld.compact(js, ctx=[
-            context,
-            self._context,
-        ])
-
-        content = json.dumps(js, indent=2, sort_keys=True)
+        content = json.dumps(js, indent=4, sort_keys=True)
 
         return content
 
-    def _coerce_field(self, field: str) -> Any:
-        value = getattr(self, field)
+    def _coerce_field(self, field: Any) -> Any:
+        value = getattr(self, str(field))
 
         # Coerce using converter if specified
         if field in self._coercions:
