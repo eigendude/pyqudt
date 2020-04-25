@@ -19,13 +19,12 @@ from typing import Callable
 from typing import ClassVar
 from typing import Dict
 from typing import Optional
-from typing import Union
 
 
 _Coerce = collections.namedtuple('Coerce', ['iri', 'converter'])
 _Link = collections.namedtuple('Link', ['iri'])
 
-def coerce(iri: Any, converter: Callable[[Any], str]) -> _Coerce:
+def coerce(iri: Any, converter: Callable[[Any], Any]) -> _Coerce:
     return _Coerce(str(iri), converter)
 
 def link(iri: Optional[Any]) -> _Link:
@@ -153,7 +152,8 @@ class BaseModel:
 
         result = pyld.jsonld.compact(result, ctx=self._CONTEXT)
 
-        del result['@context']
+        if '@context' in result:
+            del result['@context']
 
         return result
 
