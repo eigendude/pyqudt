@@ -21,14 +21,17 @@ from typing import Dict
 from typing import Optional
 
 
-_Coerce = collections.namedtuple('Coerce', ['iri', 'converter'])
-_Link = collections.namedtuple('Link', ['iri'])
+_Coerce = collections.namedtuple('_Coerce', ['iri', 'converter'])
+_Link = collections.namedtuple('_Link', ['iri'])
 
 def coerce(iri: Any, converter: Callable[[Any], Any]) -> _Coerce:
     return _Coerce(str(iri), converter)
 
-def link(iri: Optional[Any]) -> _Link:
+def link(iri: Any) -> _Link:
     return _Link(str(iri) if iri else None)
+
+def nested(iri: Any) -> _Coerce:
+    return coerce(iri, lambda obj: obj.jsonld() if obj else None)
 
 
 class BaseModel:
@@ -43,7 +46,7 @@ class BaseModel:
     _SCHEMA: ClassVar[Dict[str, Any]] = dict()
 
     # The JSON-LD context
-    _CONTEXT: ClassVar[Dict[str, str]] = dict()
+    _CONTEXT: ClassVar[Dict[str, Any]] = dict()
 
     def __post_init__(self) -> None:
         """
