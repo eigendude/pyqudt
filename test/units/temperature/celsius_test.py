@@ -32,6 +32,10 @@ class CelsiusTest(unittest.TestCase):
         self.assertEqual(TemperatureUnit.KELVIN, temp2.unit)
         self.assertAlmostEqual(293.15, temp2.value)
 
+        temp_f = temp.convert_to(TemperatureUnit.FAHRENHEIT)
+        self.assertEqual(TemperatureUnit.FAHRENHEIT, temp_f.unit)
+        self.assertAlmostEqual(68, temp_f.value, 2)
+
 
 if __name__ == '__main__':
     unittest.main()
