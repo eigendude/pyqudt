@@ -18,4 +18,6 @@ from qudt.ontology.unit_factory import UnitFactory
 class EnergyUnit(object):
     """
     """
-    EV: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#ElectronVolt')
+    EV: Unit = UnitFactory.get_qudt('EV')
+    JOULE: Unit = UnitFactory.get_qudt('J')
+    BTU: Unit = UnitFactory.get_qudt('BTU_IT')

@@ -18,8 +18,9 @@ from qudt.ontology.unit_factory import UnitFactory
 class MassUnit(object):
     """
     """
-    KILOGRAM: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Kilogram')
-    GRAM: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Gram')
+    KILOGRAM: Unit = UnitFactory.get_qudt('KiloGM')
+    GRAM: Unit = UnitFactory.get_qudt('GM')
+
     MILLIGRAM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Milligram')
     MICROGRAM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Microgram')
     NANOGRAM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanogram')

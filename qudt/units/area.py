@@ -18,5 +18,6 @@ from qudt.ontology.unit_factory import UnitFactory
 class AreaUnit(object):
     """
     """
-    SQUARE_METER: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#SquareMeter')
+    SQUARE_METER: Unit = UnitFactory.get_qudt('M2')
     SQUARE_ANGSTROM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/SquareAngstrom')
+    ACRE: Unit = UnitFactory.get_qudt('AC')

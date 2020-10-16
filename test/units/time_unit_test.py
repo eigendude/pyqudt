@@ -11,16 +11,16 @@
 #
 ################################################################################
 
-from qudt.ontology.unit_factory import UnitFactory
 from qudt.quantity import Quantity
+from qudt.units.time import TimeUnit
 
 import unittest
 
 
 class TimeUnitTest(unittest.TestCase):
     def test(self) -> None:
-        hour = UnitFactory.get_unit('http://qudt.org/vocab/unit#Hour')
-        second = UnitFactory.get_unit('http://qudt.org/vocab/unit#SecondTime')
+        hour = TimeUnit.HOUR
+        second = TimeUnit.SECOND
 
         obs = Quantity(1, hour)
         obs2 = obs.convert_to(second)
