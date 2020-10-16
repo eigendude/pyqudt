@@ -10248,6 +10248,19 @@ unit:LB-PER-HR
   rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
   rdfs:label "Pound per Hour" ;
 .
+unit:KiloLB-PER-HR
+  a qudt:ImperialUnit ;
+  a qudt:Unit ;
+  dcterms:description "Thousand Pounds per hour is a mass flow unit. It is abbreviated as KPPH."^^qudt:LatexString ;
+  qudt:conversionMultiplier 1.2599788055555556E-1 ;
+  qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:dbpediaMatch "http://dbpedia.org/resource/Pound_per_hour"^^xsd:anyURI ;
+  qudt:expression "\\(KPPH\\)"^^qudt:LatexString ;
+  qudt:hasQuantityKind quantitykind:MassPerTime ;
+  qudt:informativeReference "http://en.wikipedia.org/wiki/Pound_per_hour?oldid=328571072"^^xsd:anyURI ;
+  rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
+  rdfs:label "Thousand Pounds per Hour" ;
+.
 unit:LB-PER-IN
   a qudt:ImperialUnit ;
   a qudt:Unit ;
