@@ -1,3 +1,4 @@
 PyLD ~= 2.0.1
 rdflib ~= 5.0.0
 rdflib-jsonld ~= 0.5.0
+frozendict @ git+https://github.com/gnmerritt/python-frozendict.git@d684b189f9e0a61b0a54f4e6944c650eb42ac621
