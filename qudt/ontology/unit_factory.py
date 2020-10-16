@@ -33,7 +33,7 @@ Predicate = Callable[[str, str, rdflib.term.Identifier], bool]
 # The package containing the RDF triplet repositories
 REPO_PACKAGE_NAME = 'resources'
 
-VERSION = "v2.1.4"
+VERSION = "v2_1_4"  # https://github.com/qudt/qudt-public-repo/releases/tag/v2.1.4
 
 # The RDF triplet repositories to load
 REPO_FILES = [

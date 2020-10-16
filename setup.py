@@ -46,6 +46,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['test', 'test.*']),
     package_data={
         'qudt.ontology.resources': ['*'],
+        'qudt.ontology.resources.v2_1_4': ['*'],
         'qudt': ['py.typed'],
     },
     install_requires=requirements,
