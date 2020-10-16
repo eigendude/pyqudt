@@ -18,6 +18,6 @@ from qudt.ontology.unit_factory import UnitFactory
 class TemperatureUnit(object):
     """
     """
-    KELVIN: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Kelvin')
-    CELSIUS: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#DegreeCelsius')
-    FAHRENHEIT: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#DegreeFahrenheit')
+    KELVIN: Unit = UnitFactory.get_qudt('K')
+    CELSIUS: Unit = UnitFactory.get_qudt('DEG_C')
+    FAHRENHEIT: Unit = UnitFactory.get_qudt('DEG_F')

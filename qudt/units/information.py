@@ -18,7 +18,7 @@ from qudt.ontology.unit_factory import UnitFactory
 class InformationUnit(object):
     """
     """
-    BYTE: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Byte')
-    KILOBYTE: Unit = UnitFactory.get_unit('http://aclima.io/schema/1.0/Kilobyte')
-    MEGABYTE: Unit = UnitFactory.get_unit('http://aclima.io/schema/1.0/Megabyte')
-    GIGABYTE: Unit = UnitFactory.get_unit('http://aclima.io/schema/1.0/Gigabyte')
+    BYTE: Unit = UnitFactory.get_qudt('BYTE')
+    KILOBYTE: Unit = UnitFactory.get_qudt('KiloBYTE')
+    MEGABYTE: Unit = UnitFactory.get_qudt('MegaBYTE')
+    GIGABYTE: Unit = UnitFactory.get_qudt('GigaBYTE')

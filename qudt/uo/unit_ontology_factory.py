@@ -25,7 +25,7 @@ def long_iri(shortened_iri: str) -> str:
     elif shortened_iri.startswith('ops:'):
         return 'http://www.openphacts.org/units/' + shortened_iri[4:]
     elif shortened_iri.startswith('qudt:'):
-        return 'http://qudt.org/schema/qudt#' + shortened_iri[5:]
+        return 'http://qudt.org/vocab/unit/' + shortened_iri[5:]
 
     raise ValueError(f'Invalid shortened IRI: {shortened_iri}')
 
@@ -54,10 +54,12 @@ class UnitOntologyFactory(object):
         long_iri('uo:UO_0000031'): long_iri('qudt:MinuteTime'),
         long_iri('uo:UO_0000032'): long_iri('qudt:Hour'),
         long_iri('uo:UO_0000033'): long_iri('qudt:Day'),
-        long_iri('uo:UO_0000039'): long_iri('qudt:Micromole'),
-        long_iri('uo:UO_0000040'): long_iri('qudt:Millimole'),
-        long_iri('uo:UO_0000041'): long_iri('qudt:Nanomole'),
-        long_iri('uo:UO_0000042'): long_iri('qudt:Picomole'),
+        long_iri('uo:UO_0000013'): long_iri('qudt:MOL'),
+        long_iri('uo:UO_0000039'): long_iri('qudt:MicroMOL'),
+        long_iri('uo:UO_0000040'): long_iri('qudt:MilliMOL'),
+        # these don't appear in v2.1.4 vocab qudt units?
+        # long_iri('uo:UO_0000041'): long_iri('qudt:Nanomole'),
+        # long_iri('uo:UO_0000042'): long_iri('qudt:Picomole'),
         long_iri('uo:UO_0000043'): long_iri('qudt:Femtomole'),
         long_iri('uo:UO_0000062'): long_iri('ops:Molar'),
         long_iri('uo:UO_0000063'): long_iri('ops:Millimolar'),

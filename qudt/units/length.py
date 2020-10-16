@@ -18,4 +18,5 @@ from qudt.ontology.unit_factory import UnitFactory
 class LengthUnit(object):
     """
     """
-    NM: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanometer')
+    NM: Unit = UnitFactory.get_qudt('NanoM')
+    ANGSTROM: Unit = UnitFactory.get_qudt('ANGSTROM')
