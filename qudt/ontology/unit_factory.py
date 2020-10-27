@@ -271,6 +271,7 @@ class UnitFactory(object):
             QUDT.USED_WITH_SI_UNIT,
             QUDT.THERMODYNAMIC_TEMP,
             QUDT.CELSIUS_TEMP,
+            QUDT.THERMAL_ENERGY,
         ]:
             return True
 

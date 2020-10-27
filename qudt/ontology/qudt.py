@@ -36,3 +36,4 @@ class QUDT(object):
 
     THERMODYNAMIC_TEMP = OntologyUtils.get_iri('kind', 'ThermodynamicTemperature')
     CELSIUS_TEMP = OntologyUtils.get_iri('kind', 'CelciusTemperature')
+    THERMAL_ENERGY = OntologyUtils.get_iri('kind', 'ThermalEnergy')

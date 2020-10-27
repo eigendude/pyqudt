@@ -21,3 +21,4 @@ class EnergyUnit(object):
     EV: Unit = UnitFactory.get_qudt('EV')
     JOULE: Unit = UnitFactory.get_qudt('J')
     BTU: Unit = UnitFactory.get_qudt('BTU_IT')
+    KWH: Unit = UnitFactory.get_qudt('KiloW-HR')

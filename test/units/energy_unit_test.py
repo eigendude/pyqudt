@@ -25,6 +25,15 @@ class EnergyUnitTest(unittest.TestCase):
 
         self.assertEqual("eV", temp.unit.abbreviation)
 
+    def test_kwh_to_btu(self) -> None:
+        kwh = Quantity(50, EnergyUnit.KWH)
+
+        self.assertTrue(kwh.unit)
+
+        btu = kwh.convert_to(EnergyUnit.BTU)
+        self.assertEqual(btu.unit, EnergyUnit.BTU)
+        self.assertAlmostEqual(btu.value, 170607.08, 2)
+
 
 if __name__ == '__main__':
     unittest.main()
