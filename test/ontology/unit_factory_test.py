@@ -77,6 +77,11 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertGreaterEqual(len(units), 1)
         self.assertEqual('http://qudt.org/vocab/unit/K', units[0].resource_iri)
 
+    def test_skips_thermal_energy(self) -> None:
+        btu = UnitFactory.get_qudt('BTU_IT')
+        self.assertTrue(btu.symbol)
+        self.assertEqual('http://qudt.org/vocab/quantitykind/Energy', btu.type_iri)
+
 
 if __name__ == '__main__':
     unittest.main()
