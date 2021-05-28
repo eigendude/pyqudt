@@ -43,6 +43,7 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=['test', 'test.*']),
     package_data={
         'qudt.ontology.resources': ['*'],
+        'qudt': ['py.typed'],
     },
     install_requires=[
         'PyLD',
