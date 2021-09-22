@@ -31,7 +31,6 @@ setuptools.setup(
     classifiers=[
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Topic :: Scientific/Engineering',
@@ -40,6 +39,7 @@ setuptools.setup(
         'Topic :: Scientific/Engineering :: Chemistry',
         'Topic :: Scientific/Engineering :: Physics',
     ],
+    python_requires='>=3.7',
     packages=setuptools.find_packages(exclude=['test', 'test.*']),
     package_data={
         'qudt.ontology.resources': ['*'],
