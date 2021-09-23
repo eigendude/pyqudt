@@ -16,15 +16,27 @@ from qudt.ontology.unit_factory import UnitFactory
 
 
 class ConcentrationUnit(object):
-    """
-    """
-    MOLE_PER_CUBIC_METER: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#MolePerCubicMeter')
+    """ """
+
+    MOLE_PER_CUBIC_METER: Unit = UnitFactory.get_unit(
+        'http://qudt.org/vocab/unit#MolePerCubicMeter'
+    )
 
     MOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Molar')
-    MILLIMOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Millimolar')
+    MILLIMOLAR: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/Millimolar'
+    )
     NANOMOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanomolar')
-    MICROMOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Micromolar')
+    MICROMOLAR: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/Micromolar'
+    )
 
-    GRAM_PER_LITER: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/GramPerLiter')
-    MICROGRAM_PER_MILLILITER: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/MicrogramPerMilliliter')
-    PICOGRAM_PER_MILLILITER: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/PicogramPerMilliliter')
+    GRAM_PER_LITER: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/GramPerLiter'
+    )
+    MICROGRAM_PER_MILLILITER: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/MicrogramPerMilliliter'
+    )
+    PICOGRAM_PER_MILLILITER: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/PicogramPerMilliliter'
+    )

@@ -64,9 +64,6 @@ class OntologyReader(object):
         """
         _, repo_ext = os.path.splitext(repo_path)
 
-        formats = {
-            '.jsonld': 'json-ld',
-            '.ttl': 'turtle'
-        }
+        formats = {'.jsonld': 'json-ld', '.ttl': 'turtle'}
 
         return formats.get(repo_ext)

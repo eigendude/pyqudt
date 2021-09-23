@@ -19,5 +19,6 @@ class Multiplier(object):
     """
     A multiplier with an optional offset.
     """
+
     offset: float = dataclasses.field(default=0.0)
     multiplier: float = dataclasses.field(default=1.0)

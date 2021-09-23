@@ -171,7 +171,8 @@ class UnitFactory(object):
 
         statements: List[Statement] = self._get_statements(
             self._repos,
-            lambda subj, pred, o: str(pred) == QUDT.ABBREVIATION and str(o) == abbreviation,
+            lambda subj, pred, o: str(pred) == QUDT.ABBREVIATION
+            and str(o) == abbreviation,
         )
 
         for (subject, predicate, obj) in statements:
@@ -214,8 +215,7 @@ class UnitFactory(object):
 
     @staticmethod
     def _get_statements(
-            repos: List[rdflib.Graph],
-            triplet_test: Predicate
+        repos: List[rdflib.Graph], triplet_test: Predicate
     ) -> List[Statement]:
         """
         Get the statements of the given repos that satisfy the provided lambda.

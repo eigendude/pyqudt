@@ -29,10 +29,14 @@ class UnitOntologyFactoryTest(unittest.TestCase):
         self.assertEqual('nM', unit.abbreviation)
         self.assertEqual(0.000001, unit.multiplier.multiplier)
         self.assertEqual(0, unit.multiplier.offset)
-        self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
+        self.assertEqual(
+            'http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri
+        )
 
     def test_get_units_by_qudt_type(self) -> None:
-        units = UnitOntologyFactory.get_iris('http://qudt.org/schema/qudt#MolarConcentrationUnit')
+        units = UnitOntologyFactory.get_iris(
+            'http://qudt.org/schema/qudt#MolarConcentrationUnit'
+        )
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)

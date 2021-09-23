@@ -16,6 +16,6 @@ from qudt.ontology.unit_factory import UnitFactory
 
 
 class DimensionlessUnit(object):
-    """
-    """
+    """ """
+
     UNITLESS: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Unitless')

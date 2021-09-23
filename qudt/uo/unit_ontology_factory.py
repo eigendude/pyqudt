@@ -34,6 +34,7 @@ class UnitOntologyFactory(object):
     """
     A class for creating units from the Unit Ontology.
     """
+
     uo_to_qudt: Dict[str, str] = {
         long_iri('uo:EFO_0004374'): long_iri('ops:MilligramPerDeciliter'),
         long_iri('uo:EFO_0004385'): long_iri('ops:PicogramPerMilliliter'),
@@ -80,13 +81,11 @@ class UnitOntologyFactory(object):
         long_iri('uo:UO_0000274'): long_iri('ops:MicrogramPerMilliliter'),
         long_iri('uo:UO_0000275'): long_iri('ops:NanogramPerMilliliter'),
         long_iri('uo:UO_0000308'): long_iri('ops:MilligramPerKilogram'),
-        #long_iri('uo:UO_0000311'), longIRI(''),
+        # long_iri('uo:UO_0000311'), longIRI(''),
     }
 
     # Reverse the lookup table
-    qudt_to_uo: Dict[str, str] = {
-        v: k for k, v in uo_to_qudt.items()
-    }
+    qudt_to_uo: Dict[str, str] = {v: k for k, v in uo_to_qudt.items()}
 
     @classmethod
     def get_unit(cls, resource_iri: str) -> Optional[Unit]:
