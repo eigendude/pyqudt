@@ -1,0 +1,82 @@
+#
+# This workflow will install Python dependencies, run tests and lint with a
+# variety of Python versions.
+#
+# For more information see:
+#
+#   https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+#
+
+name: Python package
+
+# Controls when the action will run
+on: [push, pull_request]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in
+# parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-20.04
+
+    steps:
+      - name: Build environment information
+        run: 'echo "Matrix OS: ${{ matrix.os }} on $HOSTNAME with $(getconf _NPROCESSORS_ONLN) cores"'
+
+      # Checks-out the repository under $GITHUB_WORKSPACE, so the job can
+      # access it
+      - uses: actions/checkout@v2
+
+      #
+      # Required on self-hosted workers: sudo apt install python3.7-dev
+      #
+      # Furthermore, on Ubuntu 20.04, Python 3.7 backports don't exist, so you
+      # can use the deadsnakes repository:
+      #
+      #   sudo add-apt-repository ppa:deadsnakes/ppa
+      #   sudo apt update
+      #   sudo apt install python3.7-dev
+      #
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      # Required on self-hosted workers: sudo apt install python3.8-dev
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      # Required on self-hosted workers: sudo apt install python3.9-dev
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox
+
+      - name: Restore tox environment
+        id: restore-tox
+        uses: actions/cache@v2
+        with:
+          path: |
+            .tox
+          key: tox-env-${{ hashFiles('poetry.lock', 'pyproject.toml', 'tox.ini') }}
+          restore-keys: |
+            tox-env-
+
+      # Run the tests!
+      - name: Run tox
+        run: |
+          tox
