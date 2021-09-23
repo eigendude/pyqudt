@@ -11,10 +11,10 @@
 #
 ################################################################################
 
-from qudt.units.length import LengthUnit
-from qudt.quantity import Quantity
-
 import unittest
+
+from qudt.quantity import Quantity
+from qudt.units.length import LengthUnit
 
 
 class LengthUnitTest(unittest.TestCase):

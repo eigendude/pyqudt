@@ -11,10 +11,11 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
-
 import dataclasses
+
 from typing import Optional
+
+from qudt.unit import Unit
 
 
 @dataclasses.dataclass
@@ -22,6 +23,7 @@ class Quantity(object):
     """
     A quantity with a value and a unit.
     """
+
     value: float
     unit: Optional[Unit]
 
@@ -49,10 +51,14 @@ class Quantity(object):
             )
 
         # Convert to the base unit
-        base_unit_value = self.value * self.unit.multiplier.multiplier + self.unit.multiplier.offset
+        base_unit_value = (
+            self.value * self.unit.multiplier.multiplier + self.unit.multiplier.offset
+        )
 
         # Convert the base unit to the new unit
-        new_value = (base_unit_value - unit.multiplier.offset) / unit.multiplier.multiplier
+        new_value = (
+            base_unit_value - unit.multiplier.offset
+        ) / unit.multiplier.multiplier
 
         new_measurement = Quantity(
             unit=unit,

@@ -11,10 +11,10 @@
 #
 ################################################################################
 
-from qudt.units.energy import EnergyUnit
-from qudt.quantity import Quantity
-
 import unittest
+
+from qudt.quantity import Quantity
+from qudt.units.energy import EnergyUnit
 
 
 class EnergyUnitTest(unittest.TestCase):

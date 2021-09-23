@@ -11,11 +11,11 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
 from qudt.ontology.unit_factory import UnitFactory
+from qudt.unit import Unit
 
 
 class DimensionlessUnit(object):
-    """
-    """
+    """ """
+
     UNITLESS: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Unitless')

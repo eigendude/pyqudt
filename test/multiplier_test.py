@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.multiplier import Multiplier
-
 import unittest
+
+from qudt.multiplier import Multiplier
 
 
 class MultiplierTest(unittest.TestCase):

@@ -44,3 +44,22 @@ Output
 0.1 μM = 100.00000000000001 nM
 20 degC = 293.15 K
 ````
+
+# Developing
+
+The CI suite is run using tox, which assumes you have all Python versions
+installed, either from source or using deadsnakes repo on Ubuntu LTS.
+To run tox:
+
+```
+pip3 install tox
+tox
+```
+
+Tox calls into Poetry, which is used for dependency management.
+To test outside of tox, install Poetry and then install the project dependencies:
+
+```
+pip3 install poetry
+poetry install
+```

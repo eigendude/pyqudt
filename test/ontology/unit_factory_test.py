@@ -11,10 +11,10 @@
 #
 ################################################################################
 
+import unittest
+
 from qudt.ontology.unit_factory import UnitFactory
 from qudt.unit import Unit
-
-import unittest
 
 
 class UnitFactoryTest(unittest.TestCase):
@@ -49,10 +49,14 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('nM', unit.abbreviation)
         self.assertAlmostEqual(0.000001, unit.multiplier.multiplier)
         self.assertAlmostEqual(0, unit.multiplier.offset)
-        self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
+        self.assertEqual(
+            'http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri
+        )
 
     def test_get_open_phacts_unit_newer(self) -> None:
-        unit = UnitFactory.get_unit('http://www.openphacts.org/units/NanogramPerMilliliter')
+        unit = UnitFactory.get_unit(
+            'http://www.openphacts.org/units/NanogramPerMilliliter'
+        )
 
         self.assertTrue(unit)
         self.assertEqual('http://qudt.org/schema/qudt#MassPerVolumeUnit', unit.type_iri)
@@ -62,7 +66,9 @@ class UnitFactoryTest(unittest.TestCase):
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
-        self.assertEqual('http://www.openphacts.org/units/Nanomolar', units[0].resource_iri)
+        self.assertEqual(
+            'http://www.openphacts.org/units/Nanomolar', units[0].resource_iri
+        )
 
 
 if __name__ == '__main__':

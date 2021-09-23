@@ -11,10 +11,10 @@
 #
 ################################################################################
 
+import unittest
+
 from qudt.quantity import Quantity
 from qudt.units.temperature import TemperatureUnit
-
-import unittest
 
 
 class QuantityTest(unittest.TestCase):

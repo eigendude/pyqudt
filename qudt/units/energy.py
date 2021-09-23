@@ -11,11 +11,11 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
 from qudt.ontology.unit_factory import UnitFactory
+from qudt.unit import Unit
 
 
 class EnergyUnit(object):
-    """
-    """
+    """ """
+
     EV: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#ElectronVolt')

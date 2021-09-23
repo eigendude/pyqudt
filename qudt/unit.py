@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.multiplier import Multiplier
-
 import dataclasses
+
+from qudt.multiplier import Multiplier
 
 
 @dataclasses.dataclass
@@ -21,6 +21,7 @@ class Unit(object):
     """
     A unit of measurement.
     """
+
     resource_iri: str
     label: str = dataclasses.field(default_factory=str)
     abbreviation: str = dataclasses.field(default_factory=str)

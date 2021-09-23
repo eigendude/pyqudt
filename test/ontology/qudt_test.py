@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.ontology.qudt import QUDT
-
 import unittest
+
+from qudt.ontology.qudt import QUDT
 
 
 class QUDTTest(unittest.TestCase):

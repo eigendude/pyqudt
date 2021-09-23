@@ -11,13 +11,17 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
 from qudt.ontology.unit_factory import UnitFactory
+from qudt.unit import Unit
 
 
 class VolumeUnit(object):
-    """
-    """
+    """ """
+
     LITER: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Liter')
-    MICROLITER: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Microliter')
-    MILLILITER: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Milliliter')
+    MICROLITER: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/Microliter'
+    )
+    MILLILITER: Unit = UnitFactory.get_unit(
+        'http://www.openphacts.org/units/Milliliter'
+    )

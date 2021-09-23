@@ -11,10 +11,10 @@
 #
 ################################################################################
 
-from qudt.units.concentration import ConcentrationUnit
-from qudt.quantity import Quantity
-
 import unittest
+
+from qudt.quantity import Quantity
+from qudt.units.concentration import ConcentrationUnit
 
 
 class MassPerVolumeUnitTest(unittest.TestCase):
