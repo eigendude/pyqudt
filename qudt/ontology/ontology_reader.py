@@ -13,9 +13,11 @@
 
 import json
 import os
+
+from typing import Optional
+
 import pyld.jsonld
 import rdflib
-from typing import Optional
 
 
 class OntologyReader(object):

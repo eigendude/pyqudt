@@ -11,10 +11,10 @@
 #
 ################################################################################
 
+import unittest
+
 from qudt.ontology.unit_factory import UnitFactory
 from qudt.unit import Unit
-
-import unittest
 
 
 class UnitFactoryTest(unittest.TestCase):

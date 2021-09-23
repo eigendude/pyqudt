@@ -11,8 +11,8 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
 from qudt.ontology.unit_factory import UnitFactory
+from qudt.unit import Unit
 
 
 class InformationUnit(object):

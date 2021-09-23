@@ -11,10 +11,10 @@
 #
 ################################################################################
 
+import unittest
+
 from qudt.ontology.unit_factory import UnitFactory
 from qudt.quantity import Quantity
-
-import unittest
 
 
 class TimeUnitTest(unittest.TestCase):

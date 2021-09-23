@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.ontology.ontology_utils import OntologyUtils
-
 import unittest
+
+from qudt.ontology.ontology_utils import OntologyUtils
 
 
 OntologyUtils.register_namespace('qudt', 'http://qudt.org/schema/qudt#')

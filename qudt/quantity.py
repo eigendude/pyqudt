@@ -11,10 +11,11 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
-
 import dataclasses
+
 from typing import Optional
+
+from qudt.unit import Unit
 
 
 @dataclasses.dataclass

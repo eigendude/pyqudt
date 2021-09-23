@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.multiplier import Multiplier
-
 import dataclasses
+
+from qudt.multiplier import Multiplier
 
 
 @dataclasses.dataclass

@@ -11,10 +11,10 @@
 #
 ################################################################################
 
-from qudt.uo.unit_ontology_factory import UnitOntologyFactory
-from qudt.unit import Unit
-
 import unittest
+
+from qudt.unit import Unit
+from qudt.uo.unit_ontology_factory import UnitOntologyFactory
 
 
 class UnitOntologyFactoryTest(unittest.TestCase):

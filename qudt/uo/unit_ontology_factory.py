@@ -11,12 +11,12 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
-from qudt.ontology.unit_factory import UnitFactory
-
 from typing import Dict
 from typing import List
 from typing import Optional
+
+from qudt.ontology.unit_factory import UnitFactory
+from qudt.unit import Unit
 
 
 def long_iri(shortened_iri: str) -> str:

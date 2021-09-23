@@ -11,18 +11,20 @@
 #
 ################################################################################
 
+import os
+
+from typing import Callable
+from typing import List
+from typing import Optional
+from typing import Tuple
+
+import rdflib
+
 from qudt.ontology.ontology_reader import OntologyReader
 from qudt.ontology.qudt import QUDT
 from qudt.ontology.rdf import RDF
 from qudt.ontology.rdfs import RDFS
 from qudt.unit import Unit
-
-import os
-import rdflib
-from typing import Callable
-from typing import List
-from typing import Optional
-from typing import Tuple
 
 
 # Type definitions

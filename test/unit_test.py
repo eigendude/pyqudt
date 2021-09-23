@@ -11,9 +11,9 @@
 #
 ################################################################################
 
-from qudt.unit import Unit
-
 import unittest
+
+from qudt.unit import Unit
 
 
 class UnitTest(unittest.TestCase):

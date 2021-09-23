@@ -11,10 +11,10 @@
 #
 ################################################################################
 
-from qudt.units.area import AreaUnit
-from qudt.quantity import Quantity
-
 import unittest
+
+from qudt.quantity import Quantity
+from qudt.units.area import AreaUnit
 
 
 class SquareAreaTest(unittest.TestCase):
