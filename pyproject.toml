@@ -56,6 +56,10 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Physics",
 ]
 
+packages = [
+    { include = "qudt" },
+]
+
 [tool.poetry.dependencies]
 
 # Python version is managed by tox
