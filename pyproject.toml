@@ -38,7 +38,7 @@ use_parentheses = true
 
 name = "pyqudt"
 description = "Python library for working with the QUDT (Quantity, Unit, Dimension and Type) ontology."
-version = "1.1.0"
+version = "1.1.1"
 authors = ["Garrett Brown"]
 license = "BSD-3-Clause"
 

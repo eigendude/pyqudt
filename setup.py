@@ -20,7 +20,7 @@ with open('README.md') as file:
 
 setuptools.setup(
     name='pyqudt',
-    version='1.1.0',
+    version='1.1.1',
     author='Garrett Brown',
     author_email='themagnificentmrb@gmail.com',
     description='Python library for working with the QUDT (Quantity, Unit, Dimension and Type) ontology.',
