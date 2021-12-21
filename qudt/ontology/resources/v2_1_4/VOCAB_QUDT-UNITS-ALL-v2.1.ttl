@@ -5886,6 +5886,7 @@ unit:GAL_UK-PER-MIN
   a qudt:Unit ;
   qudt:conversionMultiplier 7.576817e-05 ;
   qudt:conversionOffset 0e+00 ;
+  qudt:hasQuantityKind quantitykind:VolumePerUnitTime ;
   qudt:hasQuantityKind quantitykind:VolumeFlowRate ;
   qudt:iec61360Code "0112/2///62720#UAA503" ;
   qudt:plainTextDescription "unit gallon (UK dry or liq.) according to the Imperial system of units divided by the SI unit minute" ;
@@ -10005,6 +10006,7 @@ unit:L-PER-SEC
   qudt:conversionMultiplier 1e-03 ;
   qudt:conversionOffset 0e+00 ;
   qudt:hasQuantityKind quantitykind:VolumeFlowRate ;
+  qudt:hasQuantityKind quantitykind:VolumePerUnitTime ;
   qudt:iec61360Code "0112/2///62720#UAA664" ;
   qudt:plainTextDescription "unit litre divided by the SI base unit second" ;
   qudt:uneceCommonCode "G51" ;

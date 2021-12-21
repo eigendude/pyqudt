@@ -39,3 +39,5 @@ class QUDT(object):
     THERMAL_ENERGY = OntologyUtils.get_iri('kind', 'ThermalEnergy')
     HEAT_FLOW_RATE = OntologyUtils.get_iri('kind', 'HeatFlowRate')
     LIQUID_VOLUME = OntologyUtils.get_iri('kind', 'LiquidVolume')
+    VOLUME_FLOW_RATE = OntologyUtils.get_iri('kind', 'VolumeFlowRate')
+    IONIZATION_ENERGY = OntologyUtils.get_iri('kind', 'IonizationEnergy')

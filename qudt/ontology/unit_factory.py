@@ -274,6 +274,8 @@ class UnitFactory(object):
             QUDT.THERMAL_ENERGY,
             QUDT.HEAT_FLOW_RATE,
             QUDT.LIQUID_VOLUME,
+            QUDT.VOLUME_FLOW_RATE,
+            QUDT.IONIZATION_ENERGY,
         ]:
             return True
 
