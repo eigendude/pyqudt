@@ -9903,6 +9903,7 @@ unit:L
   qudt:conversionOffset "0.0"^^xsd:double ;
   qudt:dbpediaMatch "http://dbpedia.org/resource/Litre"^^xsd:anyURI ;
   qudt:exactMatch unit:L ;
+  qudt:hasQuantityKind quantitykind:Volume ;
   qudt:hasQuantityKind quantitykind:LiquidVolume ;
   qudt:informativeReference "http://en.wikipedia.org/wiki/Litre?oldid=494846400"^^xsd:anyURI ;
   qudt:omUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/litre> ;
