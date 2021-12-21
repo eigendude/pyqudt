@@ -5911,6 +5911,7 @@ unit:GAL_US
   dcterms:description "\"US Gallon\" is a unit for  'Liquid Volume' expressed as \\(galUS\\)."^^qudt:LatexString ;
   qudt:conversionMultiplier "0.003785412"^^xsd:double ;
   qudt:conversionOffset "0.0"^^xsd:double ;
+  qudt:hasQuantityKind quantitykind:Volume ;
   qudt:hasQuantityKind quantitykind:LiquidVolume ;
   qudt:symbol "gal" ;
   qudt:ucumCaseInsensitiveCode "[GAL_US]" ;

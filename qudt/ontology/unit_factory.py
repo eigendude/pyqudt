@@ -273,6 +273,7 @@ class UnitFactory(object):
             QUDT.CELSIUS_TEMP,
             QUDT.THERMAL_ENERGY,
             QUDT.HEAT_FLOW_RATE,
+            QUDT.LIQUID_VOLUME,
         ]:
             return True
 

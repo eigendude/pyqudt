@@ -38,3 +38,4 @@ class QUDT(object):
     CELSIUS_TEMP = OntologyUtils.get_iri('kind', 'CelciusTemperature')
     THERMAL_ENERGY = OntologyUtils.get_iri('kind', 'ThermalEnergy')
     HEAT_FLOW_RATE = OntologyUtils.get_iri('kind', 'HeatFlowRate')
+    LIQUID_VOLUME = OntologyUtils.get_iri('kind', 'LiquidVolume')
