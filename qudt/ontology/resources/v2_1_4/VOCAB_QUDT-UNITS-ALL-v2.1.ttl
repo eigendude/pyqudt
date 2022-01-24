@@ -9934,6 +9934,7 @@ unit:L-PER-HR
   qudt:conversionMultiplier 2.777778e-07 ;
   qudt:conversionOffset 0e+00 ;
   qudt:hasQuantityKind quantitykind:VolumeFlowRate ;
+  qudt:hasQuantityKind quantitykind:VolumePerUnitTime ;
   qudt:iec61360Code "0112/2///62720#UAA655" ;
   qudt:plainTextDescription "Unit litre divided by the unit hour" ;
   qudt:uneceCommonCode "E32" ;
