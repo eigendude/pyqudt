@@ -20664,7 +20664,7 @@ unit:failures-in-time
 .
   unit:NM3-NAT-GAS:
     a qudt:Unit ;
-    dcterms:description "Normal Cubic Meter - One M3 of natural gas at 0c and 1.01325 bar (=37MJ)"
+    dcterms:description "Normal Cubic Meter - One M3 of natural gas at 0c and 1.01325 bar (=37MJ)";
     qudt:conversionMultiplier 3.7E7;
     qudt:conversionOffset "0.0"^^xsd:double ;
     qudt:expression "\\(NM3\\)"^^qudt:LatexString ;
@@ -20674,7 +20674,7 @@ unit:failures-in-time
 .
 unit:SCM-NAT-GAS:
   a qudt:Unit ;
-  dcterms:description "Standard Cubic Metre - One M3 of natural gas at 15C and 1.01325 bar (=37MJ)"
+  dcterms:description "Standard Cubic Metre - One M3 of natural gas at 15C and 1.01325 bar";
   qudt:conversionMultiplier 3.9109E7;
   qudt:conversionOffset "0.0"^^xsd:double ;
   qudt:expression "\\(SCM\\)"^^qudt:LatexString ;
@@ -20684,7 +20684,7 @@ unit:SCM-NAT-GAS:
 .
 unit:SFT3-NAT-GAS:
   a qudt:Unit ;
-  dcterms:description "Standard Cubic Foot - One Ft3 of natural gas at 60f and 1.01325 bar (=37MJ)"
+  dcterms:description "Standard Cubic Foot - One Ft3 of natural gas at 60f and 1.01325 bar";
   qudt:conversionMultiplier 1.085E6;
   qudt:conversionOffset "0.0"^^xsd:double ;
   qudt:expression "\\(SFT3\\)"^^qudt:LatexString ;
