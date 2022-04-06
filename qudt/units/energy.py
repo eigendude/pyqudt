@@ -22,3 +22,7 @@ class EnergyUnit(object):
     JOULE: Unit = UnitFactory.get_qudt('J')
     BTU: Unit = UnitFactory.get_qudt('BTU_IT')
     KWH: Unit = UnitFactory.get_qudt('KiloW-HR')
+
+    NM3_GAS: Unit = UnitFactory.get_qudt('NM3-NAT-GAS')
+    SCM_GAS: Unit = UnitFactory.get_qudt('SCM-NAT-GAS')
+    SFT3_GAS: Unit = UnitFactory.get_qudt('SFT3-NAT-GAS')

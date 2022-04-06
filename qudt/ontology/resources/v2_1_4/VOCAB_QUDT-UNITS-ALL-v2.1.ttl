@@ -20662,7 +20662,7 @@ unit:failures-in-time
   rdfs:label "failures in time" ;
   skos:prefLabel "failures in time" ;
 .
-  unit:NM3-NAT-GAS:
+  unit:NM3-NAT-GAS
     a qudt:Unit ;
     dcterms:description "Normal Cubic Meter - One M3 of natural gas at 0c and 1.01325 bar (=37MJ)";
     qudt:conversionMultiplier 3.7E7;
@@ -20672,7 +20672,7 @@ unit:failures-in-time
     rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
     rdfs:label "Normal Cubic Metre" ;
 .
-unit:SCM-NAT-GAS:
+unit:SCM-NAT-GAS
   a qudt:Unit ;
   dcterms:description "Standard Cubic Metre - One M3 of natural gas at 15C and 1.01325 bar";
   qudt:conversionMultiplier 3.9109E7;
@@ -20682,7 +20682,7 @@ unit:SCM-NAT-GAS:
   rdfs:isDefinedBy <http://qudt.org/2.1/vocab/unit> ;
   rdfs:label "Standard Cubic Metre" ;
 .
-unit:SFT3-NAT-GAS:
+unit:SFT3-NAT-GAS
   a qudt:Unit ;
   dcterms:description "Standard Cubic Foot - One Ft3 of natural gas at 60f and 1.01325 bar";
   qudt:conversionMultiplier 1.085E6;

@@ -35,5 +35,16 @@ class EnergyUnitTest(unittest.TestCase):
         self.assertAlmostEqual(btu.value, 170607.08, 2)
 
 
+class NormalNaturalGasTest(unittest.TestCase):
+    def test_gas_to_joules(self) -> None:
+        for gas in [EnergyUnit.NM3_GAS, EnergyUnit.SCM_GAS, EnergyUnit.SFT3_GAS]:
+            one_standard = Quantity(1, gas)
+            assert one_standard.unit is not None
+
+            joules = one_standard.convert_to(EnergyUnit.JOULE)
+            assert joules.value > 0
+            self.assertEqual(joules.unit, EnergyUnit.JOULE)
+
+
 if __name__ == '__main__':
     unittest.main()
