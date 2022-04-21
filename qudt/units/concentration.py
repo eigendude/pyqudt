@@ -18,7 +18,7 @@ from qudt.ontology.unit_factory import UnitFactory
 class ConcentrationUnit(object):
     """
     """
-    MOLE_PER_CUBIC_METER: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#MolePerCubicMeter')
+    MOLE_PER_CUBIC_METER: Unit = UnitFactory.get_qudt('MOL-PER-M3')
 
     MOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Molar')
     MILLIMOLAR: Unit = UnitFactory.get_unit('http://www.openphacts.org/units/Millimolar')

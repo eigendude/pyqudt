@@ -18,4 +18,4 @@ from qudt.ontology.unit_factory import UnitFactory
 class CountingUnit(object):
     """
     """
-    PERCENT: Unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Percent')
+    PERCENT: Unit = UnitFactory.get_qudt('Percent')

@@ -33,11 +33,17 @@ Predicate = Callable[[str, str, rdflib.term.Identifier], bool]
 # The package containing the RDF triplet repositories
 REPO_PACKAGE_NAME = 'resources'
 
+VERSION = "v2_1_4"  # https://github.com/qudt/qudt-public-repo/releases/tag/v2.1.4
+
 # The RDF triplet repositories to load
 REPO_FILES = [
-    'openphacts.jsonld',
-    'unit.jsonld',
-    'contrib.jsonld',
+    'SCHEMA_QUDT-v2.1.ttl',
+    'SCHEMA_QUDT-DATA-v2.1.ttl',
+    'SCHEMA_QUDT-DATATYPE-v2.1.ttl',
+    'SCHEMA_QUDT-SCIENCE-v2.1.ttl',
+    'SCHEMA_QUDT-ENGINEERING-v2.1.ttl',
+    'SCHEMA_QUDT-MATHEMATICS-v2.1.ttl',
+    'VOCAB_QUDT-UNITS-ALL-v2.1.ttl',
 ]
 
 
@@ -63,7 +69,8 @@ class UnitFactory(object):
         self._repos: List[rdflib.Graph] = list()
         for repo_file in REPO_FILES:
             try:
-                self._repos.append(self._read_repo(repo_file))
+                qudt_file = os.path.join(VERSION, repo_file)
+                self._repos.append(self._read_repo(qudt_file))
             except FileNotFoundError:
                 pass
 
@@ -122,6 +129,13 @@ class UnitFactory(object):
         """
         return cls._get_instance()._get_unit(resource_iri)
 
+    @classmethod
+    def get_qudt(cls, unit: str) -> Unit:
+        """
+        Shorthand for getting a QUDT unit like Joule (`J`) or meter-squared (`M2`)
+        """
+        return cls.get_unit('http://qudt.org/vocab/unit/' + unit)
+
     def _get_unit(self, resource_iri: str) -> Unit:
         """
         Internal implementation of get_unit().
@@ -146,10 +160,13 @@ class UnitFactory(object):
                 unit.multiplier.multiplier = float(obj)
             elif predicate == RDFS.LABEL:
                 unit.label = str(obj)
-            elif predicate == RDF.TYPE:
+            elif predicate == QUDT.QUANTIY_KIND:
                 type_iri = str(obj)
                 if not self._should_be_ignored(type_iri):
                     unit.type_iri = type_iri
+
+        if not unit.abbreviation:
+            unit.abbreviation = unit.symbol
 
         return unit
 
@@ -171,7 +188,7 @@ class UnitFactory(object):
 
         statements: List[Statement] = self._get_statements(
             self._repos,
-            lambda subj, pred, o: str(pred) == QUDT.ABBREVIATION and str(o) == abbreviation,
+            lambda subj, pred, o: (str(pred) == QUDT.ABBREVIATION or str(pred) == QUDT.SYMBOL) and str(o) == abbreviation,
         )
 
         for (subject, predicate, obj) in statements:
@@ -242,7 +259,7 @@ class UnitFactory(object):
         :return: True if the statement should be ignored, False otherwise
         """
         # Accept anything outside the QUDT namespace
-        if not type_iri.startswith(QUDT.namespace):
+        if not type_iri.startswith(QUDT.domain):
             return False
 
         if type_iri in [
@@ -252,6 +269,13 @@ class UnitFactory(object):
             QUDT.DERIVED_UNIT,
             QUDT.NOT_USED_WITH_SI_UNIT,
             QUDT.USED_WITH_SI_UNIT,
+            QUDT.THERMODYNAMIC_TEMP,
+            QUDT.CELSIUS_TEMP,
+            QUDT.THERMAL_ENERGY,
+            QUDT.HEAT_FLOW_RATE,
+            QUDT.LIQUID_VOLUME,
+            QUDT.VOLUME_FLOW_RATE,
+            QUDT.IONIZATION_ENERGY,
         ]:
             return True
 

@@ -24,7 +24,7 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertTrue(factory)
 
     def test_get_unit(self) -> None:
-        unit = UnitFactory.get_unit('http://qudt.org/vocab/unit#Kelvin')
+        unit = UnitFactory.get_unit('http://qudt.org/vocab/unit/K')
 
         self.assertTrue(isinstance(unit, Unit))
         self.assertEqual('Kelvin', unit.label)
@@ -32,14 +32,26 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('K', unit.abbreviation)
         self.assertEqual(1, unit.multiplier.multiplier)
         self.assertEqual(0, unit.multiplier.offset)
-        self.assertEqual('http://qudt.org/schema/qudt#TemperatureUnit', unit.type_iri)
+        self.assertEqual('http://qudt.org/vocab/quantitykind/Temperature', unit.type_iri)
+
+    def test_get_qudt(self) -> None:
+        unit = UnitFactory.get_qudt('K')
+
+        self.assertTrue(isinstance(unit, Unit))
+        self.assertEqual('Kelvin', unit.label)
+        self.assertEqual('K', unit.symbol)
+        self.assertEqual('K', unit.abbreviation)
+        self.assertEqual(1, unit.multiplier.multiplier)
+        self.assertEqual(0, unit.multiplier.offset)
+        self.assertEqual('http://qudt.org/vocab/quantitykind/Temperature', unit.type_iri)
 
     def test_get_iris(self) -> None:
-        units = UnitFactory.get_iris('http://qudt.org/schema/qudt#TemperatureUnit')
+        units = UnitFactory.get_iris('http://qudt.org/vocab/quantitykind/Temperature')
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
 
+    @unittest.skip("TODO<open phacts>")
     def test_get_open_phacts_unit(self) -> None:
         unit = UnitFactory.get_unit('http://www.openphacts.org/units/Nanomolar')
 
@@ -51,6 +63,7 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertAlmostEqual(0, unit.multiplier.offset)
         self.assertEqual('http://qudt.org/schema/qudt#MolarConcentrationUnit', unit.type_iri)
 
+    @unittest.skip("TODO<open phacts>")
     def test_get_open_phacts_unit_newer(self) -> None:
         unit = UnitFactory.get_unit('http://www.openphacts.org/units/NanogramPerMilliliter')
 
@@ -58,11 +71,16 @@ class UnitFactoryTest(unittest.TestCase):
         self.assertEqual('http://qudt.org/schema/qudt#MassPerVolumeUnit', unit.type_iri)
 
     def test_find_units(self) -> None:
-        units = UnitFactory.find_units('nM')
+        units = UnitFactory.find_units('K')
 
         self.assertTrue(units)
         self.assertGreaterEqual(len(units), 1)
-        self.assertEqual('http://www.openphacts.org/units/Nanomolar', units[0].resource_iri)
+        self.assertEqual('http://qudt.org/vocab/unit/K', units[0].resource_iri)
+
+    def test_skips_thermal_energy(self) -> None:
+        btu = UnitFactory.get_qudt('BTU_IT')
+        self.assertTrue(btu.symbol)
+        self.assertEqual('http://qudt.org/vocab/quantitykind/Energy', btu.type_iri)
 
 
 if __name__ == '__main__':

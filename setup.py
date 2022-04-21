@@ -17,10 +17,12 @@ import setuptools
 with open('README.md') as file:
     long_description = file.read()
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
 
 setuptools.setup(
     name='pyqudt',
-    version='1.1.0',
+    version='2.0.0',
     author='Garrett Brown',
     author_email='themagnificentmrb@gmail.com',
     description='Python library for working with the QUDT (Quantity, Unit, Dimension and Type) ontology.',
@@ -31,23 +33,21 @@ setuptools.setup(
     classifiers=[
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Astronomy',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Chemistry',
         'Topic :: Scientific/Engineering :: Physics',
     ],
+    python_requires='>=3.7',
     packages=setuptools.find_packages(exclude=['test', 'test.*']),
     package_data={
         'qudt.ontology.resources': ['*'],
+        'qudt.ontology.resources.v2_1_4': ['*'],
         'qudt': ['py.typed'],
     },
-    install_requires=[
-        'PyLD',
-        'rdflib',
-        'rdflib-jsonld',
-    ],
+    install_requires=requirements,
 )

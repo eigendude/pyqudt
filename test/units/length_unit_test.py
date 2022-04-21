@@ -18,12 +18,12 @@ import unittest
 
 
 class LengthUnitTest(unittest.TestCase):
-    def test_electron_volt(self) -> None:
-        temp = Quantity(23.5, LengthUnit.NM)
+    def test_nanometer(self) -> None:
+        length = Quantity(23.5, LengthUnit.NM)
 
-        assert temp.unit is not None
+        assert length.unit is not None
 
-        self.assertEqual("nm", temp.unit.abbreviation)
+        self.assertEqual("NanoM", length.unit.label)
 
 
 if __name__ == '__main__':

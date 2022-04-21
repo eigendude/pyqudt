@@ -23,7 +23,11 @@ class FahrenheitTest(unittest.TestCase):
         temp2 = temp.convert_to(TemperatureUnit.FAHRENHEIT)
 
         self.assertEqual(TemperatureUnit.FAHRENHEIT, temp2.unit)
-        self.assertAlmostEqual(68, round(temp2.value, 2))
+        self.assertAlmostEqual(68, temp2.value, 2)
+
+        temp_c = temp2.convert_to(TemperatureUnit.CELSIUS)
+        self.assertEqual(TemperatureUnit.CELSIUS, temp_c.unit)
+        self.assertAlmostEqual(20, temp_c.value)
 
     def test_minus_fourty(self) -> None:
         temp = Quantity(-40, TemperatureUnit.CELSIUS)
