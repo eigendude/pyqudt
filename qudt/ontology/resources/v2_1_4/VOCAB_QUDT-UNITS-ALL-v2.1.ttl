@@ -9259,7 +9259,7 @@ unit:KiloJ-PER-KiloGM
   a qudt:Unit ;
   qudt:conversionMultiplier 1e+03 ;
   qudt:conversionOffset 0e+00 ;
-  qudt:hasQuantityKind quantitykind:HeatCapacity ;
+  qudt:hasQuantityKind quantitykind:SpecificEnergy ;
   qudt:iec61360Code "0112/2///62720#UAA570" ;
   qudt:plainTextDescription "1 000-fold of the SI derived unit joule divided by the SI base unit kilogram" ;
   qudt:uneceCommonCode "B42" ;
